@@ -184,6 +184,7 @@ class Company_name(models.Model):
     meta_title = models.CharField(max_length=100)
     meta_tag = models.CharField(max_length=100)
     description = models.CharField(max_length=100)
+    ecommerce = models.BooleanField(default=False)
     best_seller = models.BooleanField(default=False)
     curtain_fabric_category = models.BooleanField(default=False)
     fabric_use_upholstery_category = models.BooleanField(default=False)

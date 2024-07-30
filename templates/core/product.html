@@ -936,7 +936,7 @@
                                 </svg>
                               </div>
                               <a href="#reviews" class="woocommerce-review-link"
-                                >(0 reviews)</a
+                                >(Best Rated)</a
                               >
                             </div>
                           </div>
@@ -1067,6 +1067,7 @@
                             class="quantity"
                             style="margin-bottom: 0.6rem; margin-top: 0.4rem"
                           ></div>
+
                           <style>
                             .modal-overlay {
                               display: none;
@@ -1230,6 +1231,12 @@
         </div>
       </div>
     </div>
+    {% if ecommerce_enabled %}
+    <button>add to cart</button>
+    {% else %}
+    <button>enquiry the product</button>
+    {% endif %}
+
     <div class="woocommerce-tabs woocommerce-main-tabs">
       <div class="container-broad">
         <div

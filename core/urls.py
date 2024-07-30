@@ -34,6 +34,7 @@ urlpatterns = [
     path("career", career, name="career"),
     path("write-to-ceo/", write_to_ceo, name="write_to_ceo"),
     path("blog/", blogs, name="blogs"),
+    path("testing/", testing, name="testing"),
     path("privacy-policy/", privacypolicy, name="privacypolicy"),
     path("<slug:sub_cat_slug>/", sub_category, name="sub-category"),
 ]

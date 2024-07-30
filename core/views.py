@@ -194,6 +194,7 @@ def product(request, product_slug):
         "related_company": related_company,
         "related_subcategory": related_subcategory,
         "product_varients" : product_varients,
+        "ecommerce_enabled": related_company.ecommerce,  # Add this line
     }
     return render(request, "core/product.html", context)
 
@@ -322,6 +323,9 @@ def our_clients(request):
 
 def premium_websites(request):
     return render(request, "core/premium_websites.html")
+
+def testing(request):
+    return render(request, "core/old-product.html")
 
 def our_achievements(request):
     return render(request, "core/our_achievements.html")
