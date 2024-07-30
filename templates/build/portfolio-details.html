@@ -1,0 +1,394 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+
+    <title>{{architecture.name}} | Architect & Interior Design | The Panipat Handloom</title>
+
+    <!--Favicon-->
+    <link rel="icon" href="{% static "wp-content/themes/minimog-child-demo/assets/demos/megamog/tph.png/" %}" type="image/png">
+    <!-- Bootstrap CSS -->
+    <link href="{% static "arch/assets/css/bootstrap.min.css" %}" rel="stylesheet">
+    <!-- Line Awesome CSS -->
+    <link href="{% static "arch/assets/css/line-awesome.min.css" %}" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <link href="{% static "arch/assets/css/fontAwesomePro.css" %}" rel="stylesheet">
+    <!-- Animate CSS-->
+    <link href="{% static "arch/assets/css/animate.css" %}" rel="stylesheet">
+    <!-- Bar Filler CSS -->
+    <link href="{% static "arch/assets/css/barfiller.css" %}" rel="stylesheet">
+    <!-- Magnific Popup Video -->
+    <link href="{% static "arch/assets/css/magnific-popup.css" %}" rel="stylesheet">
+    <!-- Flaticon CSS -->
+    <link href="{% static "arch/assets/css/flaticon.css" %}" rel="stylesheet">
+    <!-- Owl Carousel CSS -->
+    <link href="{% static "arch/assets/css/owl.carousel.css" %}" rel="stylesheet">
+    <!-- Slick Slider CSS -->
+    <link href="{% static "arch/assets/css/slick.css" %}" rel="stylesheet">
+    <!-- Nice Select  -->
+    <link href="{% static "arch/assets/css/nice-select.css" %}" rel="stylesheet">
+    <!-- Back to Top -->
+    <link href="{% static "arch/assets/css/backToTop.css" %}" rel="stylesheet">
+    <!-- Metis Menu -->
+    <link href="{% static "arch/assets/css/metismenu.css" %}" rel="stylesheet">
+    <!-- Style CSS -->
+    <link href="{% static "arch/assets/css/style.css" %}" rel="stylesheet">
+    <!-- Responsive CSS -->
+    <link href="{% static "assets/css/responsive.css" %}" rel="stylesheet">
+
+    <!-- jquery -->
+    <script src="{% static "arch/assets/js/jquery-1.12.4.min.js" %}"></script>
+</head>
+
+<body>
+    <!-- Mouse Cursor  -->
+    <div class="mouseCursor cursor-outer"></div>
+    <div class="mouseCursor cursor-inner"><span>Drag</span></div>
+
+    <!-- Header Area  -->
+
+    <div id="header-sticky" class="header-area">        
+        <div class="navigation">
+            <div class="container">
+                <div class="header-inner-box">
+                    <a href="/" class="logo"> <img src="{% static 'wp-content/themes/minimog-child-demo/assets/demos/megamog/tph.png' %}" alt="" width="161"
+					height="80"> </a>
+
+                    <div class="main-menu d-none d-lg-block">
+                        <ul>
+                            <li><a href="/architectures">Home</a>
+                            </li>
+                            <li><a href="#projects">Projects</a>
+                            </li>
+                            <li><a href="#">Architects <i class="las la-angle-down"></i></a>
+                                <ul class="sub-menu">
+                                    {% for arch in archi %}
+                                    <li><a href="{% url 'core:arch_name' arch.name %}">{{arch.name}}</a></li>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </li>
+                            <li><a href="#blog">Blog</a>
+                            </li>
+                            
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>                            
+                    </div>
+
+                    <div class="header-btn">
+                        <div class="menu-trigger">
+                            <span class="lines"></span>
+                            <span class="lines"></span>
+                            <span class="lines"></span>
+                        </div>
+                    </div>
+
+                    <div class="mobile-nav-bar d-block col-sm-1 col-6 d-lg-none">
+                        <div class="mobile-nav-wrap">                    
+                            <div id="hamburger">
+                                <i class="las la-bars"></i>                                    
+                            </div>
+                            <!-- mobile menu - responsive menu  -->
+                            <div class="mobile-nav">
+                                <button type="button" class="close-nav">
+                                    <i class="las la-times-circle"></i>
+                                </button>
+                                <nav class="sidebar-nav">
+                                    <ul class="metismenu" id="mobile-menu">
+                                        <li><a href="/architectures">Home</a></li>
+                                        <li><a href="https://thepanipathandloom.com/architectures/#projects">Projects</a></li>
+                                        <li><a class="has-arrow" href="#">Architects</a>
+                                            <ul class="sub-menu">
+                                                {% for arch in archi %}
+                                    <li><a href="{% url 'core:arch_name' arch.name %}">{{arch.name}}</a></li>
+                                    </li>
+                                    {% endfor %} 
+                                            </ul>
+                                        </li>
+                                        <li><a href="https://thepanipathandloom.com/architectures/#contact">Contact</a></li>
+                                        
+                                    </ul>
+                                </nav> 
+                                <div class="action-bar">
+                                    <a href="mailto:info@architex.com"><i class="las la-envelope"></i>info@architex.com</a>
+                                    <a href="tel:123-456-7890"><i class="fal fa-phone"></i>123-456-7890</a>
+                                    <a href="" class="theme-btn bordered-btn">Contact Us</a>
+                                </div>      
+                            </div>                            
+                        </div>
+                        <div class="overlay"></div>
+                    </div>                        
+                </div>
+            </div>
+        </div>        
+    </div>
+
+<!-- Project Details  -->
+
+<div class="single-project-section section-padding pb-60">
+    <div class="container">
+        <div class="row pb-0">
+            <div class="col-xl-6 col-lg-6 text-center">
+                <div class="section-title">                    
+                    <h1 class="gradient-text">{{architecture.name}}</h1>
+                    <h6><a href="/architectures">Architect /</a> {{architecture.name}}</h6>
+                </div>                
+            </div>            
+        </div>
+        <style>
+            .gradient-text {
+background: -webkit-linear-gradient(20deg, rgba(255, 0, 120, 1) 15%, rgba(0, 199, 255, 1) 100%);
+-webkit-background-clip: text;
+color: transparent;
+}
+
+        </style>
+
+        <div class="row">
+            <div class="project-details-wrapper">
+                <div class="row mt-60">
+                    <div class="col-xl-7">
+                        <div class="project-details">
+                            <p>{{architecture.description}}</p> <br>
+                        </div>
+                        <div class="project-info-wrap">
+                            <div class="project-info">
+                                <h6>Architect:</h6>
+                                <p>{{architecture.name}}</p>
+                            </div>
+                            <div class="project-info">
+                                <h6>Contact:</h6>
+                                <p>{{architecture.contact}}</p>
+                            </div>
+                            <div class="project-info">
+                                <h6>Email:</h6>
+                                <p>{{architecture.email}}</p>
+                            </div>
+                            <div class="project-info">
+                                <h6>Location:</h6>
+                                <p>{{architecture.address}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-5">
+                       
+                            <img src="{{architecture.image.url}}" alt="">
+                        
+                    </div>
+                </div>
+                <div class="row pt-50">
+                    <div class="col-xl-6 col-lg-6">
+                        <div class="section-title">                    
+                            <h1 class="gradient-text">Make your house better....</h1>                         
+                        </div>    
+                        <p>We carefully planned and paid close attention to every detail in this home. Each area is now a perfect mix of beauty and practicality, giving you a living space that goes beyond the usual</p>   
+                        <hr>         
+                    </div>            
+                </div>
+                <style>
+                    .image-container {
+                        position: relative;
+                        overflow: hidden;
+                    }
+                    
+                    .overlay {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-color: rgba(255, 255, 255, 0.6); /* Light shade with transparency */
+                        color: black; /* Adjust text color */
+                        opacity: 0; /* Initially hidden */
+                        transition: opacity 0.3s ease;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        z-index: 1; /* Ensure overlay appears on top */
+                    }
+                    
+                    .overlay p {
+                        font-size: 20px; /* Adjust font size */
+                        color: black;
+                    }
+                    
+                    .image-container:hover .overlay {
+                        opacity: 1; /* Show overlay on hover */
+                    }
+                    
+                </style>
+                <div class="project-details-img">
+                    <div class="row mt-0">
+                        {% for arch_img in arch_images %}
+    <div class="col-xl-6">
+        <div class="image-container">
+            <img src="{{ arch_img.images.url }}" alt="">
+            <div class="overlay">
+                <p>{{ arch_img.location }}</p>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+
+
+                    </div>
+                </div>
+                <div class="counter-section section-padding pt-60 pb-30 phone-hid">
+                    <div class="container">
+                        <div class="row gx-5">
+                            <div class="col-lg-3 col-md-6 col-sm-6">
+                                <div class="single-counter-box">
+                                    <p class="counter-number"><span>80</span></p>
+                                    <h6>Site Area</h6>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6">
+                                <div class="single-counter-box">
+                                    <p class="counter-number"><span>70</span></p>
+                                    <h6>Building Surface</h6>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6">
+                                <div class="single-counter-box">
+                                    <p class="counter-number"><span>150</span>+</p>
+                                    <h6>Building Height</h6>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6">
+                                <div class="single-counter-box">
+                                    <p class="counter-number"><span>360</span>+</p>
+                                    <h6>Number of Stories</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <style>
+                @media (max-width: 767px) {
+  .phone-hid {
+    display: none;
+  }
+}
+            </style>
+
+        </div>
+        
+    </div>
+</div>
+<div class="cta-area d-flex align-items-center bg-cover" data-background="{% static "arch/assets/img/cta-bg.jpg" %}">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-10 text-center">
+                <div class="section-title">                    
+                    <h2 class="text-white">Let's start your new <br> dream project</h2>
+                </div>
+                <a href="/architectures#contact" class="theme-btn">Contact Us</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Footer Bottom Area -->
+
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row justify-content-center align-items-center justify-content-center">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <p class="copyright-line">© 2023 The Panipat Handloom. All rights reserved.</p>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <p class="privacy">Design & Developed by: <b>Prince Sachdeva</b></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Off-canvas Area-->
+
+    <div class="extra-info">
+        <div class="close-icon menu-close">
+            <button>
+                <i class="las la-times"></i>
+            </button>
+        </div>
+        <div class="logo-side mb-30">
+            <div class="logo">
+                <a href="" class="logo"><img src="{% static 'wp-content/themes/minimog-child-demo/assets/demos/megamog/tph.png' %}" alt="" width="161"
+					height="80"></a>
+            </div>
+        </div>
+        <div class="side-info">
+            <div class="contact-list mb-40">
+                <!-- <h4>About</h4> -->
+               
+                <img src="{% static "arch/assets/img/offcanvas-img.jpg" %}" alt="">
+
+                <div class="mt-30 mb-30">
+                    <a href="/architectures#contact" class="bordered-btn">Get In Touch</a>
+                </div>
+            </div>
+            <div class="social-area-wrap">
+                <a href="https://twitter.com/HandloomPanipat"><i class="lab la-twitter"></i></a>
+                <a href="https://www.facebook.com/thepanipathandloom"><i class="lab la-facebook"></i></a>
+                <a href="https://www.linkedin.com/in/panipathandloom/"><i class="lab la-linkedin"></i></a>
+                <a href="https://www.instagram.com/thepanipathandloom1976/"><i class="lab la-instagram"></i></a>
+                <a href="https://www.youtube.com/@thepanipathandloom"><i class="lab la-youtube"></i></a>
+                <a href="https://api.whatsapp.com/send/?phone=%2B919899073000&text&type=phone_number&app_absent=0"><i class="lab la-whatsapp"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="offcanvas-overly"></div>
+
+
+    <!-- back to top start -->
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
+    </div>
+
+
+    <!-- Popper JS -->
+    <script src="{% static "arch/assets/js/popper.min.js" %}"></script>
+    <!-- Bootstrap JS -->
+    <script src="{% static "arch/assets/js/bootstrap.min.js" %}"></script>
+    <!-- Wow JS -->
+    <script src="{% static "arch/assets/js/wow.min.js" %}"></script>
+    <!-- Way Points JS -->
+    <script src="{% static "arch/assets/js/jquery.waypoints.min.js" %}"></script>
+    <!-- Counter Up JS -->
+    <script src="{% static "arch/assets/js/jquery.counterup.min.js" %}"></script>
+    <!-- Owl Carousel JS -->
+    <script src="{% static "arch/assets/js/owl.carousel.min.js" %}"></script>
+    <!-- Slick Slider JS -->
+    <script src="{% static "arch/assets/js/slick.min.js" %}"></script>
+    <!-- Magnific Popup JS -->
+    <script src="{% static "arch/assets/js/magnific-popup.min.js" %}"></script>
+    <!-- Isotope JS -->
+    <script src="{% static "arch/assets/js/isotope-3.0.6-min.js" %}"></script>
+    <!-- Sticky JS -->
+    <script src="{% static "arch/assets/js/jquery.sticky.js" %}"></script>
+    <!-- Nice Select JS -->
+    <script src="{% static "arch/assets/js/jquery.nice-select.min.js" %}"></script>
+    <!-- Back To Top JS -->
+    <script src="{% static "arch/assets/js/backToTop.js" %}"></script>
+    <!-- Metis Menu JS -->
+    <script src="{% static "arch/assets/js/metismenu.js" %}"></script>
+    <!-- Progress Bar JS -->
+    <script src="{% static "arch/assets/js/jquery.barfiller.js" %}"></script>
+    <!-- Circle Progress Bar JS -->
+    <script src="{% static "arch/assets/js/circle-progress.min.js" %}"></script>
+    <!-- Main JS -->
+    <script src="{% static "arch/assets/js/main.js" %}"></script>
+</body>
+</html>

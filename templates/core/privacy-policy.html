@@ -1,0 +1,75 @@
+{% extends 'partials/base.html' %} {% load static %} 
+{% block breadmb %}
+<div id="page-title-bar" class="page-title-bar page-title-bar-minimal-01">
+  <div class="page-title-bar-inner">
+    <div class="page-title-bar-bg"></div>
+
+    <div id="page-breadcrumb" class="page-breadcrumb">
+      <div class="container-broad">
+        <div class="page-breadcrumb-wrap">
+          <ul class="insight_core_breadcrumb">
+            <li class="level-1 top item-home">
+              <a href="/">Home</a>
+            </li>
+            <li class="level-2 sub item-current tail current">
+              <span>Privacy Policy</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock breadmb %}
+
+{% block content %}
+<section class="elementor-section elementor-top-section elementor-element elementor-element-18fd70a elementor-section-boxed elementor-section-gap-beside-yes elementor-section-height-default elementor-section-height-default elementor-section-column-vertical-align-stretch" data-id="18fd70a" data-element_type="section">
+  <div class="elementor-container elementor-column-gap-extended">
+    <div class="elementor-row">
+      <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-b521ef3" data-id="b521ef3" data-element_type="column">
+        <div class="elementor-column-wrap elementor-element-populated">
+          <div class="elementor-widget-wrap" style="text-align: center;">
+            <div class="elementor-element elementor-element-0650558 elementor-widget elementor-widget-tm-heading" data-id="0650558" data-element_type="widget" data-widget_type="tm-heading.default">
+              <div class="elementor-widget-container">
+                <div class="tm-modern-heading tm-modern-heading--style-01 tm-modern-heading--highlight-style-01">
+                  <div class="heading-primary-wrap">
+                    
+                   
+                  </div>
+                </div>
+              </div>
+            </div>
+            <style>
+              .faq-toggle {
+background: linear-gradient(90deg, #e6317b, #bd529c, #6b94ce);
+-webkit-background-clip: text;
+color: transparent;
+display: inline;
+}
+
+.faq-answer{
+padding-top: 1.8rem;
+padding-bottom: 2rem ;
+}
+
+            </style>
+            <div class="elementor-element elementor-element-faq-content" data-id="faq-content" data-element_type="widget">
+              <div class="elementor-widget-container">
+    
+                <div class="faq-question">
+                  <div class="faq-answer">
+                      {{ privacy_policy_content | safe }}
+                  </div>
+              </div>
+
+                <!-- Add more FAQ items as needed -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}

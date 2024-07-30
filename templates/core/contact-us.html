@@ -1,0 +1,111 @@
+{% extends 'partials/base.html' %} {% load static %} 
+{% block content %}
+<link rel="icon" href="{% static "wp-content/themes/minimog-child-demo/assets/demos/megamog/tph.png/" %}" type="image/png">
+<!-- Bootstrap CSS -->
+<link href="{% static "arch/assets/css/bootstrap.min.css" %}" rel="stylesheet">
+<!-- Line Awesome CSS -->
+<link href="{% static "arch/assets/css/line-awesome.min.css" %}" rel="stylesheet">
+<!-- Font Awesome CSS -->
+<link href="{% static "arch/assets/css/fontAwesomePro.css" %}" rel="stylesheet">
+<!-- Animate CSS-->
+<link href="{% static "arch/assets/css/animate.css" %}" rel="stylesheet">
+<!-- Bar Filler CSS -->
+<link href="{% static "arch/assets/css/barfiller.css" %}" rel="stylesheet">
+<!-- Magnific Popup Video -->
+<link href="{% static "arch/assets/css/magnific-popup.css" %}" rel="stylesheet">
+<!-- Flaticon CSS -->
+<link href="{% static "arch/assets/css/flaticon.css" %} " rel="stylesheet">
+<!-- Owl Carousel CSS -->
+<link href="{% static "arch/assets/css/owl.carousel.css" %}" rel="stylesheet">
+<!-- Slick Slider CSS -->
+<link href="{% static "arch/assets/css/slick.css" %}" rel="stylesheet">
+<!-- Nice Select  -->
+<link href="{% static "arch/assets/css/nice-select.css" %}" rel="stylesheet">
+<!-- Back to Top -->
+<link href="{% static "arch/assets/css/backToTop.css" %}" rel="stylesheet">
+<!-- Metis Menu -->
+<link href="{% static "arch/assets/css/metismenu.css" %}" rel="stylesheet">
+<!-- Style CSS -->
+<link href="{% static "arch/assets/css/style.css" %}" rel="stylesheet">
+<!-- Responsive CSS -->
+<link href="{% static "arch/assets/css/responsive.css" %}" rel="stylesheet">
+
+
+<!-- jquery -->
+<script src="{% static "arch/assets/js/jquery-1.12.4.min.js" %}"></script>
+<div class="contact-page section-padding">
+    <div class="container">
+        <div class="row gx-5">
+            <div class="col-xl-6 col-lg-6 col-12">
+                <div class="contact-page google-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.018290064745!2d77.22094837503133!3d28.56921348695409!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d00e5a6e640ad%3A0xab0c231085c5e591!2sPanipat%20Handloom%20Emporium%20-%20Wooden%20Flooring%20%7C%20Wallpaper%20%7C%20Windows%20Blinds%20%7C%20Mattress%20%7C%20Interior%20%26%20Exterior%20Shop%20%7C%20Sofa%20Cloth!5e0!3m2!1sen!2sin!4v1700566835093!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-12">
+                <div class="contact-form">
+                    <div class="section-title">
+                        <h2>Lets talk...</h2>                            
+                    </div>
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Your Name*</label>
+                                <input type="text" placeholder="Your Full Name">
+                            </div>
+                            <div class="col-md-6">
+                                <label>Email Address*</label>
+                                <input type="email" placeholder="E-mail Address">
+                            </div>
+                            <div class="col-12">
+                                <label>Subject*</label>
+                                <input type="text" placeholder="Website">
+                            </div>
+                            <div class="col-12">
+                                <label>Message*</label>
+                                <textarea name="message" id="message" cols="30" rows="10" placeholder="Write Here"></textarea>
+                            </div>
+                            <div><button type="submit" class="bordered-btn">Send Now</button></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Contact Info -->
+<div class="contact-info-wrap section-padding pt-0 pb-120">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                <div class="single-contact-info">
+                    <div class="contact-icon">
+                        <img src="{% static "arch/assets/img/contact/1.png" %}" alt="">
+                    </div>
+                    <p>N-14, South Extn-1, Gurudwara Road, New Delhi-110049</p>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                <div class="single-contact-info">
+                    <div class="contact-icon">
+                        <img src="{% static "arch/assets/img/contact/2.png" %}" alt="">
+                    </div>
+                    <p>Team@thepanipathandloom.com</p>
+                    <p>Accounts@thepanipathandloom.com</p>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                <div class="single-contact-info">
+                    <div class="contact-icon">
+                        <img src="{% static "arch/assets/img/contact/3.png" %}" alt="">
+                    </div>
+                    <p>+91-9999999009</p>
+                    <p>+91-9899073000</p>
+                    <p>011-24622572</p>
+                    <p>011-24610143</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

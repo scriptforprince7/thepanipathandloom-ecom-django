@@ -1,0 +1,596 @@
+{% extends 'partials/base.html' %} {% load static %} {% block breadmb %}
+<div id="page-title-bar" class="page-title-bar page-title-bar-minimal-01">
+  <div class="page-title-bar-inner">
+    <div class="page-title-bar-bg"></div>
+
+    <div id="page-breadcrumb" class="page-breadcrumb">
+      <div class="container-broad">
+        <div class="page-breadcrumb-wrap">
+          <ul class="insight_core_breadcrumb">
+            <li class="level-1 top item-home">
+              <a href="/">Home</a>
+            </li>
+            <li class="level-1 top item-home">
+              <a href="/blog">Blog</a>
+            </li>
+            <li class="level-2 sub item-current tail current">
+              <span>{{blog_detail.blog_title}}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock breadmb %} {% block innerheader %}
+<div class="header-below">
+  <div class="container-broad">
+    <div class="header-below-wrap">
+      <div class="header-below-left header-col-start">
+        <div class="header-content-inner lingrad">
+          <div
+            id="header-categories-nav"
+            class="header-categories-nav"
+          >
+            <div class="inner">
+              <span class="nav-toggle-btn" id="nav-toggle-btn">
+                <span class="nav-toggle-bars fa fa-bars"></span>
+                Shop by Categories
+              </span>
+              <nav class="category-menu">
+                <ul
+                  id="menu-product-categories"
+                  class="product-category-dropdown menu__container sm sm-simple sm-vertical"
+                  data-sm-options='{"mainMenuSubOffsetX":-15,"subMenusSubOffsetX":-18,"subMenusSubOffsetY":-17,"keepInViewport":false}'
+                >
+                {% for p in main_cat %}
+                  <li
+                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-886 level-1 menu-item-has-icon has-mega-menu"
+                  >
+                    <a href=""
+                      ><div class="menu-item-wrap">
+                        <span class="menu-item-icon"
+                          ><svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 20 20"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8.125 13.125V6.25H16.25C16.913 6.25 17.5489 6.51339 18.0178 6.98223C18.4866 7.45107 18.75 8.08696 18.75 8.75V13.125"
+                              stroke="black"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                            <path
+                              d="M1.25 16.25V3.75"
+                              stroke="black"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                            <path
+                              d="M1.25 13.125H18.75V16.25"
+                              stroke="black"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                            <path
+                              d="M8.125 6.25H1.25"
+                              stroke="black"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg> </span
+                        ><span class="menu-item-title"
+                          >{{p.main_title}}</span
+                        ><span class="toggle-sub-menu"> </span></div
+                    ></a>
+                    <ul class="sub-menu children mega-menu">
+                      <li
+                        class="menu-item menu-item-type-post_type menu-item-object-ic_mega_menu menu-item-1305"
+                      >
+                        <div class="mega-menu-content">
+                          <div
+                            data-elementor-type="wp-post"
+                            data-elementor-id="1298"
+                            class="elementor elementor-1298"
+                          >
+                            <div class="elementor-inner">
+                              <div class="elementor-section-wrap">
+                                <section
+                                  class="elementor-section elementor-top-section elementor-element elementor-element-8e1d000 elementor-section-boxed elementor-section-gap-beside-yes elementor-section-height-default elementor-section-height-default elementor-section-column-vertical-align-stretch"
+                                  data-id="8e1d000"
+                                  data-element_type="section"
+                                >
+                                  <div
+                                    class="elementor-container elementor-column-gap-extended"
+                                  >
+                                    <div class="elementor-row">
+                                      {% for cat in p.category_set.all %}
+                                      <div
+                                        class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-8b6c475"
+                                        data-id="8b6c475"
+                                        data-element_type="column"
+                                      >
+                                        <div
+                                          class="elementor-column-wrap elementor-element-populated"
+                                        >
+                                          <div
+                                            class="elementor-widget-wrap"
+                                          >
+                                            <div
+                                              class="elementor-element elementor-element-60475cc elementor-widget elementor-widget-heading"
+                                              data-id="60475cc"
+                                              data-element_type="widget"
+                                              data-widget_type="heading.default"
+                                            >
+                                              <div
+                                                class="elementor-widget-container"
+                                              >
+                                              <style>
+                                                /*! elementor - v3.10.0 - 09-01-2023 */
+                                                .elementor-column
+                                                  .elementor-spacer-inner {
+                                                  height: var(
+                                                    --spacer-size
+                                                  );
+                                                }
+                                                .e-con {
+                                                  --container-widget-width: 100%;
+                                                }
+                                                .e-con-inner
+                                                  > .elementor-widget-spacer,
+                                                .e-con
+                                                  > .elementor-widget-spacer {
+                                                  width: var(
+                                                    --container-widget-width,
+                                                    var(
+                                                      --spacer-size
+                                                    )
+                                                  );
+                                                  --align-self: var(
+                                                    --container-widget-align-self,
+                                                    initial
+                                                  );
+                                                  --flex-shrink: 0;
+                                                }
+                                                .e-con-inner
+                                                  > .elementor-widget-spacer
+                                                  > .elementor-widget-container,
+                                                .e-con-inner
+                                                  > .elementor-widget-spacer
+                                                  > .elementor-widget-container
+                                                  > .elementor-spacer,
+                                                .e-con
+                                                  > .elementor-widget-spacer
+                                                  > .elementor-widget-container,
+                                                .e-con
+                                                  > .elementor-widget-spacer
+                                                  > .elementor-widget-container
+                                                  > .elementor-spacer {
+                                                  height: 100%;
+                                                }
+                                                .e-con-inner
+                                                  > .elementor-widget-spacer
+                                                  > .elementor-widget-container
+                                                  > .elementor-spacer
+                                                  > .elementor-spacer-inner,
+                                                .e-con
+                                                  > .elementor-widget-spacer
+                                                  > .elementor-widget-container
+                                                  > .elementor-spacer
+                                                  > .elementor-spacer-inner {
+                                                  height: var(
+                                                    --container-widget-height,
+                                                    var(
+                                                      --spacer-size
+                                                    )
+                                                  );
+                                                }
+                                              </style>
+                                               <style>
+                                                /*! elementor - v3.10.0 - 09-01-2023 */
+                                                .elementor-heading-title {
+                                                  padding: 0;
+                                                  margin: 0;
+                                                  line-height: 1;
+                                                }
+                                                .elementor-widget-heading
+                                                  .elementor-heading-title[class*="elementor-size-"]
+                                                  > a {
+                                                  color: inherit;
+                                                  font-size: inherit;
+                                                  line-height: inherit;
+                                                }
+                                                .elementor-widget-heading
+                                                  .elementor-heading-title.elementor-size-small {
+                                                  font-size: 15px;
+                                                }
+                                                .elementor-widget-heading
+                                                  .elementor-heading-title.elementor-size-medium {
+                                                  font-size: 19px;
+                                                }
+                                                .elementor-widget-heading
+                                                  .elementor-heading-title.elementor-size-large {
+                                                  font-size: 29px;
+                                                }
+                                                .elementor-widget-heading
+                                                  .elementor-heading-title.elementor-size-xl {
+                                                  font-size: 39px;
+                                                }
+                                                .elementor-widget-heading
+                                                  .elementor-heading-title.elementor-size-xxl {
+                                                  font-size: 59px;
+                                                }
+                                              </style>
+                                                <h2
+                                                  class="elementor-heading-title elementor-size-default"
+                                                >
+                                                  {{cat.cat_title}}
+                                                </h2>
+                                              </div>
+                                            </div>
+                                            {% for sub_cat in cat.sub_categories_set.all %}
+                                            <div
+                                              class="elementor-element elementor-element-e8afc0b elementor-widget elementor-widget-tm-simple-list"
+                                              data-id="e8afc0b"
+                                              data-element_type="widget"
+                                              data-widget_type="tm-simple-list.default" style="margin-top: 0.3rem;"
+                                            >
+                                              <div
+                                                class="elementor-widget-container"
+                                              >
+                                              <style>
+                                                .dropdown-icon {
+                                                    display: inline-block;
+                                                    width: 8px; 
+                                                    height: 8px;
+                                                    border-left: 2px solid rgb(101, 96, 96);
+                                                    border-bottom: 2px solid rgb(101, 96, 96);
+                                                    transform: rotate(-45deg); 
+                                                    margin-left: 5px; /* Add margin to the left of the dropdown icon */
+                                                    cursor: pointer; /* Change cursor to indicate interactivity */
+                                                }
+                                                
+                                                .dropdown-container {
+                                                    display: none;
+                                                    margin-top: 5px;
+                                                    padding: 10px;
+                                                    border: 1px solid #ccc;
+                                                    background-color: white;
+                                                    position: absolute;
+                                                    z-index: 1;
+                                                    padding: 20px;
+                                                }
+                                            </style>
+                                                <div
+                                                  class="minimog-simple-list minimog-simple-list--style-03"
+                                                >
+                                                  <div
+                                                    class="item elementor-repeater-item-9c988d6 truncated"
+                                                  >
+                                                    <a
+                                                      class="link"
+                                                      href="{% url 'core:sub-category' sub_cat.sub_cat_title %}"
+                                                    >
+                                                      {{sub_cat.sub_cat_title}}
+                                                    </a><i class="dropdown-icon"></i>
+                                                    <div class="dropdown-container">
+                                                      <ul>
+                                                        {% for company in sub_cat.company_name_set.all %}
+                                                            {% with company_name=company.company_name_title %}
+                                                                {% if company_name %}
+                                                                    <a href="{% url 'core:sub-category' sub_cat_title=sub_cat.sub_cat_title %}#{{ company.sid }}">
+                                                                        <li>{{ company_name }}</li>
+                                                                    </a>
+                                                                {% else %}
+                                                                    <li>No brands available</li>
+                                                                {% endif %}
+                                                            {% endwith %}
+                                                        {% empty %}
+                                                            <li>No brands available</li>
+                                                        {% endfor %}
+                                                    </ul>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            {% endfor %}
+                                            <script>
+                                              document.addEventListener("DOMContentLoaded", function() {
+                                                  const dropdownIcons = document.querySelectorAll('.dropdown-icon');
+                                                  
+                                                  dropdownIcons.forEach(icon => {
+                                                      icon.addEventListener('click', () => {
+                                                          const dropdownContainer = icon.nextElementSibling;
+                                                          dropdownContainer.style.display = (dropdownContainer.style.display === 'none' || dropdownContainer.style.display === '') ? 'block' : 'none';
+                                                      });
+                                                  });
+                                              });
+                                          </script>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      {% endfor %}
+
+                                      
+                                      <div
+                                        class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-877ceeb"
+                                        data-id="877ceeb"
+                                        data-element_type="column"
+                                      >
+                                        <div
+                                          class="elementor-column-wrap elementor-element-populated"
+                                        >
+                                          <div
+                                            class="elementor-widget-wrap"
+                                          >
+                                            <div
+                                              class="elementor-element elementor-element-9c6cc46 minimog-animation-zoom-in sub-title-position-above_title elementor-widget elementor-widget-tm-banner"
+                                              data-id="9c6cc46"
+                                              data-element_type="widget"
+                                              data-widget_type="tm-banner.default"
+                                            >
+                                              <div
+                                                class="elementor-widget-container"
+                                              >
+                                                <a
+                                                  class="minimog-banner minimog-box link-secret"
+                                                  href=""
+                                                >
+                                                  <div
+                                                    class="minimog-image"
+                                                  >
+                                                    <div
+                                                      class="image ll-background ll-background-unload"
+                                                      data-src="{{blog_detail.blog_image.url}}"
+                                                    ></div>
+                                                  </div>
+                                                  <div
+                                                    class="content-wrap"
+                                                  >
+                                                    <div
+                                                      class="content-wrap__inner"
+                                                    >
+                                                      <h3
+                                                        class="title"
+                                                      >
+                                                       {{p.main_title}}
+                                                      </h3>
+                                                    </div>
+                                                    <div
+                                                      class="content-wrap__bottom"
+                                                    >
+                                                      <div
+                                                        class="tm-button-wrapper"
+                                                      >
+                                                        <div
+                                                          class="tm-button style-bottom-line tm-button-nm"
+                                                        >
+                                                          <div
+                                                            class="button-content-wrapper"
+                                                          >
+                                                            <span
+                                                              class="button-text"
+                                                              >Shop
+                                                              Now</span
+                                                            >
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </a>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </section>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                  {% endfor %}
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="header-below-center header-col-center lingrad">
+        <div class="header-content-inner">
+          <div
+            id="page-navigation"
+            class="navigation page-navigation"
+          >
+            <nav id="menu" class="menu menu--primary">
+              <ul
+                id="menu-primary"
+                class="menu__container sm sm-simple"
+                data-sm-options='{"subMenusSubOffsetX":-18,"subMenusSubOffsetY":-17}'
+              >
+                <li
+                  class=""
+                >
+                  <a href=""
+                    ><div class="menu-item-wrap">
+                      <span class="menu-item-title">Home</span>
+                    </div></a
+                  >
+                </li>
+                <li
+                  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-40 level-1"
+                >
+                  <a
+                    href=" .0.0.1:8000/shop-category/Wall%20Decor/"
+                    ><div class="menu-item-wrap">
+                      <span class="menu-item-title">Shop</span>
+                    </div></a
+                  >
+                </li>
+                <li
+                  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1112 level-1"
+                >
+                  <a href="#"
+                    ><div class="menu-item-wrap">
+                      <span class="menu-item-title">About</span>
+                    </div></a
+                  >
+                </li>
+                <li
+                  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-324 level-1"
+                >
+                  <a
+                    href="
+                    "
+                    ><div class="menu-item-wrap">
+                      <span class="menu-item-title">Blog</span>
+                    </div></a
+                  >
+                </li>
+                <li
+                  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1111 level-1"
+                >
+                  <a href="#"
+                    ><div class="menu-item-wrap">
+                      <span class="menu-item-title">Reach Us</span>
+                    </div></a
+                  >
+                </li>
+                <li
+                  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2083 level-1"
+                >
+                  <a
+                    href=""
+                    ><div class="menu-item-wrap">
+                      <span class="menu-item-title"
+                        >Store List</span
+                      >
+                    </div></a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <div class="header-below-right header-col-end">
+        <div class="header-content-inner"></div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock innerheader %} {% block content %}
+<div id="page-content" class="page-content">
+  <div class="container-broad">
+    <div class="dokan-profile-frame-wrapper" style="text-align: center;">
+      <div class="profile-frame">
+        <div class="profile-info-box profile-layout-default">
+          <div class="profile-info-cover">
+            <img
+              src="{{blog_detail.blog_image.url}}"
+              alt="{{blog_detail.blog_title}}"
+              title="{{blog_detail.blog_title}}"
+              class="profile-info-img"
+            />
+          </div>
+          <style>
+            .store-name {
+              background-image: linear-gradient(
+                45deg,
+                #e6317b,
+                #bd529c,
+                #6b94ce
+              );
+              background-clip: text;
+              -webkit-background-clip: text;
+              color: transparent;
+              margin-top: 1rem;
+              text-align: center;
+              font-size: 3.2rem;
+            }
+            .show{
+              text-align: right;
+            }
+          </style>
+
+          
+          <!-- .profile-info-summery-wrapper -->
+        </div>
+        <!-- .profile-info-box -->
+      </div>
+      <!-- .profile-frame -->
+    </div>
+
+  
+
+    <div class="row">
+      <div class="page-sidebar page-sidebar-left sidebar-primary">
+        <div
+          class="page-sidebar-inner tm-sticky-column"
+          data-sticky-group="content-sidebar"
+          itemscope="itemscope"
+        >
+          <a href="#" class="btn-close-off-sidebar">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 18 18"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10.6465 8.975L16.7012 15.0297C16.8639 15.1924 16.8639 15.3715 16.7012 15.5668L15.5781 16.6898C15.3828 16.8526 15.2038 16.8526 15.041 16.6898L14.0156 15.6156L8.98633 10.6352L2.93164 16.6898C2.76888 16.8526 2.58984 16.8526 2.39453 16.6898L1.27148 15.5668C1.10872 15.3715 1.10872 15.1924 1.27148 15.0297L7.32617 8.975L1.27148 2.92031C1.10872 2.75755 1.10872 2.57852 1.27148 2.3832L2.39453 1.26016C2.58984 1.0974 2.76888 1.0974 2.93164 1.26016L8.98633 7.31484L15.041 1.26016C15.2038 1.0974 15.3828 1.0974 15.5781 1.26016L16.7012 2.3832C16.8639 2.57852 16.8639 2.75755 16.7012 2.92031L15.627 3.9457L10.6465 8.975Z"
+                fill="#000000"
+              />
+            </svg>
+          </a>
+          <div class="page-sidebar-content-wrap">
+            <div class="page-sidebar-content"></div>
+          </div>
+        </div>
+      </div>
+
+      
+    </div>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600&family=Playfair+Display:wght@500&display=swap');
+    </style>
+    <div class="profile-info-summery-wrapper dokan-clearfix">
+      <div class="profile-info-summery">
+        <div class="profile-info-head">
+          <h1 class="store-name custom-heading">{{blog_detail.blog_title}}</h1>
+        </div>
+
+        <style>
+          .custom-heading{
+            font-family: Dancing Script;
+            font-size: 4rem;
+          }
+
+          @media only screen and (max-width: 600px) {
+    /* Adjust font size for small screens and mobile screens */
+    .custom-heading {
+      font-size: 3rem;
+    }
+  }
+        </style>
+        <hr>
+        <p>{{blog_detail.blog_description| safe}}</p>
+
+        <!-- .profile-info -->
+      </div>
+      <!-- .profile-info-summery -->
+    </div>
+  </div>
+</div>
+{% endblock content %}

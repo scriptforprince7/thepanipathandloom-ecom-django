@@ -1,0 +1,1590 @@
+{% extends 'partials/base.html' %} {% load static %}
+{% block content %}
+<div class="archive post-type-archive post-type-archive-product wp-embed-responsive theme-minimog woocommerce-multi-currency-EUR woocommerce-shop woocommerce woocommerce-page woocommerce-no-js desktop desktop-menu primary-nav-rendering header-sticky-enable page-has-mobile-tabs page-has-sidebar page-one-sidebar page-sidebar1-off-mobile page-blocks-style-normal title-bar-standard-03 archive-shop elementor-default elementor-kit-4 dokan-theme-minimog">
+<style id='minimog-style-inline-css' type='text/css'>
+  :root {
+    --minimog-typography-body-font-family: Work Sans;
+    --minimog-typography-body-font-size: 16px;
+    --minimog-typography-body-font-weight: 400;
+    --minimog-typography-body-line-height: 28px;
+    --minimog-typography-headings-font-family: Fraunces;
+    --minimog-typography-headings-font-weight: 400;
+    --minimog-typography-headings-font-weight-secondary: 400;
+    --minimog-typography-headings-text-transform: none;
+    --minimog-typography-headings-letter-spacing: none;
+    --minimog-typography-headings-2-font-family: inherit;
+    --minimog-typography-headings-2-font-weight: 400;
+    --minimog-typography-button-font-family: Work Sans;
+    --minimog-typography-button-font-size: 16px;
+    --minimog-typography-button-font-weight: 500;
+    --minimog-typography-button-text-transform: none;
+    --minimog-typography-button-letter-spacing: 0;
+    --minimog-typography-form-font-family: Work Sans;
+    --minimog-typography-form-font-size: 15px;
+    --minimog-typography-form-font-weight: 400;
+    --minimog-color-primary: #AE5000;
+    --minimog-color-primary-rgb: 174, 80, 0;
+    --minimog-color-secondary: #000;
+    --minimog-color-text: #666;
+    --minimog-color-text-bit-lighten: #7e7e7e;
+    --minimog-color-text-lighten: #ababab;
+    --minimog-color-heading: #000000;
+    --minimog-color-link: #000;
+    --minimog-color-link-hover: #999;
+    --minimog-color-box-white-background: #fff;
+    --minimog-color-box-white-border: #ededed;
+    --minimog-color-box-grey-background: #f8f8f8;
+    --minimog-color-box-light-grey-background: #f9f9fb;
+    --minimog-color-box-fill-separator: #eee;
+    --minimog-color-box-border: #eee;
+    --minimog-color-box-border-lighten: #ededed;
+    --minimog-color-button-text: #fff;
+    --minimog-color-button-border: #000;
+    --minimog-color-button-background: #000;
+    --minimog-color-button-hover-text: #fff;
+    --minimog-color-button-hover-border: #000;
+    --minimog-color-button-hover-background: #000;
+    --minimog-color-button2-text: #000;
+    --minimog-color-button2-border: #f2f2f2;
+    --minimog-color-button2-background: #f2f2f2;
+    --minimog-color-button2-hover-text: #fff;
+    --minimog-color-button2-hover-border: #000;
+    --minimog-color-button2-hover-background: #000;
+    --minimog-color-form-text: #000;
+    --minimog-color-form-border: #f2f2f2;
+    --minimog-color-form-background: #f2f2f2;
+    --minimog-color-form-shadow: none;
+    --minimog-color-form-focus-text: #000;
+    --minimog-color-form-focus-border: #000;
+    --minimog-color-form-focus-background: #fff;
+    --minimog-color-form-focus-shadow: none;
+    --minimog-color-sub-menu-border: #ededed;
+    --minimog-color-sub-menu-background: #fff;
+    --minimog-small-rounded: 0;
+    --minimog-normal-rounded: 0;
+    --minimog-semi-rounded: 0;
+    --minimog-large-rounded: 0;
+    --minimog-form-input-normal-border-thickness: 1px;
+    --minimog-form-input-normal-rounded: 5px;
+    --minimog-form-input-small-rounded: 5px;
+    --minimog-form-textarea-rounded: 5px;
+    --minimog-button-rounded: 5px;
+    --minimog-button-small-rounded: 5px;
+    --minimog-button-large-rounded: 5px;
+  }
+
+  body {
+    --minimog-branding-size: 161px;
+    --minimog-tablet-branding-size: 140px;
+    --minimog-mobile-branding-size: 120px;
+    --minimog-sticky-branding-size: 140px;
+  }
+
+  .header-categories-nav {
+    --link-rounded: 5px;
+  }
+
+  @media (min-width: 992px) {
+    .page-sidebar {
+      flex: 0 0 20%;
+      max-width: 20%;
+    }
+
+    .page-main-content {
+      flex: 0 0 80%;
+      max-width: 80%;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .page-sidebar-left .page-sidebar-inner {
+      padding-right: 0px;
+    }
+
+    .page-sidebar-right .page-sidebar-inner {
+      padding-left: 0px;
+    }
+  }
+
+  @media (max-width: 991px) {
+    .page-sidebar {
+      margin-top: 50px;
+    }
+
+    .page-main-content {
+      -webkit-order: -1;
+      -moz-order: -1;
+      order: -1;
+    }
+  }
+
+  .page-title-bar {
+    --heading-font-size: 36px;
+  }
+
+  .page-title-bar-minimal-01 {
+    --breadcrumb-align: flex-start;
+    --breadcrumb-height: 58px
+  }
+
+  body {
+    background-color: #fff;
+  }
+
+  .page-header .branding__logo a {
+    padding-top: 5px;
+    padding-right: 0;
+    padding-bottom: 5px;
+    padding-left: 0;
+  }
+
+  .top-bar-01 {
+    font-family: Work Sans;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 26px;
+    color: #fff;
+  }
+
+  .top-bar-01 {
+    background-color: #000
+  }
+
+  .top-bar-01 {
+    --top-bar-link-color: #fff
+  }
+
+  .top-bar-01 {
+    --top-bar-link-hover-color: rgba(255, 255, 255, 0.7)
+  }
+
+  #page-header.header-pinned .page-header-inner {
+    background-color: #fff !important;
+  }
+
+  .page-header .menu--primary>ul>li>a {
+    font-family: Work Sans;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .header-icon .text {
+    font-family: Work Sans;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .header-categories-nav .nav-toggle-btn {
+    font-family: Work Sans;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .mini-cart-total {
+    font-family: Work Sans;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .page-header.header-dark .page-header-inner {
+    background-color: #fff;
+  }
+
+  .page-header.header-dark .header-above {
+    background: linear-gradient(90deg,
+        rgba(255, 0, 120, 1) 15%,
+        rgba(0, 199, 255, 1) 100%);
+  }
+
+  .page-header.header-dark .header-above {
+    border-color: rgba(0, 0, 0, 0)
+  }
+
+  .page-header.header-dark .header-above {
+    --header-item-separator-color: #fff
+  }
+
+  .page-header.header-dark .header-above {
+    --header-text-color: #fff
+  }
+
+  .page-header.header-dark .header-above {
+    --header-link-color: #fff
+  }
+
+  .page-header.header-dark .header-above {
+    --header-link-hover-color: rgba(255, 255, 255, 0.7)
+  }
+
+  .header-below-wrap {
+    border-top: 1px solid #eee;
+    border-right: 0 solid #eee;
+    border-bottom: 1px solid #eee;
+    border-left: 0 solid #eee;
+  }
+
+  .desktop-menu .sm-simple .children,
+  .primary-menu-sub-visual {
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.06);
+  }
+
+  .page-mobile-main-menu>.inner {
+    background-color: #fff;
+  }
+
+  .page-mobile-main-menu .menu__container>li>a {
+    padding-top: 13px;
+    padding-right: 0;
+    padding-bottom: 13px;
+    padding-left: 0;
+  }
+
+  .page-title-bar-minimal-01 {
+    margin-bottom: 22px;
+  }
+
+  .page-title-bar-minimal-01 {
+    --breadcrumb-align: flex-start;
+  }
+
+  .page-title-bar-fill-01 {
+    --breadcrumb-align: center;
+  }
+
+  .page-title-bar-fill-01 .page-title-bar-bg {
+    background-color: #EDECEA;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-image: url();
+  }
+
+  .error404 {
+    background-color: #f5f1ed;
+  }
+
+  .minimog-pre-loader-gif-img {
+    width: 100px;
+  }
+
+  .price,
+  .amount,
+  .tr-price,
+  .woosw-content-item--price {
+    color: #000 !important
+  }
+
+  .price del,
+  del .amount,
+  .tr-price del,
+  .woosw-content-item--price del {
+    color: #666 !important
+  }
+
+  ins .amount,
+  .product.sale ins,
+  .product.sale ins .amount,
+  .single-product .product.sale .entry-summary>.price ins .amount {
+    color: #AE5000 !important
+  }
+</style>
+<div class="wall-img"
+  style="background-image: url('{% static 'wp-content/themes/minimog/assets/images/wall-image.jpg' %}')">
+  <div id="page-title-bar" class="page-title-bar page-title-bar-standard-03">
+    <div class="page-title-bar-bg"></div>
+
+    <div class="page-title-bar-inner">
+      <div id="page-breadcrumb" class="page-breadcrumb">
+        <div class="container-broad">
+          <div class="page-breadcrumb-wrap">
+            <ul class="insight_core_breadcrumb">
+              <li class="level-1 top item-home"><a href="/">Home</a></li>
+              <li class="level-2 sub item-current tail current"><span>{{sub_cat.sub_cat_title}}</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600&family=Playfair+Display:wght@500&display=swap');
+      </style>
+      <!-- <div class="page-title-bar-content">
+          <div class="container-broad">
+    
+            
+            <div class="page-title-bar-heading">
+          {% for prod in products %}
+          <h1>{{prod.title}}-{{prod.company_name}}</h1>
+          {% endfor %}
+              <h2 class="">
+                <span class="gradient-text"><span style="font-family: Dancing Script;">Shop the</span><br><span class="big-height"><h3 class="big-height gradient-text">{{sub_cat.sub_cat_title}}</h3></span></span>
+              </h2>
+          <style>
+          .big-height {
+            font-size: 4rem;
+          }
+        
+          @media screen and (max-width: 767px) {
+            .big-height {
+              font-size: 2rem;
+            }
+    
+            .hidd{
+              display: none;
+            }
+          }
+        </style>
+        
+              
+            </div>
+            
+            <style>
+              .gradient-text {
+      background: linear-gradient(45deg, #e6317b, #bd529c, #6b94ce);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      display: inline-block;
+      position: relative;
+    }
+    
+    .gradient-text::before {
+      content: attr(data-content); /* Display the actual text */
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: -1; /* Place it behind the text */
+    }
+    
+            </style>        
+            
+            
+          
+                  </div>
+        </div> -->
+    </div>
+  </div>
+
+  <style>
+    /* Apply basic styles to the image container */
+    .image-containerr {
+      max-width: 1200px;
+      /* Adjust this value to your desired maximum width */
+      margin: 0 auto;
+      /* Center the container horizontally */
+      overflow: hidden;
+      position: relative;
+      margin-bottom: 2rem;
+      max-height: 600px;
+    }
+
+    /* Make the image responsive */
+    .image-containerr img {
+      width: 100%;
+      height: 100%q;
+      display: block;
+      /* Remove any residual inline spacing */
+      margin: 0 auto;
+      /* Center the image horizontally */
+    }
+
+    /* Add additional mobile-responsive styles as needed */
+    @media (max-width: 768px) {
+
+      /* For screens with a width of 768px or less */
+      .image-containerr {
+        max-width: 100%;
+        /* Reset the maximum width for smaller screens if needed */
+      }
+
+      .image-containerr img {
+        height: auto;
+      }
+
+      .image-containerr iframe {
+        height: 35vh;
+      }
+    }
+  </style>
+
+  <style>
+    .slider {
+      position: relative;
+      height: 100vh;
+    }
+
+    .slider__slides {
+      z-index: 1;
+      position: relative;
+      height: 100%;
+    }
+
+    .slider__control {
+      z-index: 2;
+      position: absolute;
+      top: 50%;
+      left: 5%;
+      width: 60px;
+      height: 60px;
+      margin-left: -30px;
+      margin-top: -30px;
+      border-radius: 50%;
+      background: #fff;
+      transition: background-color 0.3s;
+      cursor: pointer;
+    }
+
+    .slider__control--right {
+      left: 95%;
+    }
+
+    .slider__control:hover {
+      background-color: #2da6ff;
+    }
+
+    .slider__control-line {
+      position: absolute;
+      left: 23px;
+      top: 50%;
+      width: 3px;
+      height: 14px;
+      transform-origin: 50% 0;
+      transform: rotate(-45deg);
+    }
+
+    .slider__control-line:nth-child(2) {
+      transform: translateY(1px) rotate(-135deg);
+    }
+
+    .slider__control--right .slider__control-line {
+      left: 37px;
+      transform-origin: 1px 0;
+      transform: rotate(45deg);
+    }
+
+    .slider__control--right .slider__control-line:nth-child(2) {
+      transform: translateY(1px) rotate(135deg);
+    }
+
+    .slider__control-line:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: palevioletred;
+      transition: background-color 0.3s;
+    }
+
+    .slider__control:hover .slider__control-line:after {
+      background-color: #fff;
+    }
+
+    .slider__control.a--rotation .slider__control-line:after {
+      -webkit-animation: arrowLineRotation 0.49s;
+      animation: arrowLineRotation 0.49s;
+    }
+
+    .slider__control.a--rotation .slider__control-line:nth-child(1):after {
+      -webkit-animation: arrowLineRotationRev 0.49s;
+      animation: arrowLineRotationRev 0.49s;
+    }
+
+    @-webkit-keyframes arrowLineRotation {
+      to {
+        transform: rotate(180deg);
+      }
+    }
+
+    @keyframes arrowLineRotation {
+      to {
+        transform: rotate(180deg);
+      }
+    }
+
+    @-webkit-keyframes arrowLineRotationRev {
+      to {
+        transform: rotate(-180deg);
+      }
+    }
+
+    @keyframes arrowLineRotationRev {
+      to {
+        transform: rotate(-180deg);
+      }
+    }
+
+    .slide {
+      overflow: hidden;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 150vmax;
+      height: 150vmax;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      transition: -webkit-clip-path 0s 0.91s;
+      transition: clip-path 0s 0.91s;
+      transition: clip-path 0s 0.91s, -webkit-clip-path 0s 0.91s;
+      -webkit-clip-path: circle(30px at 120vw 50%);
+      clip-path: circle(30px at 120vw 50%);
+    }
+
+    .slide.s--prev {
+      -webkit-clip-path: circle(30px at 30vw 50%);
+      clip-path: circle(30px at 30vw 50%);
+    }
+
+    .slide.s--active {
+      z-index: 1;
+      transition: -webkit-clip-path 1.3s;
+      transition: clip-path 1.3s;
+      transition: clip-path 1.3s, -webkit-clip-path 1.3s;
+      -webkit-clip-path: circle(120vmax at 120vw 50%);
+      clip-path: circle(120vmax at 120vw 50%);
+    }
+
+    .slide.s--active.s--active-prev {
+      -webkit-clip-path: circle(120vmax at 30vw 50%);
+      clip-path: circle(120vmax at 30vw 50%);
+    }
+
+    .slide__inner {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 100vw;
+      height: 100vh;
+      margin-left: -50vw;
+      margin-top: -50vh;
+      background-size: cover;
+      background-position: center center;
+    }
+
+    .slide__inner:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .slide__content {
+      position: absolute;
+      left: 5%;
+      top: 50%;
+      margin-left: -30px;
+      margin-top: 48px;
+      max-width: 480px;
+      color: #fff;
+    }
+
+    .slide__heading {
+      margin-bottom: 20px;
+      font-size: 60px;
+    }
+
+    .slide__text {
+      font-size: 25px;
+    }
+
+    .slide__text a {
+      color: inherit;
+    }
+
+
+    @media (max-width: 768px) {
+
+      /* Adjustments for screens with a maximum width of 768px (you can adjust this value based on your needs) */
+      .slider {
+        height: 30vh;
+        /* Adjust the height for smaller screens */
+      }
+
+      .slide {
+        width: 80vmax;
+        /* Adjust the width of the slides */
+        height: 80vmax;
+        /* Adjust the height of the slides */
+      }
+
+      .slide__content {
+        left: 2%;
+        /* Adjust the left position of the content */
+      }
+
+      .slide__heading {
+        font-size: 40px;
+        /* Adjust the font size of the heading */
+      }
+
+      .slide__text {
+        font-size: 18px;
+        /* Adjust the font size of the text */
+      }
+
+      .slide__inner {
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+    }
+  </style>
+
+  {% if sub_cat.youtube_link == "1" and sub_cat.subcategoryimages_set.all %}
+  <div class="image-containerr">
+    <div class="slider">
+      <!-- slides -->
+      <div class="slider__slides">
+        {% for image in sub_cat.subcategoryimages_set.all %}
+        <div class="slide {% if forloop.first %}s--active{% endif %}">
+          <div class="slide__inner" style="background-image: url('{{ image.images.url }}');">
+            <div class="slide__content">
+              <!-- You can customize this part to display the image content if needed -->
+
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+        <div class="slide s--prev">
+          <div class="slide__inner">
+            <div class="slide__content">
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- slides end -->
+      <div class="slider__control">
+        <div class="slider__control-line"></div>
+        <div class="slider__control-line"></div>
+      </div>
+      <div class="slider__control slider__control--right m--right">
+        <div class="slider__control-line"></div>
+        <div class="slider__control-line"></div>
+      </div>
+    </div>
+  </div>
+  {% elif sub_cat.youtube_link == "1" and not sub_cat.subcategoryimages_set.all %}
+  <!-- Display main_page_img if youtube_link is "1" and there are no images -->
+  <div class="image-containerr">
+    <img src="{{ sub_cat.main_page_img.url }}" alt="Your Image">
+  </div>
+  {% elif sub_cat.youtube_link != "1" %}
+  <!-- Display "vcc" section if youtube_link is not equal to "1" -->
+  <div class="image-containerr vcc">
+    <iframe width="100%" height="600" src="{{ sub_cat.youtube_link }}" title="YouTube video player" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
+  </div>
+  {% endif %}
+
+</div>
+<style>
+  #page-content {
+    --widget-title-spacing: 20px;
+    --widget-title-size: 18px;
+}
+
+#page-content {
+    margin-top: 80px;
+    margin-bottom: 100px;
+}
+</style>
+<div id="page-content" class="page-content">
+  <div class="container-broad">
+
+    <div class="row">
+
+
+      <div
+        class="page-sidebar page-sidebar-left style-01 sidebar-widgets-collapsible sidebar-primary sidebar-off-mobile">
+        <div class="page-sidebar-inner tm-sticky-column" data-sticky-group="content-sidebar" itemscope="itemscope">
+          <a href="#" class="btn-close-off-sidebar">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M10.6465 8.975L16.7012 15.0297C16.8639 15.1924 16.8639 15.3715 16.7012 15.5668L15.5781 16.6898C15.3828 16.8526 15.2038 16.8526 15.041 16.6898L14.0156 15.6156L8.98633 10.6352L2.93164 16.6898C2.76888 16.8526 2.58984 16.8526 2.39453 16.6898L1.27148 15.5668C1.10872 15.3715 1.10872 15.1924 1.27148 15.0297L7.32617 8.975L1.27148 2.92031C1.10872 2.75755 1.10872 2.57852 1.27148 2.3832L2.39453 1.26016C2.58984 1.0974 2.76888 1.0974 2.93164 1.26016L8.98633 7.31484L15.041 1.26016C15.2038 1.0974 15.3828 1.0974 15.5781 1.26016L16.7012 2.3832C16.8639 2.57852 16.8639 2.75755 16.7012 2.92031L15.627 3.9457L10.6465 8.975Z"
+                fill="#000000" />
+            </svg>
+          </a>
+          <div class="page-sidebar-content-wrap">
+            <div class="page-sidebar-content">
+
+              <div id="custom_html-2" class="widget_text widget widget_custom_html">
+                <div class="textwidget custom-html-widget">
+                  <p class="sidebar-top-heading" style="font-family: Fraunces;">Filters</p>
+                </div>
+              </div>
+              <div id="minimog-wp-widget-product-categories-layered-nav-2"
+                class="widget minimog-wp-widget-product-categories-layered-nav minimog-wp-widget-filter"><input
+                  type="hidden" class="widget-instance" data-name=""
+                  data-instance="{&quot;title&quot;:&quot;Categories&quot;,&quot;display_type&quot;:&quot;list&quot;,&quot;list_style&quot;:&quot;normal&quot;,&quot;items_count&quot;:&quot;off&quot;,&quot;show_hierarchy&quot;:0}" />
+                <p class="widget-title heading">Categories</p>
+                <div class="widget-content">
+                  <div class="widget-content-inner">
+                    <ul class="show-display-list show-items-count-off list-style-normal">
+                      {% for resc in related_sub_categories %}
+                      <li class="wc-layered-nav-term"><a href="{% url 'core:sub-category' resc.slug %}"
+                          class="">{{resc.sub_cat_title}}</a></li>
+                      {% endfor %}
+
+
+                      <li class="wc-layered-nav-term"></li>
+                      <li class="wc-layered-nav-term"></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div id="minimog-wp-widget-product-layered-nav-2"
+                class="widget minimog-wp-widget-product-layered-nav minimog-wp-widget-filter"><input type="hidden"
+                  class="widget-instance" data-name="Minimog_WP_Widget_Product_Layered_Nav"
+                  data-instance="{&quot;title&quot;:&quot;Colors&quot;,&quot;attribute&quot;:&quot;color&quot;,&quot;query_type&quot;:&quot;and&quot;,&quot;display_type&quot;:&quot;inline&quot;,&quot;list_style&quot;:&quot;swatches&quot;,&quot;labels&quot;:&quot;off&quot;,&quot;items_count&quot;:&quot;off&quot;}" />
+                <p class="widget-title heading">Colors</p>
+                <div class="widget-content">
+                  <div class="widget-content-inner">
+                    <ul class="show-labels-off show-display-inline show-items-count-off pa_color list-style-color">
+                      <li class="wc-layered-nav-term "><a href="" class="filter-link term-link hint--bounce hint--top"
+                          aria-label="Beige">
+                          <div class="term-shape"><span style="background: #d4ccc0" class="term-shape-bg"></span><span
+                              class="term-shape-border"></span></div><span class="term-name">Beige</span>
+                        </a></li>
+                      <li class="wc-layered-nav-term "><a href="" class="filter-link term-link hint--bounce hint--top"
+                          aria-label="Brass">
+                          <div class="term-shape"><span style="background: #e0b86d" class="term-shape-bg"></span><span
+                              class="term-shape-border"></span></div><span class="term-name">Brass</span>
+                        </a></li>
+                      <li class="wc-layered-nav-term "><a href="" class="filter-link term-link hint--bounce hint--top"
+                          aria-label="Brown">
+                          <div class="term-shape"><span style="background: #a48066" class="term-shape-bg"></span><span
+                              class="term-shape-border"></span></div><span class="term-name">Brown</span>
+                        </a></li>
+                      <li class="wc-layered-nav-term "><a href="" class="filter-link term-link hint--bounce hint--top"
+                          aria-label="Dark Blue">
+                          <div class="term-shape"><span style="background: #363c47" class="term-shape-bg"></span><span
+                              class="term-shape-border"></span></div><span class="term-name">Dark Blue</span>
+                        </a></li>
+                      <li class="wc-layered-nav-term "><a href="" class="filter-link term-link hint--bounce hint--top"
+                          aria-label="Dark Brown">
+                          <div class="term-shape"><span style="background: #412b28" class="term-shape-bg"></span><span
+                              class="term-shape-border"></span></div><span class="term-name">Dark Brown</span>
+                        </a></li>
+                      <li class="wc-layered-nav-term "><a href="" class="filter-link term-link hint--bounce hint--top"
+                          aria-label="Dark Green">
+                          <div class="term-shape"><span style="background: #344533" class="term-shape-bg"></span><span
+                              class="term-shape-border"></span></div><span class="term-name">Dark Green</span>
+                        </a></li>
+                      <li class="wc-layered-nav-term "><a href="" class="filter-link term-link hint--bounce hint--top"
+                          aria-label="Golden Yellow">
+                          <div class="term-shape"><span style="background: #f1b258" class="term-shape-bg"></span><span
+                              class="term-shape-border"></span></div><span class="term-name">Golden Yellow</span>
+                        </a></li>
+                      <li class="wc-layered-nav-term "><a href="" class="filter-link term-link hint--bounce hint--top"
+                          aria-label="Gray Green">
+                          <div class="term-shape"><span style="background: #77817a" class="term-shape-bg"></span><span
+                              class="term-shape-border"></span></div><span class="term-name">Gray Green</span>
+                        </a></li>
+                      <li class="wc-layered-nav-term "><a href="" class="filter-link term-link hint--bounce hint--top"
+                          aria-label="Green">
+                          <div class="term-shape"><span style="background: #5b825b" class="term-shape-bg"></span><span
+                              class="term-shape-border"></span></div><span class="term-name">Green</span>
+                        </a></li>
+                      <li class="wc-layered-nav-term "><a href="" class="filter-link term-link hint--bounce hint--top"
+                          aria-label="Light Blue">
+                          <div class="term-shape"><span style="background: #97b0ca" class="term-shape-bg"></span><span
+                              class="term-shape-border"></span></div><span class="term-name">Light Blue</span>
+                        </a></li>
+                      <li class="wc-layered-nav-term "><a href="" class="filter-link term-link hint--bounce hint--top"
+                          aria-label="Light Pink">
+                          <div class="term-shape"><span style="background: #edccc5" class="term-shape-bg"></span><span
+                              class="term-shape-border"></span></div><span class="term-name">Light Pink</span>
+                        </a></li>
+                      <li class="wc-layered-nav-term "><a href="" class="filter-link term-link hint--bounce hint--top"
+                          aria-label="Matte Blue">
+                          <div class="term-shape"><span style="background: #45525d" class="term-shape-bg"></span><span
+                              class="term-shape-border"></span></div><span class="term-name">Matte Blue</span>
+                        </a></li>
+                      <li class="wc-layered-nav-term "><a href="" class="filter-link term-link hint--bounce hint--top"
+                          aria-label="Natural">
+                          <div class="term-shape"><span style="background: #dfc39b" class="term-shape-bg"></span><span
+                              class="term-shape-border"></span></div><span class="term-name">Natural</span>
+                        </a></li>
+                      <li class="wc-layered-nav-term "><a href="" class="filter-link term-link hint--bounce hint--top"
+                          aria-label="Olive Green">
+                          <div class="term-shape"><span style="background: #bfbd82" class="term-shape-bg"></span><span
+                              class="term-shape-border"></span></div><span class="term-name">Olive Green</span>
+                        </a></li>
+                      <li class="wc-layered-nav-term "><a href="" class="filter-link term-link hint--bounce hint--top"
+                          aria-label="Orange">
+                          <div class="term-shape"><span style="background: #e27959" class="term-shape-bg"></span><span
+                              class="term-shape-border"></span></div><span class="term-name">Orange</span>
+                        </a></li>
+                      <li class="wc-layered-nav-term "><a href="" class="filter-link term-link hint--bounce hint--top"
+                          aria-label="Red">
+                          <div class="term-shape"><span style="background: #dd3333" class="term-shape-bg"></span><span
+                              class="term-shape-border"></span></div><span class="term-name">Red</span>
+                        </a></li>
+                      <li class="wc-layered-nav-term "><a href="" class="filter-link term-link hint--bounce hint--top"
+                          aria-label="Turquoise">
+                          <div class="term-shape"><span style="background: #50919b" class="term-shape-bg"></span><span
+                              class="term-shape-border"></span></div><span class="term-name">Turquoise</span>
+                        </a></li>
+                      <li class="wc-layered-nav-term "><a href="" class="filter-link term-link hint--bounce hint--top"
+                          aria-label="Yellow">
+                          <div class="term-shape"><span style="background: #eddf21" class="term-shape-bg"></span><span
+                              class="term-shape-border"></span></div><span class="term-name">Yellow</span>
+                        </a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+
+              <div id="minimog-wp-widget-product-categories-layered-nav-2"
+                class="widget minimog-wp-widget-product-categories-layered-nav minimog-wp-widget-filter"><input
+                  type="hidden" class="widget-instance" data-name="Minimog_WP_Widget_Product_Categories_Layered_Nav"
+                  data-instance="{&quot;title&quot;:&quot;Categories&quot;,&quot;display_type&quot;:&quot;list&quot;,&quot;list_style&quot;:&quot;normal&quot;,&quot;items_count&quot;:&quot;off&quot;,&quot;show_hierarchy&quot;:0}" />
+                <p class="widget-title heading">Brands</p>
+                <div class="widget-content">
+                  <div class="widget-content-inner">
+                    <ul class="show-display-list show-items-count-off list-style-normal">
+                      {% for company, products in company_products.items %}
+                      <li class="wc-layered-nav-term"><a href="" class="filter-link">{{company.company_name_title}}</a>
+                      </li>
+                      {% endfor %}
+
+
+                      <li class="wc-layered-nav-term"></li>
+                      <li class="wc-layered-nav-term"></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="#" class="btn-js-open-off-sidebar btn-open-off-sidebar-mobile btn-open-sidebar1 position-left"
+        data-sidebar-target="primary">
+        <span class="button-text">Filters</span>
+      </a>
+
+      <div class="page-main-content">
+        <div class="shop-actions-toolbar shop-actions-toolbar-right col">
+          <div class="inner">
+            <form class="js-product-ordering" method="get" style="margin-bottom: -8rem;">
+              <p style="margin-bottom: 0px; font-family: Work Sans; font-size: 18px;">Default Sorting :</p>
+              <input type="hidden" name="paged" value="1" />
+              <input type="hidden" name="wmc-currency" value="EUR" /><input type="hidden" name="site_settings_preset"
+                value="megamog" />
+            </form>
+            <div id="archive-layout-switcher" class="archive-layout-switcher" style="margin-bottom: -8rem;">
+              <div class="inner">
+                <a href="#" class="grid-one switcher-item hint--bounce hint--top" aria-label="List"
+                  data-layout="grid-one" data-columns="1">
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="15.25" y="4.25" width="1.5" height="12.5" rx="0.75" transform="rotate(90 15.25 4.25)"
+                      fill="#000000" />
+                    <rect x="15.25" y="8.25" width="1.5" height="12.5" rx="0.75" transform="rotate(90 15.25 8.25)"
+                      fill="#000000" />
+                    <rect x="15.25" y="12.25" width="1.5" height="12.5" rx="0.75" transform="rotate(90 15.25 12.25)"
+                      fill="#000000" />
+                  </svg> </a>
+                <a href="#" class="grid-two switcher-item hint--bounce hint--top" aria-label="2 columns"
+                  data-layout="grid-two" data-columns="2">
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="6.25" y="2.75" width="1.5" height="12.5" rx="0.75" fill="#000000" />
+                    <rect x="10.25" y="2.75" width="1.5" height="12.5" rx="0.75" fill="#000000" />
+                  </svg> </a>
+                <a href="#" class="grid-three switcher-item hint--bounce hint--top" aria-label="3 columns"
+                  data-layout="grid-three" data-columns="3">
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="4.25" y="2.75" width="1.5" height="12.5" rx="0.75" fill="#000000" />
+                    <rect x="8.25" y="2.75" width="1.5" height="12.5" rx="0.75" fill="#000000" />
+                    <rect x="12.25" y="2.75" width="1.5" height="12.5" rx="0.75" fill="#000000" />
+                  </svg> </a>
+                <a href="#" class="grid-four switcher-item hint--bounce hint--top" aria-label="4 columns"
+                  data-layout="grid-four" data-columns="4">
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2.25" y="2.75" width="1.5" height="12.5" rx="0.75" fill="#000000" />
+                    <rect x="6.25" y="2.75" width="1.5" height="12.5" rx="0.75" fill="#000000" />
+                    <rect x="10.25" y="2.75" width="1.5" height="12.5" rx="0.75" fill="#000000" />
+                    <rect x="14.25" y="2.75" width="1.5" height="12.5" rx="0.75" fill="#000000" />
+                  </svg> </a>
+                <a href="#" class="grid-five switcher-item hint--bounce hint--top" aria-label="5 columns"
+                  data-layout="grid-five" data-columns="5">
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="0.25" y="2.75" width="1.5" height="12.5" rx="0.75" fill="#000000" />
+                    <rect x="4.25" y="2.75" width="1.5" height="12.5" rx="0.75" fill="#000000" />
+                    <rect x="8.25" y="2.75" width="1.5" height="12.5" rx="0.75" fill="#000000" />
+                    <rect x="12.25" y="2.75" width="1.5" height="12.5" rx="0.75" fill="#000000" />
+                    <rect x="16.25" y="2.75" width="1.5" height="12.5" rx="0.75" fill="#000000" />
+                  </svg> </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% for company, products in company_products.items %}
+        <div class="shop-archive-block">
+
+          <div class="woocommerce-notices-wrapper"></div>
+          <div id="archive-shop-actions" class="archive-shop-actions">
+            <div class="row-flex items-center justify-space-between">
+              <div class="shop-actions-toolbar shop-actions-toolbar-left col">
+                <h4 id="{{company.sid}}" class="custom-font-size">{{company.company_name_title}}</h4>
+                <style>
+                  .custom-font-size {
+                    font-size: 38px;
+                  }
+
+                  @media only screen and (max-width: 767px) {
+                    .custom-font-size {
+                      font-size: 25px;
+                    }
+                  }
+                </style>
+                <hr>
+                <div class="inner">
+                  <div class="woocommerce-result-count archive-result-count">
+                    <p>Showing {{ products.count }} products</p>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="active-filters-bar" class="active-filters-bar">
+            <div class="active-filters-list"></div>
+          </div>
+
+          <div id="minimog-main-post"
+            class="minimog-main-post minimog-grid-wrapper minimog-product group-style-06 style-grid-06 caption-style-06"
+            data-grid="{&quot;type&quot;:&quot;grid&quot;,&quot;columns&quot;:&quot;4&quot;,&quot;columnsTabletExtra&quot;:&quot;3&quot;,&quot;columnsMobileExtra&quot;:&quot;2&quot;,&quot;gutter&quot;:&quot;30&quot;,&quot;gutterTabletExtra&quot;:&quot;20&quot;,&quot;gutterMobileExtra&quot;:&quot;16&quot;}"
+            style="--grid-columns-desktop: 4;--grid-columns-tablet-extra: 3;--grid-columns-mobile-extra: 2;--grid-gutter-desktop: 30;--grid-gutter-tablet-extra: 20;--grid-gutter-mobile-extra: 16;">
+            <div class="minimog-grid lazy-grid">
+              <div class="grid-sizer"></div>
+
+
+              {% for product in products %}
+              <div
+                class="grid-item has-hover-thumbnail product type-product post-1595 status-publish instock product_cat-chairs product_cat-tables-desks product_tag-furniture has-post-thumbnail shipping-taxable purchasable product-type-variable has-default-attributes vi-sctv-product">
+                <div class="product-wrapper">
+
+                  <div class="product-thumbnail">
+
+                    <div class="thumbnail">
+                      <a href="{% if product.product_slug %}{% url 'core:product' product.product_slug %}{% else %}{% url 'core:producttitle' product.title %}{% endif %}"
+                        class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
+                        <div class="product-main-image">
+                          <div class="minimog-lazy-image" style="--lazy-image-width: 450px;--lazy-image-height: 100%;"
+                            id="product_img"><img src="{{product.image.url}}" width="450" height="450"
+                              alt="{{product.title}}" data-src="{{product.image.url}}"
+                              class="product-main-image-img ll-image" /></div>
+                        </div>
+
+                        <div class="product-hover-image">
+                          <div class="minimog-lazy-image" style="--lazy-image-width: 450px;--lazy-image-height: 100%;">
+                            <img src="{{product.image.url}}" width="450" height="450" alt="product_furniture_07_2"
+                              data-src="{{product.image.url}}" class=" ll-image" /></div>
+                        </div>
+
+                      </a>
+                    </div>
+
+                  </div>
+
+                  <div class="product-info">
+                    <div class="loop-product-category">
+                      <a
+                        href="{% if product.product_slug %}{% url 'core:product' product.product_slug %}{% else %}{% url 'core:producttitle' product.title %}{% endif %}">
+                      </a>
+                    </div>
+
+                    <p class="woocommerce-loop-product__title post-title-2-rows" style="font-family: Fraunces;">
+                      <a
+                        href="{% if product.product_slug %}{% url 'core:product' product.product_slug %}{% else %}{% url 'core:producttitle' product.title %}{% endif %}">{{product.title}}</a>
+                    </p>
+
+                    <p class="woocommerce-loop-product__title post-title-2-rows" style="font-family: Fraunces;">
+                      <a href=""
+                        style="background: -webkit-linear-gradient(45deg, rgba(255,0,120,1) 15%, rgba(0,199,255,1) 100%);background-clip: text;-webkit-background-clip: text;color: transparent;font-size: 1.2rem;">₹{{product.price}}/-</a>
+                    </p>
+
+                    <div class="reviews-wrap">
+                      <div class="tm-star-rating style-01"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                          viewBox="0 0 512 512" xml:space="preserve" class="tm-star-empty">
+                          <path fill="#000000 "
+                            d="M512,197.819l-185.933-12.228L256,9.571l-70.067,176.021L0,197.82l142.658,120.93L95.856,502.429L256,401.214 l160.144,101.215l-46.8-183.671L512,197.819z M256,365.724l-112.464,71.08l32.827-128.831L75.829,222.888l130.971-8.603 L256,90.687l49.2,123.599l131.124,8.602l-100.689,85.077l32.829,128.839L256,365.724z">
+                          </path>
+                        </svg><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 512 512"
+                          xml:space="preserve" class="tm-star-empty">
+                          <path fill="#000000 "
+                            d="M512,197.819l-185.933-12.228L256,9.571l-70.067,176.021L0,197.82l142.658,120.93L95.856,502.429L256,401.214 l160.144,101.215l-46.8-183.671L512,197.819z M256,365.724l-112.464,71.08l32.827-128.831L75.829,222.888l130.971-8.603 L256,90.687l49.2,123.599l131.124,8.602l-100.689,85.077l32.829,128.839L256,365.724z">
+                          </path>
+                        </svg><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 512 512"
+                          xml:space="preserve" class="tm-star-empty">
+                          <path fill="#000000 "
+                            d="M512,197.819l-185.933-12.228L256,9.571l-70.067,176.021L0,197.82l142.658,120.93L95.856,502.429L256,401.214 l160.144,101.215l-46.8-183.671L512,197.819z M256,365.724l-112.464,71.08l32.827-128.831L75.829,222.888l130.971-8.603 L256,90.687l49.2,123.599l131.124,8.602l-100.689,85.077l32.829,128.839L256,365.724z">
+                          </path>
+                        </svg><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 512 512"
+                          xml:space="preserve" class="tm-star-empty">
+                          <path fill="#000000 "
+                            d="M512,197.819l-185.933-12.228L256,9.571l-70.067,176.021L0,197.82l142.658,120.93L95.856,502.429L256,401.214 l160.144,101.215l-46.8-183.671L512,197.819z M256,365.724l-112.464,71.08l32.827-128.831L75.829,222.888l130.971-8.603 L256,90.687l49.2,123.599l131.124,8.602l-100.689,85.077l32.829,128.839L256,365.724z">
+                          </path>
+                        </svg><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 512 512"
+                          xml:space="preserve" class="tm-star-empty">
+                          <path fill="#000000 "
+                            d="M512,197.819l-185.933-12.228L256,9.571l-70.067,176.021L0,197.82l142.658,120.93L95.856,502.429L256,401.214 l160.144,101.215l-46.8-183.671L512,197.819z M256,365.724l-112.464,71.08l32.827-128.831L75.829,222.888l130.971-8.603 L256,90.687l49.2,123.599l131.124,8.602l-100.689,85.077l32.829,128.839L256,365.724z">
+                          </path>
+                        </svg></div>
+                    </div>
+
+
+                    <div class="content-view-list">
+                      <div class="woocommerce-loop-product__desc post-title-2-rows">
+                        {{product.title}} is not just a Nilaya Hazaribagh Velvet category, it's a just a WoW. &hellip;
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="background-color-expand">
+                  <div class="product-action hint--bounce hint--top woocommerce_loop_add_to_cart_wrap"
+                    data-hint="Select options">
+                    <input type="hidden" value="1" id="product-quantity" class="product-quantity-{{ product.id }}">
+                    <input type="hidden" class="product-pid-{{ product.id }}" value="{{ product.pid }}">
+                    <input type="hidden" class="product-image-{{ product.id }}" value="{{ product.image.url }}">
+                    <input type="hidden" class="product-id-{{ product.id }}" value="{{ product.id }}">
+                    <input type="hidden" class="product-title-{{ product.id }}" value="{{ product.title }}">
+                    <a
+                      href="{% if product.product_slug %}{% url 'core:product' product.product_slug %}{% else %}{% url 'core:producttitle' product.title %}{% endif %}"><button
+                        style="width: 100%;" class="add add-to-cart-btn" data-index="{{ pro.id }}" id="add-to-cart-btn">
+                        <span>Select Options</span></button></a>
+                  </div>
+                </div>
+              </div>
+
+              {% endfor %}
+
+            </div>
+          </div>
+
+          <nav class="woocommerce-pagination" data-type="load-more">
+          </nav>
+        </div>
+        {% endfor %}
+
+
+
+      </div>
+
+
+    </div>
+    <section
+      class="elementor-section elementor-top-section elementor-element elementor-element-18fd70a elementor-section-boxed elementor-section-gap-beside-yes elementor-section-height-default elementor-section-height-default elementor-section-column-vertical-align-stretch"
+      data-id="18fd70a" data-element_type="section">
+      <div class="elementor-container elementor-column-gap-extended">
+        <div class="elementor-row">
+          <div
+            class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-b521ef3"
+            data-id="b521ef3" data-element_type="column">
+            <div class="elementor-column-wrap elementor-element-populated">
+              <div class="elementor-widget-wrap" style="text-align: center;">
+                <div class="elementor-element elementor-element-0650558 elementor-widget elementor-widget-tm-heading"
+                  data-id="0650558" data-element_type="widget" data-widget_type="tm-heading.default">
+                  <div class="elementor-widget-container">
+                    <div class="tm-modern-heading tm-modern-heading--style-01 tm-modern-heading--highlight-style-01">
+                      <div class="heading-primary-wrap">
+
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <style>
+                  .faq-toggle {
+                    background: linear-gradient(90deg, #e6317b, #bd529c, #6b94ce);
+                    -webkit-background-clip: text;
+                    color: transparent;
+                    display: inline;
+                  }
+
+                  .faq-answer {
+                    padding-top: 1.8rem;
+                    padding-bottom: 2rem;
+                  }
+                </style>
+                <div class="elementor-element elementor-element-faq-content" data-id="faq-content"
+                  data-element_type="widget">
+                  <div class="elementor-widget-container">
+
+                    <div class="faq-question">
+                      <div class="faq-answer">
+                        {{ sub_cat.bottom_page_description | safe }}
+                      </div>
+                    </div>
+
+                    <!-- Add more FAQ items as needed -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+</div><!-- /.content-wrapper -->
+</div>
+<script
+type="text/javascript"
+src="/static/wp-includes/js/jquery/jquery.min.js"
+id="jquery-core-js"
+></script>
+<script
+      defer
+      type="text/javascript"
+      src="/static/wp-includes/js/jquery/jquery-migrate.min.js"
+      id="jquery-migrate-js"
+    ></script>
+<script
+      defer
+      type="text/javascript"
+      src="/static/wp-content/plugins/woocommerce-multi-currency/js/woocommerce-multi-currency.min.js"
+      id="woocommerce-multi-currency-js"
+    ></script>
+    <script
+    defer
+    type="text/javascript"
+    src="/static/wp-content/plugins/dokan-lite/assets/vendors/magnific/jquery.magnific-popup.min.js"
+    id="dokan-popup-js"
+  ></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script
+defer
+type="text/javascript"
+src="/static/wp-content/cache/autoptimize/3/js/autoptimize_single_8390027ea5f7c29dfc8e57ffa84d367a.js"
+id="dokan-i18n-jed-js"
+></script>
+<script
+defer
+type="text/javascript"
+src="/static/wp-content/plugins/dokan-lite/assets/vendors/sweetalert2/sweetalert2.all.min.js"
+id="dokan-sweetalert2-js"
+></script>
+<script
+defer
+type="text/javascript"
+src="/static/assets/js/function.js"
+></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script
+defer
+type="text/javascript"
+src="/static/wp-content/cache/autoptimize/3/js/autoptimize_single_0c3eec8c34fc5cb6d0111c3e48c2a54c.js"
+id="dokan-util-helper-js"
+></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script defer type='text/javascript' src="/static/wp-content/cache/autoptimize/3/js/autoptimize_single_227a39badf2290cd1b08cba41e89dbee.js" id='woocommerce-multi-currency-filter-price-js'></script>
+<script defer type='text/javascript' src="/static/wp-content/cache/autoptimize/3/js/autoptimize_single_54d53dfa482c1c6f57271ec9cb05c42e.js" id='woocommerce-multi-currency-cart-js'></script>
+<script defer id="woocommerce-multi-currency-switcher-js-extra" src="data:text/javascript;base64,Ci8qIDwhW0NEQVRBWyAqLwp2YXIgX3dvb2NvbW1lcmNlX211bHRpX2N1cnJlbmN5X3BhcmFtcyA9IHsidXNlX3Nlc3Npb24iOiIwIiwiZG9fbm90X3JlbG9hZF9wYWdlIjoiIiwiYWpheF91cmwiOiJodHRwczpcL1wvbWluaW1vZy50aGVtZW1vdmUuY29tXC9tZWdhbW9nXC93cC1hZG1pblwvYWRtaW4tYWpheC5waHAiLCJwb3N0c19zdWJtaXQiOiIwIiwic3dpdGNoX2J5X2pzIjoiIn07Ci8qIF1dPiAqLwo="></script>
+<script
+      defer
+      type="text/javascript"
+      src="/static/wp-content/plugins/woocommerce-multi-currency/js/woocommerce-multi-currency-switcher.min.js"
+      id="woocommerce-multi-currency-switcher-js"
+    ></script>
+<script defer id="isw-frontend-js-extra" src="data:text/javascript;base64,Ci8qIDwhW0NEQVRBWyAqLwp2YXIgaXN3X3ZhcnMgPSB7ImFqYXgiOiJodHRwczpcL1wvbWluaW1vZy50aGVtZW1vdmUuY29tXC9tZWdhbW9nXC93cC1hZG1pblwvYWRtaW4tYWpheC5waHAiLCJub25jZSI6IjA5NjUxYjA0MTYiLCJwcm9kdWN0X3NlbGVjdG9yIjoiLnByb2R1Y3QiLCJwcmljZV9zZWxlY3RvciI6Ii5wcmljZSIsImxvY2FsaXphdGlvbiI6eyJhZGRfdG9fY2FydF90ZXh0IjoiQWRkIHRvIGNhcnQiLCJyZWFkX21vcmVfdGV4dCI6IlJlYWQgbW9yZSIsInNlbGVjdF9vcHRpb25zX3RleHQiOiJTZWxlY3Qgb3B0aW9ucyJ9fTsKLyogXV0+ICovCg=="></script>
+<script
+      defer
+      type="text/javascript"
+      src="/static/wp-content/plugins/insight-swatches/assets/js/frontend.min.js"
+      id="isw-frontend-js"
+    ></script>
+    <script
+    defer
+    type="text/javascript"
+    src="/static/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js"
+    id="jquery-blockui-js"
+  ></script>
+<script
+defer
+type="text/javascript"
+src="/static/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js"
+id="wc-add-to-cart-js"
+></script>
+<script
+defer
+type="text/javascript"
+src="/static/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js"
+id="js-cookie-js"
+></script>
+<script defer id="woocommerce-js-extra" src="data:text/javascript;base64,Ci8qIDwhW0NEQVRBWyAqLwp2YXIgd29vY29tbWVyY2VfcGFyYW1zID0geyJhamF4X3VybCI6IlwvbWVnYW1vZ1wvd3AtYWRtaW5cL2FkbWluLWFqYXgucGhwIiwid2NfYWpheF91cmwiOiJcL21lZ2Ftb2dcLz93Yy1hamF4PSUlZW5kcG9pbnQlJSJ9OwovKiBdXT4gKi8K"></script>
+<script
+defer
+type="text/javascript"
+src="/static/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js"
+id="woocommerce-js"
+></script>
+    <script
+    defer
+    type="text/javascript"
+    src="/static/wp-content/cache/autoptimize/3/js/autoptimize_single_9347f26c0f5d449903c52483a4308755.js"
+    id="table-head-fixer-js"
+  ></script>
+<script defer type='text/javascript' src="/static/wp-content/themes/minimog/assets/js/perfect-scrollbar.min.js" id='perfect-scrollbar-js'></script>
+<script
+      defer
+      type="text/javascript"
+      src="/static/wp-includes/js/jquery/ui/core.min.js"
+      id="jquery-ui-core-js"
+    ></script>
+    <script
+    defer
+    type="text/javascript"
+    src="/static/wp-includes/js/jquery/ui/mouse.min.js"
+    id="jquery-ui-mouse-js"
+  ></script>
+  <script
+  defer
+  type="text/javascript"
+  src="/static/wp-includes/js/jquery/ui/sortable.min.js"
+  id="jquery-ui-sortable-js"
+></script>
+<script defer id="woosc-frontend-js-extra" src="data:text/javascript;base64,Ci8qIDwhW0NEQVRBWyAqLwp2YXIgd29vc2NfdmFycyA9IHsiYWpheF91cmwiOiJodHRwczpcL1wvbWluaW1vZy50aGVtZW1vdmUuY29tXC9tZWdhbW9nXC93cC1hZG1pblwvYWRtaW4tYWpheC5waHAiLCJ1c2VyX2lkIjoiMGNkYjY0ZmFiMzJhMDViZDM5M2IyMGM4YzM1MWRlOWYiLCJwYWdlX3VybCI6IiMiLCJvcGVuX2J1dHRvbiI6IiIsIm9wZW5fYnV0dG9uX2FjdGlvbiI6Im9wZW5fcG9wdXAiLCJtZW51X2FjdGlvbiI6Im9wZW5fcG9wdXAiLCJidXR0b25fYWN0aW9uIjoic2hvd190YWJsZSIsInNpZGViYXJfcG9zaXRpb24iOiJyaWdodCIsIm1lc3NhZ2VfcG9zaXRpb24iOiJyaWdodC10b3AiLCJtZXNzYWdlX2FkZGVkIjoie25hbWV9IGhhcyBiZWVuIGFkZGVkIHRvIENvbXBhcmUgbGlzdC4iLCJtZXNzYWdlX3JlbW92ZWQiOiJ7bmFtZX0gaGFzIGJlZW4gcmVtb3ZlZCBmcm9tIHRoZSBDb21wYXJlIGxpc3QuIiwibWVzc2FnZV9leGlzdHMiOiJ7bmFtZX0gaXMgYWxyZWFkeSBpbiB0aGUgQ29tcGFyZSBsaXN0LiIsIm9wZW5fYmFyIjoiIiwiYmFyX2J1YmJsZSI6Im5vIiwiYWRkaW5nIjoicHJlcGVuZCIsImNsaWNrX2FnYWluIjoibm8iLCJoaWRlX2VtcHR5Ijoibm8iLCJjbGlja19vdXRzaWRlIjoieWVzIiwiZnJlZXplX2NvbHVtbiI6InllcyIsImZyZWV6ZV9yb3ciOiJ5ZXMiLCJzY3JvbGxiYXIiOiJ5ZXMiLCJsaW1pdCI6IjEwMCIsInJlbW92ZV9hbGwiOiJEbyB5b3Ugd2FudCB0byByZW1vdmUgYWxsIHByb2R1Y3RzIGZyb20gdGhlIGNvbXBhcmU/IiwibGltaXRfbm90aWNlIjoiWW91IGNhbiBhZGQgYSBtYXhpbXVtIG9mIHtsaW1pdH0gcHJvZHVjdHMgdG8gdGhlIGNvbXBhcmlzb24gdGFibGUuIiwiY29waWVkX3RleHQiOiJTaGFyZSBsaW5rICVzIHdhcyBjb3BpZWQgdG8gY2xpcGJvYXJkISIsImJ1dHRvbl90ZXh0IjoiQ29tcGFyZSIsImJ1dHRvbl90ZXh0X2FkZGVkIjoiQ29tcGFyZSIsImJ1dHRvbl9ub3JtYWxfaWNvbiI6Indvb3NjLWljb24tMSIsImJ1dHRvbl9hZGRlZF9pY29uIjoid29vc2MtaWNvbi03NCJ9OwovKiBdXT4gKi8K"></script>
+<script
+      defer
+      type="text/javascript"
+      src="/static/wp-content/cache/autoptimize/3/js/autoptimize_single_7a8bf113cb4887dfd0c43f475c1c0126.js"
+      id="woosc-frontend-js"
+    ></script>
+<script defer id="woosw-frontend-js-extra" src="data:text/javascript;base64,Ci8qIDwhW0NEQVRBWyAqLwp2YXIgd29vc3dfdmFycyA9IHsiYWpheF91cmwiOiJodHRwczpcL1wvbWluaW1vZy50aGVtZW1vdmUuY29tXC9tZWdhbW9nXC93cC1hZG1pblwvYWRtaW4tYWpheC5waHAiLCJtZW51X2FjdGlvbiI6Im9wZW5fcGFnZSIsInBlcmZlY3Rfc2Nyb2xsYmFyIjoieWVzIiwid2lzaGxpc3RfdXJsIjoiaHR0cHM6XC9cL21pbmltb2cudGhlbWVtb3ZlLmNvbVwvbWVnYW1vZ1wvd2lzaGxpc3RcLyIsImJ1dHRvbl9hY3Rpb24iOiJsaXN0IiwibWVzc2FnZV9wb3NpdGlvbiI6InJpZ2h0LXRvcCIsImJ1dHRvbl9hY3Rpb25fYWRkZWQiOiJwb3B1cCIsImVtcHR5X2NvbmZpcm0iOiJUaGlzIGFjdGlvbiBjYW5ub3QgYmUgdW5kb25lLiBBcmUgeW91IHN1cmU/IiwiZGVsZXRlX2NvbmZpcm0iOiJUaGlzIGFjdGlvbiBjYW5ub3QgYmUgdW5kb25lLiBBcmUgeW91IHN1cmU/IiwiY29waWVkX3RleHQiOiJDb3BpZWQgdGhlIHdpc2hsaXN0IGxpbms6IiwibWVudV90ZXh0IjoiV2lzaGxpc3QiLCJidXR0b25fdGV4dCI6IkFkZCB0byB3aXNobGlzdCIsImJ1dHRvbl90ZXh0X2FkZGVkIjoiQnJvd3NlIHdpc2hsaXN0IiwiYnV0dG9uX25vcm1hbF9pY29uIjoid29vc3ctaWNvbi01IiwiYnV0dG9uX2FkZGVkX2ljb24iOiJ3b29zdy1pY29uLTgiLCJidXR0b25fbG9hZGluZ19pY29uIjoid29vc3ctaWNvbi00In07Ci8qIF1dPiAqLwo="></script>
+<script
+defer
+type="text/javascript"
+src="/static/wp-content/cache/autoptimize/3/js/autoptimize_single_83870cba975748d03bd73847b41de143.js"
+id="woosw-frontend-js"
+></script>
+<script
+defer
+type="text/javascript"
+src="/static/wp-content/themes/minimog/assets/js/modal.min.js"
+id="minimog-modal-js"
+></script>
+<script
+defer
+type="text/javascript"
+src="/static/wp-content/themes/minimog/assets/libs/matchHeight/jquery.matchHeight-min.js"
+id="matchheight-js"
+></script>
+<script
+      defer
+      type="text/javascript"
+      src="/static/wp-content/themes/minimog/assets/libs/isotope/js/isotope.pkgd.min.js"
+      id="isotope-masonry-js"
+    ></script>
+    <script
+    defer
+    type="text/javascript"
+    src="/static/wp-content/themes/minimog/assets/libs/packery-mode/packery-mode.pkgd.min.js"
+    id="isotope-packery-js"
+  ></script>
+  <script
+  defer
+  type="text/javascript"
+  src="/static/wp-content/themes/minimog/assets/js/grid-layout.min.js"
+  id="minimog-grid-layout-js"
+></script>
+<script defer id="minimog-script-js-extra" src="data:text/javascript;base64,Ci8qIDwhW0NEQVRBWyAqLwp2YXIgJG1pbmltb2cgPSB7ImFqYXh1cmwiOiJodHRwczpcL1wvbWluaW1vZy50aGVtZW1vdmUuY29tXC9tZWdhbW9nXC93cC1hZG1pblwvYWRtaW4tYWpheC5waHAiLCJtaW5pbW9nX2FqYXhfdXJsIjoiXC9tZWdhbW9nXC8/bWluaW1vZy1hamF4PSUlZW5kcG9pbnQlJSIsIm5vbmNlIjoiNTYwOTE4NzBmOSIsImhlYWRlcl9zdGlja3lfZW5hYmxlIjoiMSIsInNjcm9sbF90b3BfZW5hYmxlIjoiIiwibGlnaHRfZ2FsbGVyeV9hdXRvX3BsYXkiOiIiLCJsaWdodF9nYWxsZXJ5X2Rvd25sb2FkIjoiMSIsImxpZ2h0X2dhbGxlcnlfZnVsbF9zY3JlZW4iOiIxIiwibGlnaHRfZ2FsbGVyeV96b29tIjoiMSIsImxpZ2h0X2dhbGxlcnlfdGh1bWJuYWlsIjoiIiwibGlnaHRfZ2FsbGVyeV9zaGFyZSI6IjEiLCJtb2JpbGVfbWVudV9icmVha3BvaW50IjoiMTE5OSIsImlzU2luZ2xlIjoiIiwicG9zdElEIjoiMCIsInBvc3RUeXBlIjoicHJvZHVjdCIsInNlYXJjaCI6eyJhamF4X2Rpc2FibGUiOmZhbHNlLCJkZWxheSI6IiJ9LCJpMThsIjp7Im5vTWF0Y2hlc0ZvdW5kIjoiTm8gbWF0Y2hlcyBmb3VuZCIsImFsbCI6IkFsbCAlcyJ9fTsKLyogXV0+ICovCg=="></script>
+<script
+defer
+type="text/javascript"
+src="/static/wp-content/themes/minimog/assets/js/main.min.js"
+id="minimog-script-js"
+></script>
+<script defer id="minimog-promo-popup-js-extra" src="data:text/javascript;base64,Ci8qIDwhW0NEQVRBWyAqLwp2YXIgJG1pbmltb2dQb3B1cCA9IHsib25Mb2FkIjp7ImVuYWJsZSI6IjEiLCJkZWxheSI6MH0sIm9uU2Nyb2xsaW5nIjp7ImVuYWJsZSI6IjAiLCJkaXJlY3Rpb24iOiJkb3duIiwib2Zmc2V0Ijo1MH0sIm9uQ2xpY2siOnsiZW5hYmxlIjoiMCIsImNsaWNrVGltZXMiOiIxIn0sInJ1bGVzIjp7ImJ5VGltZXMiOnsiZW5hYmxlIjoiMSIsInRpbWVzIjoiMSJ9LCJieVBhZ2VWaWV3cyI6eyJlbmFibGUiOiIwIiwicmVhY2giOiIzIn19fTsKLyogXV0+ICovCg=="></script>
+<script
+defer
+type="text/javascript"
+src="/static/wp-content/themes/minimog/assets/js/promo-popup.min.js"
+id="minimog-promo-popup-js"
+></script>
+<script
+defer
+type="text/javascript"
+src="/static/wp-content/themes/minimog/assets/js/laziesloader.min.js"
+id=" -js"
+></script>
+<script
+defer
+type="text/javascript"
+src="/static/wp-content/themes/minimog/assets/libs/elementor-waypoints/jquery.waypoints.min.js"
+id="elementor-waypoints-js"
+></script>
+<script
+      defer
+      type="text/javascript"
+      src="/static/wp-content/themes/minimog/assets/libs/swiper/js/swiper.min.js"
+      id="swiper-js"
+    ></script>
+<script defer id="minimog-swiper-wrapper-js-extra" src="data:text/javascript;base64,Ci8qIDwhW0NEQVRBWyAqLwp2YXIgJG1pbmltb2dTd2lwZXIgPSB7InByZXZUZXh0IjoiUHJldiIsIm5leHRUZXh0IjoiTmV4dCJ9OwovKiBdXT4gKi8K"></script>
+<script
+defer
+type="text/javascript"
+src="/static/wp-content/themes/minimog/assets/js/swiper-wrapper.min.js"
+id="minimog-swiper-wrapper-js"
+></script>
+<script
+defer
+type="text/javascript"
+src="/static/wp-content/themes/minimog/assets/libs/smartmenus/jquery.smartmenus.min.js"
+id="smartmenus-js"
+></script>
+<script
+      defer
+      type="text/javascript"
+      src="/static/wp-content/themes/minimog/assets/js/woo/wishlist.min.js"
+      id="minimog-wc-wishlist-js"
+    ></script>
+    <script
+    defer
+    type="text/javascript"
+    src="/static/wp-includes/js/underscore.min.js"
+    id="underscore-js"
+  ></script>
+<script defer id="wp-util-js-extra" src="data:text/javascript;base64,Ci8qIDwhW0NEQVRBWyAqLwp2YXIgX3dwVXRpbFNldHRpbmdzID0geyJhamF4Ijp7InVybCI6IlwvbWVnYW1vZ1wvd3AtYWRtaW5cL2FkbWluLWFqYXgucGhwIn19OwovKiBdXT4gKi8K"></script>
+<script
+defer
+type="text/javascript"
+src="/static/wp-includes/js/wp-util.min.js"
+id="wp-util-js"
+></script>
+<script
+      defer
+      type="text/javascript"
+      src="/static/wp-content/themes/minimog/assets/js/woo/add-to-cart-variation.min.js"
+      id="wc-add-to-cart-variation-js"
+    ></script>
+    <script
+    defer
+    type="text/javascript"
+    src="/static/wp-content/themes/minimog/assets/js/woo/quantity-button.min.js"
+    id="minimog-quantity-button-js"
+  ></script>
+  <script
+  defer
+  type="text/javascript"
+  src="/static/wp-content/themes/minimog/assets/js/nice-select.min.js"
+  id="minimog-nice-select-js"
+></script>
+<script defer id="minimog-wc-general-js-extra" src="data:text/javascript;base64,Ci8qIDwhW0NEQVRBWyAqLwp2YXIgJG1pbmltb2dXb28gPSB7IndjX2FqYXhfdXJsIjoiXC9tZWdhbW9nXC8/d2MtYWpheD0lJWVuZHBvaW50JSUiLCJhcHBseV9jb3Vwb25fbm9uY2UiOiJiYWY0MDk2NWFmIiwicmVtb3ZlX2NvdXBvbl9ub25jZSI6ImUyNDMxNDUzZjMiLCJpc19jaGVja291dCI6IiIsImFkZF90b19jYXJ0X2JlaGF2aW91ciI6Im9wZW5fY2FydF9kcmF3ZXIifTsKLyogXV0+ICovCg=="></script>
+<script
+defer
+type="text/javascript"
+src="/static/wp-content/themes/minimog/assets/js/woo/general.min.js"
+id="minimog-wc-general-js"
+></script>
+<script
+defer
+type="text/javascript"
+src="/static/wp-content/plugins/woocommerce/assets/js/selectWoo/selectWoo.full.min.js"
+id="selectWoo-js"
+></script>
+<script
+defer
+type="text/javascript"
+src="/static/wp-content/plugins/woocommerce/assets/js/frontend/country-select.min.js"
+id="wc-country-select-js"
+></script>
+<script
+      defer
+      type="text/javascript"
+      src="/static/wp-content/themes/minimog/assets/js/countdown-timer.min.js"
+      id="minimog-countdown-timer-js"
+    ></script>
+    <script
+    defer
+    type="text/javascript"
+    src="/static/wp-content/themes/minimog/assets/js/woo/coupon.min.js"
+    id="minimog-wc-coupon-js"
+  ></script>
+  <script
+  defer
+  type="text/javascript"
+  src="/static/wp-content/themes/minimog/assets/js/woo/fly-cart.min.js"
+  id="minimog-wc-fly-cart-js"
+></script>
+<script defer type='text/javascript' src="/static/wp-content/themes/minimog/assets/js/common-archive.min.js" id='minimog-common-archive-js'></script>
+<script
+      defer
+      type="text/javascript"
+      src="/static/wp-content/cache/autoptimize/3/js/autoptimize_single_ffe589943ec037c5ca817248393946ae.js"
+      id="dokan-login-form-popup-js"
+    ></script>
+    <script
+    defer
+    type="text/javascript"
+    src="/static/wp-content/themes/minimog/assets/libs/validate/jquery.validate.min.js"
+    id="validate-js"
+  ></script>
+<script
+      defer
+      type="text/javascript"
+      src="/static/wp-content/themes/minimog/assets/js/login.min.js"
+      id="minimog-login-js"
+    ></script>
+    <script
+    defer
+    type="text/javascript"
+    src="/static/wp-content/plugins/dokan-lite/assets/js/speakingurl.min.js"
+    id="speaking-url-js"
+  ></script>
+  <script
+  defer
+  type="text/javascript"
+  src="/static/wp-content/themes/minimog/assets/js/dokan/vendor-registration.min.js"
+  id="minimog-dokan-vendor-registration-js"
+></script>
+<script defer id="minimog-child-showcase-js-extra" src="data:text/javascript;base64,Ci8qIDwhW0NEQVRBWyAqLwp2YXIgJG1pbmltb2dDaGlsZCA9IHsiZGVtb19oYXNoIjoiMmYxZTQ3M2VmYWViYjZjYzkwMzdjZGExYThlMmQ5ODcifTsKLyogXV0+ICovCg=="></script>
+<script
+      defer
+      type="text/javascript"
+      src="/static/wp-content/cache/autoptimize/3/js/autoptimize_single_d29ada74fd12253302827b1ee34a2530.js"
+      id="minimog-child-showcase-js"
+    ></script>
+    <script
+    defer
+    type="text/javascript"
+    src="/static/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js"
+    id="elementor-webpack-runtime-js"
+  ></script>
+  <script
+  defer
+  type="text/javascript"
+  src="/static/wp-content/plugins/elementor/assets/js/frontend-modules.min.js"
+  id="elementor-frontend-modules-js"
+></script>
+<script
+defer
+type="text/javascript"
+src="/static/wp-content/plugins/elementor/assets/js/frontend.min.js"
+id="elementor-frontend-js"
+></script>
+<script
+      defer
+      type="text/javascript"
+      src="/static/wp-content/cache/autoptimize/3/js/autoptimize_single_cefa4dc3d4e4bcd3148dd75e2c6de95f.js"
+      id="minimog-column-collapsible-js"
+    ></script>
+<script
+defer
+type="text/javascript"
+src="/static/wp-content/plugins/wpforms-lite/assets/js/integrations/elementor/frontend.min.js"
+id="wpforms-elementor-js"
+></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const dropdownIcons = document.querySelectorAll('.dropdown-icon');
+    let dropdownTimeout;
+
+    dropdownIcons.forEach(icon => {
+      icon.addEventListener('mouseenter', () => {
+        clearTimeout(dropdownTimeout);
+        const dropdownContainer = icon.nextElementSibling;
+        dropdownContainer.style.display = 'block';
+      });
+
+      icon.addEventListener('mouseleave', () => {
+        const dropdownContainer = icon.nextElementSibling;
+        dropdownTimeout = setTimeout(() => {
+          dropdownContainer.style.display = 'none';
+        }, 500);
+      });
+
+      const dropdownContainer = icon.nextElementSibling;
+      dropdownContainer.addEventListener('mouseenter', () => {
+        clearTimeout(dropdownTimeout);
+      });
+
+      dropdownContainer.addEventListener('mouseleave', () => {
+        dropdownTimeout = setTimeout(() => {
+          dropdownContainer.style.display = 'none';
+        }, 50);
+      });
+    });
+  });
+</script>
+
+<script>
+  (function () {
+    var $slides = document.querySelectorAll('.slide');
+    var $controls = document.querySelectorAll('.slider__control');
+    var numOfSlides = $slides.length;
+    var slidingAT = 1300;
+    var slidingBlocked = false;
+
+    function autoSlide() {
+      var $rightControl = document.querySelector('.slider__control--right');
+      $rightControl.click();
+    }
+
+    var autoSlideInterval = setInterval(autoSlide, 5000);
+
+    document.querySelectorAll('.slider__control').forEach(function ($control) {
+      $control.addEventListener('click', function (event) {
+        event.stopPropagation(); // Prevent event from propagating to the dropdown
+        clearInterval(autoSlideInterval);
+      });
+    });
+
+    document.querySelector('.slider__slides').addEventListener('transitionend', function () {
+      autoSlideInterval = setInterval(autoSlide, 5000);
+    });
+
+    [].slice.call($slides).forEach(function ($el, index) {
+      var i = index + 1;
+      $el.classList.add('slide-' + i);
+      $el.dataset.slide = i;
+    });
+
+    [].slice.call($controls).forEach(function ($el) {
+      $el.addEventListener('click', controlClickHandler);
+    });
+
+    function controlClickHandler() {
+      if (slidingBlocked) return;
+      slidingBlocked = true;
+
+      var $control = this;
+      var isRight = $control.classList.contains('m--right');
+      var $curActive = document.querySelector('.slide.s--active');
+      var index = +$curActive.dataset.slide;
+      (isRight) ? index++ : index--;
+      if (index < 1) index = numOfSlides;
+      if (index > numOfSlides) index = 1;
+      var $newActive = document.querySelector('.slide-' + index);
+
+      $control.classList.add('a--rotation');
+      $curActive.classList.remove('s--active', 's--active-prev');
+      document.querySelector('.slide.s--prev').classList.remove('s--prev');
+
+      $newActive.classList.add('s--active');
+      if (!isRight) $newActive.classList.add('s--active-prev');
+
+      var prevIndex = index - 1;
+      if (prevIndex < 1) prevIndex = numOfSlides;
+
+      document.querySelector('.slide-' + prevIndex).classList.add('s--prev');
+
+      setTimeout(function () {
+        $control.classList.remove('a--rotation');
+        slidingBlocked = false;
+      }, slidingAT * 0.75);
+    }
+  })();
+</script>
+{% endblock content %}
