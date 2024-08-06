@@ -30,7 +30,7 @@ SECRET_KEY = "django-insecure-=gz6u1d6i@v#$c@(zxy_@4+c7w)5hlumrdyu_ru^(_!kc!b5_8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['103.169.86.3', '*', '192.168.0.107']
+ALLOWED_HOSTS = ['103.169.86.3', '*', '192.168.0.107', '192.168.1.31']
 
 SITE_ID = 1
 # Application definition
@@ -73,6 +73,7 @@ TEMPLATES = [
                 "core.context_processor.default",
                 "core.context_processor.defaultOne",
                 "core.context_processor.defaultTwo",
+                "core.context_processor.cart_context",
                 "django.template.context_processors.debug",
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
@@ -162,6 +163,7 @@ DEFAULT_FROM_EMAIL = 'princesachdeva@nationalmarketingprojects.com'  # Use the s
 PAYPAL_RECEIVER_EMAIL = 'sprince1500@gmail.com'
 PAYPAL_TEST =True
 
-
+KEY = 'rzp_test_J49wAxU6gIgE2k'
+SECRET = 'dcyvIk7pIORJEw5uzNK3NonJ'
 
 

@@ -237,6 +237,7 @@ class Product(models.Model):
     bottom_page_description = HTMLField(default="N/A")
     price = models.DecimalField(max_digits=9999, decimal_places=2, default="1")
     old_price = models.DecimalField(max_digits=9999, decimal_places=2, default="2")
+    gst_rate = models.CharField(max_length=100, default="18")
     specifications = models.TextField(max_length=500,null=True, blank=True, default="N/A")
     # tags = models.ForeignKey(Tags, on_delete=models.SET_NULL, null=True)
     product_status = models.CharField(choices=STATUS, max_length=10, default="in_review")
@@ -341,15 +342,16 @@ class ProductVariantImages(models.Model):
         verbose_name_plural = "Product Variant Images"
 
 class CartOrder(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    price = models.DecimalField(max_digits=9999999999, decimal_places=2, default="1.99")
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+    price = models.DecimalField(max_digits=99999, decimal_places=2, default="1")
     paid_status = models.BooleanField(default=False)
     order_date = models.DateTimeField(auto_now_add=True)
     product_status = models.CharField(choices=STATUS_CHOICE, max_length=30, default="processing")
 
     class Meta:
-        verbose_name_plural = "Cart Order"
+        verbose_name_plural = "Cart Orders"
 
+        verbose_name_plural = "Cart Order"
 
 
 class CartOrderItems(models.Model):
@@ -359,15 +361,14 @@ class CartOrderItems(models.Model):
     item = models.CharField(max_length=200)
     image = models.CharField(max_length=200)
     qty = models.IntegerField(default=0)
-    price = models.DecimalField(max_digits=999999999999, decimal_places=2, default="1.99")
-    total = models.DecimalField(max_digits=999999999999, decimal_places=2, default="1.99")
+    price = models.DecimalField(max_digits=99999, decimal_places=2, default="1")
+    total = models.DecimalField(max_digits=99999, decimal_places=2, default="1")
 
     class Meta:
         verbose_name_plural = "Cart Order Items"
 
-
     def order_img(self):
-        return mark_safe('<img src="/media/%s" width="50" height="50" />' % (self.image.url))   
+        return mark_safe('<img src="/media/%s" width="50" height="50" />' % (self.image.url)) 
 
 
 
@@ -498,6 +499,16 @@ class BuilderImages(models.Model):
 
     class Meta:
         verbose_name_plural = "Builder Project Images"
+
+class InvoiceNumber(models.Model):
+    number = models.IntegerField(default=1)
+
+    def increment(self):
+        self.number += 1
+        self.save()
+
+    def __str__(self):
+        return f'Invoice No: TPH2024-{self.number:04d}'
 
 
 
