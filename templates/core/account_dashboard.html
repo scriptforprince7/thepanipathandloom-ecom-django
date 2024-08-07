@@ -149,6 +149,11 @@
 	<div id="page-content" class="page-content"
 					style="--minimog-page-content-gap: 30px"
 			>
+			<div class="row mb-9 align-items-center justify-content-between">
+				<div class="col-sm-6 mb-8 mb-sm-0">
+				<h4 class="fs-4 mb-0">Hi, <span style="background: linear-gradient(130deg, #353935, #066582); -webkit-background-clip: text; color: transparent; font-size:1.8rem;">{{request.user|title}}</span>  👋</h4>
+				</div>
+				</div>
 		<div class="container">
 			<div class="row">
 
@@ -165,11 +170,11 @@
 												<div class="my-account-profile">
 						<div class="my-avatar">
 							<div class="avatar">
-								<img alt='' src='https://secure.gravatar.com/avatar/71fcecb7c32a54c2fdd1877271955d9b?s=108&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/71fcecb7c32a54c2fdd1877271955d9b?s=216&#038;d=mm&#038;r=g 2x' class='avatar avatar-108 photo' height='108' width='108' />
+								<img alt='' src="{% static 'assets/icon-avatar.jpg' %}" class='avatar avatar-108 photo' height='108' width='108' />
 															</div>
 
 													</div>
-						<h6 class="my-name fn">prince sachdeva</h6>
+						<h6 class="my-name fn">{{request.user|title}}</h6>
 					</div>
 										
 <nav class="woocommerce-MyAccount-navigation">
@@ -194,7 +199,7 @@
 		<div class="minimog-wc-account-content-inner">
 			<div class="woocommerce-notices-wrapper"></div>
 <p>
-	Hello <strong>prince sachdeva</strong> (not <strong>prince sachdeva</strong>? <a href="/users/sign-out/">Log out</a>)</p>
+	Hello <strong>{{request.user|title}}</strong> (not <strong>{{request.user|title}}</strong>? <a href="/users/sign-out/">Log out</a>)</p>
 
 <p>
 	From your account dashboard you can view your <a href="/dashboard/myorders">recent orders</a>, manage your manage your settings here and <a href="/users/sign-out/">logout</a></p>

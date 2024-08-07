@@ -806,6 +806,69 @@ def generate_invoice(request, order_id):
     # Render the invoice template with the context
     return render(request, 'core/download_invoice.html', context)
 
+def generate_invoicee(request, order_id):
+    # Common logic for generating the invoice
+    order = get_object_or_404(CartOrder, pk=order_id)
+    cart_items = CartOrderItems.objects.filter(order=order)
+
+    cart_data = {}
+    price_wo_gst_total = Decimal('0')
+    for item in cart_items:
+        cart_data[item.id] = {
+            'title': item.item,
+            'qty': item.qty,
+            'price': item.price,
+            'image': item.image,
+            'invoice_no': item.invoice_no,
+            'product_status': item.product_status,
+            'total': item.total,
+            'price_wo_gst': item.price_wo_gst,
+            'gst_rates_final': item.gst_rates_final,
+            'first_name': order.firstname,
+            'last_name': order.lastname,
+            'zipcode': order.zipcode,
+            'email': order.email,
+            'phone': order.phone,
+            'pin_details': order.pin_details,
+            'city': order.city,
+            'district': order.district,
+            'division': order.division,
+            'state': order.state,
+            'billing_address': order.billingaddress,
+            'shipping_address': order.shippingaddress,
+            'company_name': order.companyname,
+            'gst_number': order.gstnumber,
+        }
+        price_wo_gst_total += item.price_wo_gst * item.qty
+    cart_total_amount_words = num2words(price_wo_gst_total, lang='en_IN')
+
+    context = {
+        'order': order,
+        'cart_data': cart_data,
+        'first_name': order.firstname,
+        'last_name': order.lastname,
+        'zipcode': order.zipcode,
+        'email': order.email,
+        'phone': order.phone,
+        'pin_details': order.pin_details,
+        'city': order.city,
+        'district': order.district,
+        'division': order.division,
+        'state': order.state,
+        'billing_address': order.billingaddress,
+        'shipping_address': order.shippingaddress,
+        'company_name': order.companyname,
+        'gst_number': order.gstnumber,
+        'price_wo_gst_total': price_wo_gst_total,
+        'cart_total_amount_words': cart_total_amount_words
+    }
+
+    return render(request, 'core/download_invoice.html', context)
+
+# New view for user invoices
+def generate_user_invoice(request, order_id):
+    return generate_invoicee(request, order_id)
+
 
 
 def payment_failed_view(request):
@@ -917,6 +980,9 @@ def contact(request):
 
 def career(request):
     return render(request, "core/career.html")
+
+def download_invoice(request):
+    return render(request, "core/download_invoice.html")
 
 def write_to_ceo(request):
     return render(request, "core/write-to-ceo.html")

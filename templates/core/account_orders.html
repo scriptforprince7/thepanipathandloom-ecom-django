@@ -1395,17 +1395,16 @@
                         <div class="avatar">
                           <img
                             alt=""
-                            src="https://secure.gravatar.com/avatar/71fcecb7c32a54c2fdd1877271955d9b?s=108&#038;d=mm&#038;r=g"
+                            src="{% static 'assets/icon-avatar.jpg' %}"
                             srcset="
-                              https://secure.gravatar.com/avatar/71fcecb7c32a54c2fdd1877271955d9b?s=216&#038;d=mm&#038;r=g 2x
-                            "
+                            {% static 'assets/icon-avatar.jpg' %}"
                             class="avatar avatar-108 photo"
                             height="108"
                             width="108"
                           />
                         </div>
                       </div>
-                      <h6 class="my-name fn">prince sachdeva</h6>
+                      <h6 class="my-name fn">{{request.user|title}}</h6>
                     </div>
 
                     <nav class="woocommerce-MyAccount-navigation">
@@ -1439,7 +1438,7 @@
                           <th
                             class="woocommerce-orders-table__header woocommerce-orders-table__header-order-number"
                           >
-                            <span class="nobr">Order</span>
+                            <span class="nobr">Order Id</span>
                           </th>
                           <th
                             class="woocommerce-orders-table__header woocommerce-orders-table__header-order-date"
@@ -1508,7 +1507,7 @@
                             data-title="Actions"
                           >
                             <a
-                              href="https://minimog.thememove.com/megamog/my-account/view-order/2236/"
+                              href="{% url 'core:user_generate_invoice' o.id %}"
                               class="woocommerce-button button view"
                               >View</a
                             >
