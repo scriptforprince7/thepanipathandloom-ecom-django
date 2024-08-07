@@ -186,9 +186,10 @@ def fetch_pin_details(request):
 
 
 
+
 def add_to_cart(request):
     # Ensure all required parameters are present
-    required_params = ['id', 'title', 'qty', 'price', 'image', 'sku', 'price_wo_gst', 'gst_rate']
+    required_params = ['id', 'title', 'qty', 'price', 'image', 'sku', 'price_wo_gst', 'gst_rate', 'gst_applied']
     for param in required_params:
         if param not in request.GET:
             return JsonResponse({"error": f"Missing parameter: {param}"}, status=400)
@@ -219,16 +220,22 @@ def add_to_cart(request):
         gst_rate = Decimal(request.GET['gst_rate'])  # Ensure gst_rate is a decimal
     except InvalidOperation as e:
         return JsonResponse({"error": f"Invalid numeric value for gst_rate: {str(e)}"}, status=400)
+    
+    try:
+        gst_applied = Decimal(request.GET['gst_applied'])  # Ensure gst_applied is a decimal
+    except InvalidOperation as e:
+        return JsonResponse({"error": f"Invalid numeric value for gst_applied: {str(e)}"}, status=400)
 
     cart_product = {
         'product_id': product_id,
         'title': request.GET.get('title'),
         'qty': qty,
-        'price': str(price),
+        'price': str(price),  # Convert Decimal to string
         'image': request.GET.get('image'),
         'sku': request.GET.get('sku'),
-        'price_wo_gst': str(price_wo_gst),
-        'gst_rate': str(gst_rate),
+        'price_wo_gst': str(price_wo_gst),  # Convert Decimal to string
+        'gst_rate': str(gst_rate),  # Convert Decimal to string
+        'gst_applied': str(gst_applied),  # Convert Decimal to string
     }
 
     if 'cart_data_obj' in request.session:
@@ -602,19 +609,6 @@ def payment_invoice(request):
             sgst_amount = total_gst_amount / Decimal(2)
             gst_amounts_combined[gst_rate] = {'cgst': cgst_amount, 'sgst': sgst_amount}
 
-             # Check if the user is authenticated
-        if request.user.is_authenticated:
-            # If the user is logged in, associate the order with the logged-in user
-            order = CartOrder.objects.create(
-            user=request.user,  # Use the logged-in user
-            price=total_amount
-        )
-        else:
-            # If the user is not logged in, create the order without associating it with any user
-            order = CartOrder.objects.create(
-            price=total_amount
-        )
-
         for p_id, item in request.session['cart_data_obj'].items():
             cart_total_amount += int(item['qty']) * float(item['price'])
 
@@ -842,6 +836,28 @@ def testing(request):
 
 def our_achievements(request):
     return render(request, "core/our_achievements.html")
+
+
+@login_required
+def dashboard(request):
+    return render(request, "core/account_dashboard.html")
+
+@login_required
+def orders(request):
+    orders = CartOrder.objects.filter(user=request.user).order_by("-id")
+    context = {
+        "orders": orders
+    }
+    return render(request, "core/account_orders.html", context)
+
+def order_detail(request, id):
+    order = CartOrder.objects.filter(user=request.user, id=id)
+    products = CartOrderItems.objects.filter(order=order)
+
+    context = {
+        "products": products,
+    }
+    return render(request, "core/order-detail.html", context)
 
 
 def arch(request):

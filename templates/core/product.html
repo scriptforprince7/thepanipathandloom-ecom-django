@@ -959,7 +959,7 @@
                           <b>₹ {{ main_product.price }}/-</b>
                         </span> <br>
                         <span>
-                         ( Includes <b>{{main_product.gst_rate}}</b>  gst )
+                         ( Includes <b>{{main_product.gst_rate}}%</b>  gst )
                         </span>
                         {% endif %}
                         <p>
@@ -1119,6 +1119,7 @@
                         <input type="hidden" value="{{main_product.title}}" class="product-title-{{main_product.pid}}">
                         <input type="hidden" value="{{main_product.price}}" class="product-price-{{main_product.pid}}">
                         <input type="hidden" value="{{price_wo_gst}}" class="product-price-wo-gst-{{main_product.pid}}">
+                        <input type="hidden" value="{{gst_amount_applied}}" class="gst-applied-{{main_product.pid}}">
                         <input type="hidden" value="{{gst_rate}}" class="gst_rate-{{main_product.pid}}">
                         <input type="hidden" value="{{main_product.sku}}" class="product-sku-{{main_product.pid}}">
                         <input type="hidden" value="{{main_product.image.url}}" class="product-image-{{main_product.pid}}">

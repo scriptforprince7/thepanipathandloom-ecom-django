@@ -8,6 +8,7 @@ $(document).ready(function () {
     let product_price = $(".product-price-" + index).val();
     let product_price_wo_gst = $(".product-price-wo-gst-" + index).val();
     let gst_rate = $(".gst_rate-" + index).val();
+    let gst_applied = $(".gst-applied-" + index).val();
     let product_sku = $(".product-sku-" + index).val();
     let product_image = $(".product-image-" + index).val();
 
@@ -16,6 +17,7 @@ $(document).ready(function () {
     console.log("Price:", product_price);
     console.log("Price Without Gst:", product_price_wo_gst);
     console.log("gst_rate:", gst_rate);
+    console.log("GST Applied:", gst_applied);
     console.log("ID:", product_id);
     console.log("Image:", product_image);
     console.log("Sku:", product_sku);
@@ -32,6 +34,7 @@ $(document).ready(function () {
         price: product_price,
         price_wo_gst: product_price_wo_gst,
         gst_rate: gst_rate,
+        gst_applied: gst_applied,
         sku: product_sku,
       },
       dataType: "json",
@@ -81,6 +84,88 @@ function generateProductUrl(baseUrl, title) {
   var encodedTitle = encodeURIComponent(cleanedTitle);
   return `${baseUrl}${encodedTitle}/`;
 }
+
+function updateCartItemsList(cartData) {
+  var cartItemsList = $("table tbody");
+  cartItemsList.empty();
+
+  var subtotalAmount = 0;
+  var baseUrl = "";
+
+  // Update cart item count badge
+  var cartItemCount = Object.keys(cartData).length;
+  $("#cartItemCount").text(cartItemCount);
+  $("#cartItemCountt").text(cartItemCount);
+  $("#cartItemCounttt").text(cartItemCount);
+  $("#cartItemCountttt").text(cartItemCount);
+
+  if ($.isEmptyObject(cartData)) {
+    var noProductsHtml = `
+      <tr class="no-products-message">
+        <td colspan="3" style="text-align: center;">
+          <div style="text-align: center;">
+            <img src="{% static 'images/no-product.png' %}" alt="Empty Cart Image" width="70%">
+            <style>
+              .explore:hover {
+                background-color: #9fcfb5;
+              }
+            </style>
+            <a href="/shop-category" style="text-align: center;">
+              <button class="btn btn-success mt-3 d-block explore">Explore Categories</button>
+            </a>
+          </div>
+        </td>
+      </tr>`;
+    cartItemsList.append(noProductsHtml);
+  } else {
+    $(".no-products-message").remove(); // Remove the no products message if present
+
+    $.each(cartData, function (productId, item) {
+      var productUrl = generateProductUrl(baseUrl, item.title);
+      var itemHtml = `
+        <tr class="position-relative">
+          <td class="align-middle text-center">
+            <a href="#" class="d-block clear-product remove-cart delete-product js-cart-item-remove" data-product="${productId}">
+              <i class="far fa-times"></i>
+            </a>
+          </td>
+          <td class="shop-product">
+            <div class="d-flex align-items-center">
+              <div class="me-6">
+                <img src="${item.image}" width="60" height="80" alt="${item.title}" />
+              </div>
+              <div>
+                <p class="card-text mb-1">
+                  <span class="fs-15px fw-bold text-body-emphasis">₹ ${parseFloat(item.price).toFixed(2)}</span>
+                </p>
+                <p class="fw-500 text-body-emphasis">
+                  <a href="/cart">${item.title} x ${item.qty}</a><br>
+                  ${item.sku}
+                </p>
+              </div>
+            </div>
+          </td>
+          <td class="align-middle p-0">
+            <div class="input-group position-relative shop-quantity">
+              <a href="#" class="shop-down position-absolute z-index-2">
+                <i class="far fa-minus"></i>
+              </a>
+              <input name="number[]" type="number" class="form-control form-control-sm px-6 py-4 fs-6 text-center border-0" value="${item.qty}" required />
+              <a href="#" class="shop-up position-absolute z-index-2">
+                <i class="far fa-plus"></i>
+              </a>
+            </div>
+          </td>
+        </tr>`;
+      cartItemsList.append(itemHtml);
+
+      subtotalAmount += parseFloat(item.price) * item.qty;
+    });
+
+    $(".cart-subtotal").text(`₹ ${subtotalAmount.toFixed(2)}`);
+  }
+}
+
 
 
 $(document).ready(function () {
