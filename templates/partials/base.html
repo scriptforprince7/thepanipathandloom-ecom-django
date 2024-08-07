@@ -2858,17 +2858,15 @@
               <div class="cart-data-js">
       <div data-value="{&quot;count&quot;:3,&quot;free_shipping_class_only&quot;:0}" class="cart-data-info"></div>
     </div>
-    
-    
-    
-    
-                          <div class="cart-countdown-timer" data-countdown="{&quot;loop&quot;:true,&quot;length&quot;:5,&quot;message&quot;:&quot;\ud83d\udd25 These products are limited, checkout within <div class=\&quot;timer\&quot;>00m 00s<\/div>&quot;,&quot;expired_message&quot;:&quot;You're out of time! Checkout now to avoid losing your order!&quot;,&quot;formatter&quot;:{&quot;day&quot;:&quot;d&quot;,&quot;hour&quot;:&quot;h&quot;,&quot;minute&quot;:&quot;m&quot;,&quot;second&quot;:&quot;s&quot;}}">
+      
+    {% if cart_data.items %}
+  <div class="cart-countdown-timer" data-countdown="{&quot;loop&quot;:true,&quot;length&quot;:5,&quot;message&quot;:&quot;\ud83d\udd25 These products are limited, checkout within <div class=\&quot;timer\&quot;>00m 00s<\/div>&quot;,&quot;expired_message&quot;:&quot;You're out of time! Checkout now to avoid losing your order!&quot;,&quot;formatter&quot;:{&quot;day&quot;:&quot;d&quot;,&quot;hour&quot;:&quot;h&quot;,&quot;minute&quot;:&quot;m&quot;,&quot;second&quot;:&quot;s&quot;}}">
       <div class="inner">
         <div class="cart-countdown-message">🔥 These products are limited, checkout within <div class="timer">02m 45s </div></div>
       </div>
     </div>
               
-              <div class="cart-goal-wrap">
+  <div class="cart-goal-wrap">
       <div class="cart-goal cart-goal-done shakeY">
         <div class="cart-goal-text">
       Congrats! You are eligible for <strong>FREE Shipping</strong>	<input type="hidden" name="cart-goal-percent" value="100" class="cart-goal-percent">
@@ -2889,9 +2887,11 @@
         </div>
       </div>
     </div>
+
+    {% endif %}
     
                       </div>
-                      <div class="fly-cart-body scroll-y ps" style="height: 400px;">
+                      <div class="fly-cart-body scroll-y ps" style="height: 353px;">
                         <div class="fly-cart-body-content">
                           <div class="widget_shopping_cart_content">	<ul class="woocommerce-mini-cart cart_list product_list_widget ">
                             {% if cart_data.items %}
@@ -2932,13 +2932,16 @@
                       {% endfor %}
                       {% else %}
                       <div style="text-align: center; display: flex; flex-direction: column; align-items: center;" class="no-products-message">
-                        <img src="{% static 'assets/no-product.png' %}" alt="Empty Cart Image" width="70%">
+                        <img src="{% static 'assets/empty-cart.png' %}" alt="Empty Cart Image" width="70%">
+                        <h2 class="empty-cart-heading">Your cart is currently empty.</h2>
+                        <p>You may check out all the available products and buy some in the shop.</p>
                         <style>
                             .explore:hover {
-                                background-color: #9fcfb5;
+                              border: 1px solid #e5167d;
+                                background-color: #e5167d;
                             }
                         </style>
-                        <a href="https://vrhealthscience.com/shop-category/expert-series/" style="text-align: center;">
+                        <a href="/category/wallpapers/" style="text-align: center;">
                             <button class="btn btn-success mt-3 d-block explore">Explore Categories</button>
                         </a>
                     </div>
@@ -2949,6 +2952,9 @@
               </div>
                         </div>
                       <div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; left: 0px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div></div></div>
+
+                      {% if cart_data.items %}
+                      
             <div class="fly-cart-footer">
     
               <table class="cart-totals-table">
@@ -2973,6 +2979,9 @@
               </div>
         </a>							</div>
             </div>
+
+            {% endif %}
+
           </div>
         </div>
     
