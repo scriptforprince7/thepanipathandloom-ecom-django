@@ -2942,12 +2942,12 @@
               
                           <div class="product-price"><b><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">₹</span> {{ item.price|floatformat:"2" }}</bdi></span></b></div>
                           <div class="product-quantity-wrap">
-                              <div class="quantity-button-wrapper quantity-input-number">
+                              <div class="quantity-button-wrapper">
                   <label class="screen-reader-text" aria-label="Malm High bed frame/4 storage boxes quantity">Quantity</label>
                   <div class="quantity">
-                          <input type="number" class="input-text qty text"  value="{{item.qty}}" aria-label="Product quantity" size="4" min="0" max="" step="1" placeholder="" inputmode="numeric" autocomplete="off" >
-                            <button type="button" class="decrease">-</button>
-                      <button type="button" class="increase">+</button>
+                          <input type="number" class="input-text qty text update-product product-qty-{{product_id}}" data-product="{{product_id}}"  value="{{item.qty}}"  size="4" min="0" max="" step="1" inputmode="numeric" autocomplete="off" >
+                      <button type="button" class="decrease update-product" data-product="{{product_id}}">-</button>
+                      <button type="button" class="increase update-product" data-product="{{product_id}}">+</button>
                               </div>
                 </div>
                             <a href="" class="delete-product" data-product="{{ product_id }}">Remove</a>						</div>

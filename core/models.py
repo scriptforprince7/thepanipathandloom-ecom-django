@@ -386,7 +386,7 @@ class CartOrderItems(models.Model):
     price = models.DecimalField(max_digits=99999, decimal_places=2, default="1")
     total = models.DecimalField(max_digits=99999, decimal_places=2, default="1")
     price_wo_gst = models.DecimalField(max_digits=99999, decimal_places=2, default="0")  # Update field name
-    gst_rates_final = models.DecimalField(max_digits=5, decimal_places=2, default=0)
+    gst_rates_final = models.DecimalField(max_digits=99999, decimal_places=2, default=0)
 
     class Meta:
         verbose_name_plural = "Cart Order Items"

@@ -629,6 +629,7 @@ def payment_invoice(request):
                 phone=phone,
                 email=email,
                 price_wo_gst_total=price_wo_gst_total,
+                
             )
 
             cart_order_products = CartOrderItems.objects.create(
@@ -641,6 +642,7 @@ def payment_invoice(request):
                 price=item['price'],
                 total=Decimal(item['qty']) * Decimal(item['price']),
                 price_wo_gst=Decimal(item['price_wo_gst']),  # Store price without GST
+                gst_rates_final=Decimal(item['gst_applied'])
             )
 
         cart_total_amount = 0
