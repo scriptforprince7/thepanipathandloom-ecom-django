@@ -450,12 +450,31 @@
                           autocomplete="current-password"
                         />
                       </p>
-                   
-                    
+
                       <p class="woocommerce-form-row form-row">
-                          <input type="hidden" id="woocommerce-register-nonce" name="woocommerce-register-nonce" value="dc7fb9e82a" />
-                          <input type="hidden" name="_wp_http_referer" value="/megamog/my-account/" />
-                          <button
+                        Not Having Account? <a href="/user/sign-up/"><span>Sign Up </span> </a> 
+                    </p>
+                    <p class="woocommerce-form-row form-row">
+                      Not Having Account? <a href="/user/sign-up/"><span>Sign Up </span> </a> 
+                  </p>
+
+                    <style>
+                      .button-container {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.button-container .form-row {
+  margin: 0 5px;
+}
+
+                    </style>
+
+                    <div class="button-container">
+                      <p class="woocommerce-form-row form-row">
+                        <input type="hidden" id="woocommerce-register-nonce" name="woocommerce-register-nonce" value="dc7fb9e82a" />
+                        <input type="hidden" name="_wp_http_referer" value="/megamog/my-account/" />
+                        <button
                           type="submit"
                           class="woocommerce-button button woocommerce-form-login__submit wp-element-button"
                           name="login"
@@ -464,6 +483,18 @@
                           Log in
                         </button>
                       </p>
+                      <p class="woocommerce-form-row form-row">
+                    <a href="{% url 'userauths:password-reset-request' %}"> <button
+                      type="submit"
+                      class="woocommerce-button button"
+                      name=""
+                      value=""
+                    >
+                      Forget Password
+                    </button></a>   
+                      </p>
+                    </div>
+                    
                   </form>
                   
                   </div>

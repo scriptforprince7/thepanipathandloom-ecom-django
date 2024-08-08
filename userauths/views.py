@@ -11,6 +11,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from userauths.models import EmailVerificationToken
 from django.urls import reverse_lazy
 from django.template.loader import render_to_string
+from userauths.forms import *
+from userauths.models import *
 # User = settings.AUTH_USER_MODEL
 
 def register_view(request):
@@ -85,6 +87,68 @@ def login_view(request):
             messages.warning(request, f"User with {email} does not exist")
 
     return render(request, "userauths/sign-in.html")
+
+def password_reset_request_view(request):
+    if request.method == "POST":
+        form = PasswordResetRequestForm(request.POST)
+        if form.is_valid():
+            email = form.cleaned_data['email']
+            try:
+                user = User.objects.get(email=email)
+                token = get_random_string(length=32)
+                PasswordResetToken.objects.update_or_create(user=user, defaults={'token': token, 'created_at': timezone.now()})
+                send_password_reset_email(user, token)
+                messages.success(request, "Password reset link has been sent to your email.")
+                return redirect("userauths:password-reset-request")
+            except User.DoesNotExist:
+                messages.error(request, "Email not found. Please register.")
+                return redirect("userauths:password-reset-request")
+    else:
+        form = PasswordResetRequestForm()
+    
+    context = {'form': form}
+    return render(request, "userauths/password_reset_request.html", context)
+
+def send_password_reset_email(user, token):
+    subject = "Password Reset Request"
+    reset_url = f"{settings.BASE_URL}{reverse_lazy('userauths:password-reset', args=[token])}"
+    
+    context = {'user': user, 'reset_url': reset_url}
+    
+    message = render_to_string('userauths/password_reset_email.html', context)
+    
+    from_email = settings.DEFAULT_FROM_EMAIL
+    recipient_list = [user.email]
+    send_mail(
+        subject,
+        '',
+        from_email,
+        recipient_list,
+        html_message=message,
+        fail_silently=False,
+    )
+
+def password_reset_view(request, token):
+    reset_token = get_object_or_404(PasswordResetToken, token=token)
+    if request.method == "POST":
+        form = PasswordResetForm(request.POST)
+        if form.is_valid():
+            password1 = form.cleaned_data['password1']
+            password2 = form.cleaned_data['password2']
+            if password1 == password2:
+                user = reset_token.user
+                user.set_password(password1)
+                user.save()
+                reset_token.delete()  # Token is no longer needed
+                messages.success(request, "Your password has been reset successfully.")
+                return redirect("userauths:sign-in")
+            else:
+                messages.warning(request, "Passwords do not match.")
+    else:
+        form = PasswordResetForm()
+    
+    context = {'form': form}
+    return render(request, "userauths/password_reset.html", context)
 
 
 
