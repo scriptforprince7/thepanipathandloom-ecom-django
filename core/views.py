@@ -378,23 +378,53 @@ def delete_item_from_cart(request):
     return JsonResponse({"data": rendered_html, 'totalcartitems': len(request.session['cart_data_obj']), 'refresh_page': refresh_page})        
 
 def update_cart(request):
-    product_id = str(request.GET['id'])
+    product_id = request.GET['id']
     product_qty = request.GET['qty']
+    sku = request.GET.get('sku')
+    price = request.GET.get('price')
     refresh_page = request.GET.get('refresh_page', False)
-    if 'cart_data_obj' in request.session:
-        if product_id in request.session['cart_data_obj']:
-           cart_data = request.session['cart_data_obj']
-           cart_data[str(request.GET['id'])]['qty'] = product_qty
-           request.session['cart_data_obj'] = cart_data
 
+    # Create the unique key using the same method as in add_to_cart
+    unique_key = f"{product_id}_{sku}_{price}"
+
+    # Print the incoming data for debugging
+    print(f"Received product_id: {product_id}")
+    print(f"Received qty: {product_qty}")
+    print(f"Received sku: {sku}")
+    print(f"Received price: {price}")
+    print(f"Generated unique_key: {unique_key}")
+
+    if 'cart_data_obj' in request.session:
+        cart_data = request.session['cart_data_obj']
+        
+        # Check if the unique key exists in the session data
+        if unique_key in cart_data:
+            print(f"Found product in cart: {cart_data[unique_key]}")
+            cart_data[unique_key]['qty'] = product_qty  # Update the quantity
+            request.session['cart_data_obj'] = cart_data
+            print(f"Updated cart data: {cart_data[unique_key]}")
+        else:
+            print(f"Product with key {unique_key} not found in cart")
+
+    # Recalculate cart total amount
     cart_total_amount = 0
-    if 'cart_data_obj' in request.session:
-        for p_id, item in request.session['cart_data_obj'].items():
-            cart_total_amount += int(item['qty']) * float(item['price'])
+    for p_id, item in request.session['cart_data_obj'].items():
+        cart_total_amount += int(item['qty']) * float(item['price'])
+    
+    # Print updated cart data for debugging
+    print("Updated cart data after recalculation:")
+    for p_id, item in request.session['cart_data_obj'].items():
+        print(f"Product ID: {p_id}, Qty: {item['qty']}, Price: {item['price']}")
 
+    context = render_to_string("core/cart.html", {
+        "cart_data": request.session['cart_data_obj'],
+        'totalcartitems': len(request.session['cart_data_obj']),
+        'cart_total_amount': cart_total_amount
+    })
 
-    context = render_to_string("core/cart.html", {"cart_data": request.session['cart_data_obj'], 'totalcartitems': len(request.session['cart_data_obj']), 'cart_total_amount': cart_total_amount})
-    return JsonResponse({"data": context, 'totalcartitems': len(request.session['cart_data_obj']), 'refresh_page': refresh_page}) 
+    return JsonResponse({"data": context, 'totalcartitems': len(request.session['cart_data_obj']), 'refresh_page': refresh_page})
+
+ 
 
 
 def load_maharashtra_zipcodes():

@@ -1132,29 +1132,25 @@ var _woocommerce_multi_currency_params = {"use_session":"0","do_not_reload_page"
 							<label class="cart-item-label-mobile">Price :</label>
 							<span class="woocommerce-Price-amount amount"><bdi>₹<span class="woocommerce-Price-currencySymbol"></span>{{item.price}}</bdi></span>						</td>
 
-		<td class="product-quantity" data-title="Quantity">
-		<div class="quantity-button-wrapper">
-		<label class="screen-reader-text">Quantity</label>
-		<div class="quantity">
-					<input
-				    type="number"
-				    class="input-text qty text update-product product-qty-{{product_id}}" 
-            data-product="{{product_id}}"
-				    name="number"
-				    value="{{item.qty}}"
-				    aria-label="Product quantity"
-				    size="4"
-				    min="0"
-				    max="490"
-					step="1"
-					placeholder=""
-					inputmode="numeric"
-					autocomplete="off"
-					/>
-		<button type="button" class="decrease update-product" data-product="{{product_id}}">-</button>
-		<button type="button" class="increase update-product" data-product="{{product_id}}">+</button>
-		  </div>
-	      </div>
+		<td class="product-quantity">
+      <div class="quantity-button-wrapper">
+        <label class="screen-reader-text">Quantity</label>
+        <div class="quantity">
+          <input
+            type="number"
+            class="input-text qty text update-product product-qty-{{item.product_id}}" 
+            data-product="{{item.product_id}}"
+            data-sku="{{item.sku}}"
+            data-price="{{item.price}}"
+            name="qty"
+            value="{{ item.qty }}"
+          />
+          <button type="button" class="decrease update-product" data-product="{{item.product_id}}" data-sku="{{item.sku}}" data-price="{{item.price}}">-</button>
+<button type="button" class="increase update-product" data-product="{{item.product_id}}" data-sku="{{item.sku}}" data-price="{{item.price}}">+</button>
+
+        </div>
+      </div>
+      
 		  </td>
 
 						<td class="product-subtotal" data-title="Subtotal">
@@ -1272,7 +1268,7 @@ var _woocommerce_multi_currency_params = {"use_session":"0","do_not_reload_page"
 					<h4 class="modal-title">Estimate shipping rates</h4>
 				</div>
 
-				<form class="woocommerce-shipping-calculator fly-cart-shipping-calculator" action="https://minimog.thememove.com/megamog/cart/" method="post">
+				<form class="woocommerce-shipping-calculator fly-cart-shipping-calculator">
 	<!-- <div class="shipping-calculator-form">
 					<p class="form-row form-row-wide" id="calc_shipping_country_field">
 				<select name="calc_shipping_country" id="calc_shipping_country" class="country_to_state country_select"
@@ -2928,7 +2924,7 @@ var _woocommerce_multi_currency_params = {"use_session":"0","do_not_reload_page"
 					<h4 class="modal-title">Estimate shipping rates</h4>
 				</div>
 
-				<form class="woocommerce-shipping-calculator fly-cart-shipping-calculator" action="https://minimog.thememove.com/megamog/cart/" method="post">
+				<form class="woocommerce-shipping-calculator fly-cart-shipping-calculator">
 	<div class="shipping-calculator-form">
 					<p class="form-row form-row-wide" id="calc_shipping_country_field">
 				<select name="calc_shipping_country" id="calc_shipping_country" class="country_to_state country_select"
@@ -3034,7 +3030,7 @@ var _woocommerce_multi_currency_params = {"use_session":"0","do_not_reload_page"
 				<div class="modal-content-body">
 
 					
-					<form id="minimog-login-form" class="minimog-login-form" method="post">
+					<form>
 
 						
 						<div class="form-group">
@@ -3105,7 +3101,7 @@ var _woocommerce_multi_currency_params = {"use_session":"0","do_not_reload_page"
 				</div>
 
 				<div class="modal-content-body">
-					<form id="minimog-lost-password-form" class="minimog-lost-password-form" method="post">
+					<form>
 
 						
 						<div class="form-group">
@@ -3144,7 +3140,7 @@ var _woocommerce_multi_currency_params = {"use_session":"0","do_not_reload_page"
 				</div>
 
 				<div class="modal-content-body">
-					<form id="minimog-register-form" class="minimog-register-form" method="post">
+					<form>
 
 						
 													<div class="row">
@@ -3238,6 +3234,7 @@ var _woocommerce_multi_currency_params = {"use_session":"0","do_not_reload_page"
 		</div>
 	</div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script type="text/javascript">
 		(function () {
 			var c = document.body.className;
@@ -3289,12 +3286,6 @@ var woocommerce_params = {"ajax_url":"\/megamog\/wp-admin\/admin-ajax.php","wc_a
 /* ]]> */
 </script>
 <script type='text/javascript' src='https://minimog-4437.kxcdn.com/megamog/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=7.7.0' id='woocommerce-js'></script>
-<script type='text/javascript' id='wc-cart-fragments-js-extra'>
-/* <![CDATA[ */
-var wc_cart_fragments_params = {"ajax_url":"\/megamog\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/megamog\/?wc-ajax=%%endpoint%%","cart_hash_key":"wc_cart_hash_196b31a7bc3baf366a2a4403cfef128d","fragment_name":"wc_fragments_196b31a7bc3baf366a2a4403cfef128d","request_timeout":"5000"};
-/* ]]> */
-</script>
-<script type='text/javascript' src='https://minimog-4437.kxcdn.com/megamog/wp-content/themes/minimog/assets/js/woo/cart-fragments.min.js?ver=7.7.0' id='wc-cart-fragments-js'></script>
 <script type='text/javascript' src='https://minimog-4437.kxcdn.com/megamog/wp-content/plugins/woo-smart-compare-premium/assets/libs/table-head-fixer/table-head-fixer.js?ver=5.3.7' id='table-head-fixer-js'></script>
 <script type='text/javascript' src='https://minimog-4437.kxcdn.com/megamog/wp-content/themes/minimog/assets/js/perfect-scrollbar.min.js?ver=2.9.1' id='perfect-scrollbar-js'></script>
 <script type='text/javascript' src='https://minimog-4437.kxcdn.com/megamog/wp-includes/js/jquery/ui/core.min.js?ver=1.13.2' id='jquery-ui-core-js'></script>

@@ -243,14 +243,36 @@ $(document).ready(function () {
     let this_val = $(this);
     let product_quantity = $(".product-qty-" + product_id).val();
 
+    // Check if the clicked button is an increment or decrement button
+    if ($(this).hasClass('increase')) {
+      product_quantity = parseInt(product_quantity) + 1;
+    } else if ($(this).hasClass('decrease')) {
+      product_quantity = parseInt(product_quantity) - 1;
+    }
+
+    // Ensure quantity doesn't go below 1
+    if (product_quantity < 1) {
+      product_quantity = 1;
+    }
+
+    // Update the input field with the new quantity
+    $(".product-qty-" + product_id).val(product_quantity);
+
+    let product_sku = $(this).attr("data-sku");
+    let product_price = $(this).attr("data-price");
+
     console.log("Product ID:", product_id);
     console.log("Product Qty:", product_quantity);
+    console.log("Product SKU:", product_sku);
+    console.log("Product Price:", product_price);
 
     $.ajax({
       url: "/update-cart",
       data: {
         id: product_id,
         qty: product_quantity,
+        sku: product_sku,
+        price: product_price,
         refresh_page: true,
       },
       dataType: "json",
@@ -263,11 +285,12 @@ $(document).ready(function () {
         $("#cart-list").html(response.data);
 
         if (response.refresh_page) {
-          // Refresh the page
           window.location.reload();
         }
       },
     });
   });
 });
+
+
 
