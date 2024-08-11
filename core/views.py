@@ -193,13 +193,13 @@ def add_to_cart(request):
     for param in required_params:
         if param not in request.GET:
             return JsonResponse({"error": f"Missing parameter: {param}"}, status=400)
-    
-    product_id = request.GET.get('id')
-    unique_key = f"{product_id}"  # Create a unique key
 
-    # Log all received parameters
-    for param in required_params:
-        print(f"{param}: {request.GET.get(param)}")
+    product_id = request.GET.get('id')
+    sku = request.GET.get('sku')
+    price = request.GET.get('price')
+
+    # Create a more unique key by including sku and price
+    unique_key = f"{product_id}_{sku}_{price}" 
 
     try:
         qty = int(request.GET['qty'])  # Ensure qty is an integer
@@ -232,7 +232,7 @@ def add_to_cart(request):
         'qty': qty,
         'price': str(price),  # Convert Decimal to string
         'image': request.GET.get('image'),
-        'sku': request.GET.get('sku'),
+        'sku': sku,
         'price_wo_gst': str(price_wo_gst),  # Convert Decimal to string
         'gst_rate': str(gst_rate),  # Convert Decimal to string
         'gst_applied': str(gst_applied),  # Convert Decimal to string
@@ -255,6 +255,7 @@ def add_to_cart(request):
         'totalcartitems': len(request.session['cart_data_obj']), 
         "already_in_cart": False
     })
+
 
 
 
