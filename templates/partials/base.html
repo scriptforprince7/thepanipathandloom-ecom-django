@@ -2867,6 +2867,18 @@
         </a>
       </div>
     </div>
+    <style>
+      /* Custom class for SweetAlert to ensure it appears on top */
+.swal2-top-zindex {
+  z-index: 1050 !important;  /* Ensure this value is higher than popup-fly-cart's z-index */
+}
+
+/* Example z-index for popup-fly-cart */
+#popup-fly-cart {
+  z-index: 1000;  /* Adjust this value if necessary */
+}
+
+    </style>
     <div id="popup-fly-cart" class="popup-fly-cart">
       <div class="inner">
         <a href="#" id="btn-close-fly-cart"
@@ -2950,7 +2962,8 @@
                       <button type="button" class="increase update-product" data-product="{{product_id}}">+</button>
                               </div>
                 </div>
-                            <a href="" class="delete-product" data-product="{{ product_id }}">Remove</a>						</div>
+                            <button class="delete-product" data-product="{{ product_id }}">Remove</button>						
+                          </div>
                         </div>
                       </li>
                       {% endfor %}

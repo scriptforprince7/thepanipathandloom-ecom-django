@@ -185,6 +185,9 @@ $(document).ready(function () {
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, delete it!",
+      customClass: {
+        popup: 'swal2-top-zindex'  // Custom class to control z-index
+      }
     }).then((result) => {
       if (result.isConfirmed) {
         // User confirmed the deletion, proceed with AJAX request
