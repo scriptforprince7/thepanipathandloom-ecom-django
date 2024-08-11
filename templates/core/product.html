@@ -942,7 +942,7 @@
                           </div>
                         </div>
 
-                        {% if main_product.price|floatformat:2 != "1.99" %}
+                        {% if main_product.price|floatformat:2 != '1.99' %}
                         <span
                           style="
                             background: -webkit-linear-gradient(
@@ -1108,7 +1108,6 @@
                           name="quantity"
                           value="1"
                           id="product-quantity-{{ main_product.pid }}"
-                          min="1"
                           class="qty-control__number text-center product-quantity-{{ main_product.pid }}"
                         />
                         <button type="button" class="decrease">-</button>

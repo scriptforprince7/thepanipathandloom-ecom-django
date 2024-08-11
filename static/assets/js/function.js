@@ -1,7 +1,7 @@
 $(document).ready(function () {
   $(".add-to-cart-btn").on("click", function () {
     let this_val = $(this);
-    let index = this_val.data("index");
+    let index = this_val.attr("data-index");
     let quantity = $(".product-quantity-" + index).val();
     let product_title = $(".product-title-" + index).val();
     let product_id = $(".product-id-" + index).val();
@@ -55,6 +55,7 @@ $(document).ready(function () {
           // Show success alert and update cart
           this_val.html("✓");
           console.log("Added Product to cart!");
+          updateCartItemsList(response.data);
           $(".cart-items-count").text(response.totalcartitems);
 
           Swal.fire({
@@ -167,7 +168,6 @@ function updateCartItemsList(cartData) {
 }
 
 
-
 $(document).ready(function () {
   // Event delegation for delete buttons
   $(document).on("click", ".delete-product", function () {
@@ -206,8 +206,10 @@ $(document).ready(function () {
             // Set a flag in local storage before refreshing the page
             localStorage.setItem("productDeleted", "true");
 
-            // Refresh the page
-            window.location.reload();
+            // Refresh the page after a short delay
+            setTimeout(function() {
+              window.location.reload();
+            }, 1000); // 500ms delay before refresh
           },
         });
       }
@@ -221,7 +223,7 @@ $(document).ready(function () {
       title: "Deleted!",
       text: "Product has been deleted.",
       icon: "success",
-      timer: 2000, // 1 second
+      timer: 4000, // 2 seconds
       confirmButtonText: "OK",
     });
 
@@ -229,6 +231,7 @@ $(document).ready(function () {
     localStorage.removeItem("productDeleted");
   }
 });
+
 
 
 $(document).ready(function () {
@@ -264,5 +267,4 @@ $(document).ready(function () {
     });
   });
 });
-
 
