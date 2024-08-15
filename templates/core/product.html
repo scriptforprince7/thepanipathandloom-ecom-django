@@ -935,7 +935,7 @@
                           </div>
                         </div>
 
-                        {% if main_product.price|floatformat:2 != '1.99' %}
+                        {% if main_product.price|floatformat:2 != '1.99' and main_product.price|floatformat:2 != '1.00' %}
                         <span
                           style="
                             background: -webkit-linear-gradient(
@@ -2670,7 +2670,9 @@
         .replace(/%/g, "")
         .replace(/%20/g, " ");
 
-      const whatsappMessage = `Hey Sunny Khurana, my name is ${name} having phone number ${phoneNumber}. I want to enquire about the product ${productTitle}, including its availability and price which comes under ${categoryTitle} category.`;
+      const productUrl = "{{ product_url }}";
+
+      const whatsappMessage = `Hey Sunny Khurana, my name is ${name} having phone number ${phoneNumber}. I want to enquire about the product ${productTitle}, including its availability and price which comes under ${categoryTitle} category. You can check the product here: ${productUrl}`;
 
       const whatsappURL = `https://wa.me/+919999999009?text=${encodeURIComponent(
         whatsappMessage

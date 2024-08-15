@@ -264,10 +264,20 @@ class Product(models.Model):
     
     def __str__(self):
         return self.title
-    
+
     def save(self, *args, **kwargs):
         if not self.product_slug:
-            self.product_slug = slugify(self.title)
+            base_slug = slugify(self.title)
+            unique_slug = base_slug
+            counter = 1
+
+            # Loop to find a unique slug
+            while Product.objects.filter(product_slug=unique_slug).exists():
+                unique_slug = f"{base_slug}-{counter}"
+                counter += 1
+
+            self.product_slug = unique_slug
+
         super().save(*args, **kwargs) 
 
     def get_absolute_url(self):
@@ -363,14 +373,23 @@ class CartOrder(models.Model):
     district = models.CharField(max_length=200, blank=True, null=True)
     division = models.CharField(max_length=200, blank=True, null=True)
     state = models.CharField(max_length=200, blank=True, null=True)
-    billingaddress = models.CharField(max_length=200, blank=True, null=True)
-    shippingaddress = models.CharField(max_length=200, blank=True, null=True)
+    shipping_street_address = models.CharField(max_length=200, blank=True, null=True)
+    shipping_address_line1 = models.CharField(max_length=200, blank=True, null=True)
+    shipping_address_line2 = models.CharField(max_length=200, blank=True, null=True)
+    billing_zipcode = models.CharField(max_length=200, blank=True, null=True)
+    billing_checkout_city = models.CharField(max_length=200, blank=True, null=True)
+    billing_checkout_district = models.CharField(max_length=200, blank=True, null=True)
+    billing_checkout_division = models.CharField(max_length=200, blank=True, null=True)
+    billing_checkout_state = models.CharField(max_length=200, blank=True, null=True)
+    billing_street_address = models.CharField(max_length=200, blank=True, null=True)
+    billing_address_line1 = models.CharField(max_length=200, blank=True, null=True)
+    billing_address_line2 = models.CharField(max_length=200, blank=True, null=True)
     phone = models.CharField(max_length=20, blank=True, null=True)
     email = models.EmailField(blank=True, null=True)
     companyname = models.CharField(max_length=200, blank=True, null=True)
     gstnumber = models.CharField(max_length=200, blank=True, null=True)
     price_wo_gst_total = models.DecimalField(max_digits=99999, decimal_places=2, default="0")
-    gst_rates_final = models.DecimalField(max_digits=5, decimal_places=2, default="0.00")  # For storing the GST rate
+    gst_rates_final = models.DecimalField(max_digits=99999, decimal_places=2, default="0.00")  # For storing the GST rate
 
     class Meta:
         verbose_name_plural = "Cart Orders"

@@ -1085,6 +1085,10 @@
                 <a href="/our-works"><img src="{% static "assets/our-installations.jpg" %}" alt=""></a> 
                </div>
 
+               <div class="video-containerrr" style="border: 2px solid grey;">
+                <iframe allowfullscreen="allowfullscreen" scrolling="no" class="fp-iframe" style="border: 1px solid lightgray; width: 100%; height: 400px;" src="https://heyzine.com/flip-book/ecf1b459a4.html"></iframe>
+               </div>
+
               <section
               class="elementor-section elementor-top-section elementor-element elementor-element-8f1972d elementor-section-broad elementor-section-gap-beside-yes elementor-section-height-default elementor-section-height-default elementor-section-column-vertical-align-stretch"
               data-id="8f1972d"
@@ -2394,6 +2398,26 @@
         }
       }
     </style>
+
+<style>
+  /* Apply basic styles to the video container */
+  .video-containerrr {
+    max-width: 95%; /* Adjust this value to your desired maximum width */
+    height: 95%; /* Adjust this value to your desired maximum width */
+    margin: 0 auto; /* Center the container horizontally */
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 2rem;
+  }
+
+  /* Add additional mobile-responsive styles as needed */
+  @media (max-width: 768px) {
+    /* For screens with a width of 768px or less */
+    .video-containerrr {
+      max-width: 100%; /* Reset the maximum width for smaller screens if needed */
+    }
+  }
+</style>
     <div class="video-containerr">
      <a href="/architectures"><img src="{% static "arch/assets/img/archi.jpg" %}" alt=""></a> 
     </div>

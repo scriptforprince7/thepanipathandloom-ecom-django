@@ -448,6 +448,7 @@
   >
     <div id="page" class="site">
       <div class="content-wrapper">
+      
         <header
           id="page-header"
           class="page-header header-06 nav-links-hover-style-line header-dark header-sticky-dark-logo header-icon-set-01 header-icon-badge-large"
@@ -2957,9 +2958,22 @@
                               <div class="quantity-button-wrapper">
                   <label class="screen-reader-text" aria-label="Malm High bed frame/4 storage boxes quantity">Quantity</label>
                   <div class="quantity">
-                          <input type="number" class="input-text qty text update-product product-qty-{{product_id}}" data-product="{{product_id}}"  value="{{item.qty}}"  size="4" min="0" max="" step="1" inputmode="numeric" autocomplete="off" >
-                      <button type="button" class="decrease update-product" data-product="{{product_id}}">-</button>
-                      <button type="button" class="increase update-product" data-product="{{product_id}}">+</button>
+                          <input
+                           type="number"
+                          class="input-text qty text update-product product-qty-{{item.product_id}}"
+                          data-product="{{item.product_id}}"
+                          data-sku="{{item.sku}}"
+                          data-price="{{item.price}}"
+                          value="{{ item.qty }}"
+                          size="4"
+                          min="0"
+                          max=""
+                          step="1"
+                          name="qty"
+                          inputmode="numeric"
+                          autocomplete="off" >
+                      <button type="button" class="decrease update-product" data-product="{{item.product_id}}" data-sku="{{item.sku}}" data-price="{{item.price}}">-</button>
+                      <button type="button" class="increase update-product" data-product="{{item.product_id}}" data-sku="{{item.sku}}" data-price="{{item.price}}">+</button>
                               </div>
                 </div>
                             <button class="delete-product" data-product="{{ product_id }}">Remove</button>						

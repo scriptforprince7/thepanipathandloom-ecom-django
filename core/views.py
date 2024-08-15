@@ -296,6 +296,11 @@ def product(request, product_slug):
     related_company = products.company_name
     related_subcategory = products.sub_category
 
+    if products.product_slug:
+        product_url = f"https://thepanipathandloom.com/product/{products.product_slug}/"
+    else:
+        product_url = f"https://thepanipathandloom.com/product/{products.title.replace(' ', '-').lower()}/"
+
     context = {
         "main_product": products,
         "related_products": related_products,
@@ -307,6 +312,7 @@ def product(request, product_slug):
         "related_subcategory": related_subcategory,
         "product_varients": product_varients,
         "ecommerce_enabled": related_company.ecommerce,  # Add this line
+        "product_url": product_url,
     }
     return render(request, "core/product.html", context)
 
@@ -326,6 +332,12 @@ def producttitle(request, title):
     related_company = main_product.company_name
     related_subcategory = main_product.sub_category
 
+    if main_product.product_slug:
+        product_url = f"https://thepanipathandloom.com/product/{main_product.product_slug}/"
+    else:
+        # Replace spaces with hyphens and convert to lowercase
+        product_url = f"https://thepanipathandloom.com/product/{main_product.title.replace(' ', '-').lower()}/"
+
     context = {
         "main_product": main_product,
         "related_products": related_products,
@@ -333,6 +345,7 @@ def producttitle(request, title):
         "related_company": related_company,
         "related_subcategory": related_subcategory,
         "product_varients" : product_varients,
+        "product_url": product_url, 
     }
     return render(request, "core/product.html", context)
 
@@ -558,9 +571,20 @@ def payment_invoice(request):
     shipping_address = query_params.get('shipping_address')
     phone = query_params.get('phone')
     email = query_params.get('email')
-    checkout_state = query_params.get('checkout_state')
     checkout_district = query_params.get('checkout_district')
     checkout_division = query_params.get('checkout_division')
+    checkout_state = query_params.get('checkout_state')
+    shipping_street_address = query_params.get('shipping_street_address')
+    shipping_address_line1 = query_params.get('shipping_address_line1')
+    shipping_address_line2 = query_params.get('shipping_address_line2')
+    billing_zipcode = query_params.get('billing_zipcode')
+    billing_checkout_city = query_params.get('billing_checkout_city')
+    billing_checkout_district = query_params.get('billing_checkout_district')
+    billing_checkout_division = query_params.get('billing_checkout_division')
+    billing_checkout_state = query_params.get('billing_checkout_state')
+    billing_street_address = query_params.get('billing_street_address')
+    billing_address_line1 = query_params.get('billing_address_line1')
+    billing_address_line2 = query_params.get('billing_address_line2')
     cart_total_amount = 0
     total_amount = 0
     price_wo_gst_total = 0
@@ -655,8 +679,17 @@ def payment_invoice(request):
                 district=checkout_district,
                 division=checkout_division,
                 state=checkout_state,
-                billingaddress=street_address,
-                shippingaddress=shipping_address,
+                shipping_street_address=shipping_street_address,
+                shipping_address_line1=shipping_address_line1,
+                shipping_address_line2=shipping_address_line2,
+                billing_zipcode=billing_zipcode,
+                billing_checkout_city=billing_checkout_city,
+                billing_checkout_district=billing_checkout_district,
+                billing_checkout_division=billing_checkout_division,
+                billing_checkout_state=billing_checkout_state,
+                billing_street_address=billing_street_address,
+                billing_address_line1=billing_address_line1,
+                billing_address_line2=billing_address_line2,
                 phone=phone,
                 email=email,
                 price_wo_gst_total=price_wo_gst_total,
@@ -807,8 +840,17 @@ def generate_invoice(request, order_id):
             'district': order.district,
             'division': order.division,
             'state': order.state,
-            'billing_address': order.billingaddress,
-            'shipping_address': order.shippingaddress,
+            'shipping_street_address': order.shipping_street_address,
+            'shipping_address_line1': order.shipping_address_line1,
+            'shipping_address_line2': order.shipping_address_line2,
+            'billing_zipcode': order.billing_zipcode,
+            'billing_address_line2': order.billing_address_line2,
+            'billing_checkout_city': order.billing_checkout_city,
+            'billing_checkout_district': order.billing_checkout_district,
+            'billing_checkout_division': order.billing_checkout_division,
+            'billing_checkout_state': order.billing_checkout_state,
+            'billing_street_address': order.billing_street_address,
+            'billing_address_line1': order.billing_address_line1,
             'company_name': order.companyname,
             'gst_number': order.gstnumber,
         }
@@ -828,10 +870,19 @@ def generate_invoice(request, order_id):
         'district': order.district,
         'division': order.division,
         'state': order.state,
-        'billing_address': order.billingaddress,
-        'shipping_address': order.shippingaddress,
         'company_name': order.companyname,
         'gst_number': order.gstnumber,
+        'shipping_street_address': order.shipping_street_address,
+        'shipping_address_line1': order.shipping_address_line1,
+        'shipping_address_line2': order.shipping_address_line2,
+        'billing_zipcode': order.billing_zipcode,
+        'billing_address_line2': order.billing_address_line2,
+        'billing_checkout_city': order.billing_checkout_city,
+        'billing_checkout_district': order.billing_checkout_district,
+        'billing_checkout_division': order.billing_checkout_division,
+        'billing_checkout_state': order.billing_checkout_state,
+        'billing_street_address': order.billing_street_address,
+        'billing_address_line1': order.billing_address_line1,
         'price_wo_gst_total': price_wo_gst_total,  # Add price_wo_gst_total to context
         'cart_total_amount_words': cart_total_amount_words
     }
@@ -867,8 +918,17 @@ def generate_invoicee(request, order_id):
             'district': order.district,
             'division': order.division,
             'state': order.state,
-            'billing_address': order.billingaddress,
-            'shipping_address': order.shippingaddress,
+            'shipping_street_address': order.shipping_street_address,
+            'shipping_address_line1': order.shipping_address_line1,
+            'shipping_address_line2': order.shipping_address_line2,
+            'billing_zipcode': order.billing_zipcode,
+            'billing_address_line2': order.billing_address_line2,
+            'billing_checkout_city': order.billing_checkout_city,
+            'billing_checkout_district': order.billing_checkout_district,
+            'billing_checkout_division': order.billing_checkout_division,
+            'billing_checkout_state': order.billing_checkout_state,
+            'billing_street_address': order.billing_street_address,
+            'billing_address_line1': order.billing_address_line1,
             'company_name': order.companyname,
             'gst_number': order.gstnumber,
         }
@@ -888,10 +948,19 @@ def generate_invoicee(request, order_id):
         'district': order.district,
         'division': order.division,
         'state': order.state,
-        'billing_address': order.billingaddress,
-        'shipping_address': order.shippingaddress,
         'company_name': order.companyname,
         'gst_number': order.gstnumber,
+        'shipping_street_address': order.shipping_street_address,
+        'shipping_address_line1': order.shipping_address_line1,
+        'shipping_address_line2': order.shipping_address_line2,
+        'billing_zipcode': order.billing_zipcode,
+        'billing_address_line2': order.billing_address_line2,
+        'billing_checkout_city': order.billing_checkout_city,
+        'billing_checkout_district': order.billing_checkout_district,
+        'billing_checkout_division': order.billing_checkout_division,
+        'billing_checkout_state': order.billing_checkout_state,
+        'billing_street_address': order.billing_street_address,
+        'billing_address_line1': order.billing_address_line1,
         'price_wo_gst_total': price_wo_gst_total,
         'cart_total_amount_words': cart_total_amount_words
     }
@@ -995,7 +1064,7 @@ def build(request):
 
 def build_name(request, name):
     builder = get_object_or_404(Builder, name=name)
-    build_images = ArchitectureImages.objects.filter(builder=builder)
+    build_images = BuilderImages.objects.filter(builder=builder)
 
     context = {
         "builder": builder,

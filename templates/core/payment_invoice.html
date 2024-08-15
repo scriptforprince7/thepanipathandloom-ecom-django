@@ -43,13 +43,13 @@
           <div class="cs-invoice_right">
             <b class="cs-primary_color">Bill To:</b>
             <p>
-             <b>{{first_name}} {{last_name}}</b>  <br> {{street_address}}<br> {{zipcode}} <br> <b>{{phone}}</b> 
+             <b>{{first_name}} {{last_name}}</b>  <br> {{billing_street_address}}<br> {{billing_zipcode}} <br> <b>{{phone}}</b> 
             </p>
           </div>
           <div class="cs-invoice_right">
             <b class="cs-primary_color">Ship To:</b>
             <p>
-             <b>{{shipping_address}}</b>  <br>{{zipcode}}
+             <b>{{shipping_street_address}}</b>  <br>{{zipcode}}
             </p>
             {% if gst_number %}
             <b class="cs-primary_color">GST Details:</b>

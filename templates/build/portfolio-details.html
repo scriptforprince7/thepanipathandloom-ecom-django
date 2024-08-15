@@ -65,15 +65,13 @@
                             </li>
                             <li><a href="#projects">Projects</a>
                             </li>
-                            <li><a href="#">Architects <i class="las la-angle-down"></i></a>
+                            <li><a href="#">Builder <i class="las la-angle-down"></i></a>
                                 <ul class="sub-menu">
-                                    {% for arch in archi %}
-                                    <li><a href="{% url 'core:arch_name' arch.name %}">{{arch.name}}</a></li>
+                                    {% for build in buldi %}
+                                    <li><a href="{% url 'core:build_name' build.name %}">{{build.name}}</a></li>
                                     </li>
                                     {% endfor %}
                                 </ul>
-                            </li>
-                            <li><a href="#blog">Blog</a>
                             </li>
                             
                             <li><a href="#contact">Contact</a></li>
@@ -102,10 +100,10 @@
                                     <ul class="metismenu" id="mobile-menu">
                                         <li><a href="/architectures">Home</a></li>
                                         <li><a href="https://thepanipathandloom.com/architectures/#projects">Projects</a></li>
-                                        <li><a class="has-arrow" href="#">Architects</a>
+                                        <li><a class="has-arrow" href="#">Projects</a>
                                             <ul class="sub-menu">
-                                                {% for arch in archi %}
-                                    <li><a href="{% url 'core:arch_name' arch.name %}">{{arch.name}}</a></li>
+                                                {% for build in buldi %}
+                                    <li><a href="{% url 'core:build_name' build.name %}">{{build.name}}</a></li>
                                     </li>
                                     {% endfor %} 
                                             </ul>
@@ -135,8 +133,8 @@
         <div class="row pb-0">
             <div class="col-xl-6 col-lg-6 text-center">
                 <div class="section-title">                    
-                    <h1 class="gradient-text">{{architecture.name}}</h1>
-                    <h6><a href="/architectures">Architect /</a> {{architecture.name}}</h6>
+                    <h1 class="gradient-text">{{builder.name}}</h1>
+                    <h6><a href="/architectures">Architect /</a> {{builder.name}}</h6>
                 </div>                
             </div>            
         </div>
@@ -154,30 +152,30 @@ color: transparent;
                 <div class="row mt-60">
                     <div class="col-xl-7">
                         <div class="project-details">
-                            <p>{{architecture.description}}</p> <br>
+                            <p>{{builder.description}}</p> <br>
                         </div>
                         <div class="project-info-wrap">
                             <div class="project-info">
                                 <h6>Architect:</h6>
-                                <p>{{architecture.name}}</p>
+                                <p>{{builder.name}}</p>
                             </div>
                             <div class="project-info">
                                 <h6>Contact:</h6>
-                                <p>{{architecture.contact}}</p>
+                                <p>{{builder.contact}}</p>
                             </div>
                             <div class="project-info">
                                 <h6>Email:</h6>
-                                <p>{{architecture.email}}</p>
+                                <p>{{builder.email}}</p>
                             </div>
                             <div class="project-info">
                                 <h6>Location:</h6>
-                                <p>{{architecture.address}}</p>
+                                <p>{{builder.address}}</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-5">
                        
-                            <img src="{{architecture.image.url}}" alt="">
+                            <img src="{{builder.image.url}}" alt="">
                         
                     </div>
                 </div>
@@ -224,12 +222,12 @@ color: transparent;
                 </style>
                 <div class="project-details-img">
                     <div class="row mt-0">
-                        {% for arch_img in arch_images %}
+                        {% for build_img in build_images %}
     <div class="col-xl-6">
         <div class="image-container">
-            <img src="{{ arch_img.images.url }}" alt="">
+            <img src="{{ build_img.images.url }}" alt="">
             <div class="overlay">
-                <p>{{ arch_img.location }}</p>
+                <p>{{ build_img.location }}</p>
             </div>
         </div>
     </div>
@@ -302,7 +300,7 @@ color: transparent;
         <div class="container">
             <div class="row justify-content-center align-items-center justify-content-center">
                 <div class="col-lg-6 col-md-6 col-sm-12">
-                    <p class="copyright-line">© 2023 The Panipat Handloom. All rights reserved.</p>
+                    <p class="copyright-line">© 2024 The Panipat Handloom. All rights reserved.</p>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <p class="privacy">Design & Developed by: <b>Prince Sachdeva</b></p>

@@ -42,8 +42,7 @@
                 >
                   {% for p in main_cat %}
                   <li
-                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-886 level-1 menu-item-has-icon has-mega-menu"
-                  >
+                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-886 level-1 menu-item-has-icon has-mega-menu">
                     <a href=""
                       ><div class="menu-item-wrap">
                         <span class="menu-item-icon"
@@ -100,28 +99,22 @@
                                   data-element_type="section"
                                 >
                                   <div
-                                    class="elementor-container elementor-column-gap-extended"
-                                  >
+                                    class="elementor-container elementor-column-gap-extended">
                                     <div class="elementor-row">
                                       {% for cat in p.category_set.all %}
                                       <div
                                         class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-8b6c475"
                                         data-id="8b6c475"
-                                        data-element_type="column"
-                                      >
-                                        <div
-                                          class="elementor-column-wrap elementor-element-populated"
-                                        >
+                                        data-element_type="column">
+                                        <div class="elementor-column-wrap elementor-element-populated">
                                           <div class="elementor-widget-wrap">
                                             <div
                                               class="elementor-element elementor-element-60475cc elementor-widget elementor-widget-heading"
                                               data-id="60475cc"
                                               data-element_type="widget"
-                                              data-widget_type="heading.default"
-                                            >
+                                              data-widget_type="heading.default">
                                               <div
-                                                class="elementor-widget-container"
-                                              >
+                                                class="elementor-widget-container">
                                                 <style>
                                                   /*! elementor - v3.10.0 - 09-01-2023 */
                                                   .elementor-column
@@ -213,8 +206,7 @@
                                                   }
                                                 </style>
                                                 <h2
-                                                  class="elementor-heading-title elementor-size-default"
-                                                >
+                                                  class="elementor-heading-title elementor-size-default">
                                                   {{cat.cat_title}}
                                                 </h2>
                                               </div>
@@ -226,11 +218,9 @@
                                               data-id="e8afc0b"
                                               data-element_type="widget"
                                               data-widget_type="tm-simple-list.default"
-                                              style="margin-top: 0.3rem"
-                                            >
+                                              style="margin-top: 0.3rem">
                                               <div
-                                                class="elementor-widget-container"
-                                              >
+                                                class="elementor-widget-container">
                                                 <style>
                                                   .dropdown-icon {
                                                     display: inline-block;
@@ -256,23 +246,15 @@
                                                     padding: 20px;
                                                   }
                                                 </style>
-                                                <div
-                                                  class="minimog-simple-list minimog-simple-list--style-03"
-                                                >
-                                                  <div
-                                                    class="item elementor-repeater-item-9c988d6 truncated"
-                                                  >
+                                                <div class="minimog-simple-list minimog-simple-list--style-03">
+                                                  <div class="item elementor-repeater-item-9c988d6 truncated">
                                                     <a
                                                       class="link"
-                                                      href="{% url 'core:sub-category' sub_cat.sub_cat_title %}"
-                                                    >
-                                                      {{sub_cat.sub_cat_title}} </a
-                                                    ><i
-                                                      class="dropdown-icon"
-                                                    ></i>
+                                                      href="{% url 'core:sub-category' sub_cat.sub_cat_title %">
+                                                      {{sub_cat.sub_cat_title}} </a><i
+                                                      class="dropdown-icon"></i>
                                                     <div
-                                                      class="dropdown-container"
-                                                    >
+                                                      class="dropdown-container">
                                                       <ul>
                                                         {% for company in
                                                         sub_cat.company_name_set.all
@@ -280,8 +262,7 @@
                                                         company_name=company.company_name_title
                                                         %} {% if company_name %}
                                                         <a
-                                                          href="{% url 'core:sub-category' sub_cat_title=sub_cat.sub_cat_title %}#{{ company.sid }}"
-                                                        >
+                                                          href="{% url 'core:sub-category' sub_cat_title=sub_cat.sub_cat_title %}#{{ company.sid }}">
                                                           <li>
                                                             {{ company_name }}
                                                           </li>

@@ -1008,7 +1008,7 @@
                         href="{% if product.product_slug %}{% url 'core:product' product.product_slug %}{% else %}{% url 'core:producttitle' product.title %}{% endif %}">{{product.title}}</a>
                     </p>
 
-                    {% if product.price|floatformat:2 != '1.99' %}
+                    {% if product.price|floatformat:2 != '1.99' and product.price|floatformat:2 != '1.00' %}
 <p class="woocommerce-loop-product__title post-title-2-rows" style="font-family: Fraunces;">
     <a href=""
        style="background: -webkit-linear-gradient(45deg, rgba(255,0,120,1) 15%, rgba(0,199,255,1) 100%);background-clip: text;-webkit-background-clip: text;color: transparent;font-size: 1.2rem;">
