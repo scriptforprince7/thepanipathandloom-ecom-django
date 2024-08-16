@@ -575,16 +575,6 @@ def payment_invoice(request):
     checkout_division = query_params.get('checkout_division')
     checkout_state = query_params.get('checkout_state')
     shipping_street_address = query_params.get('shipping_street_address')
-    shipping_address_line1 = query_params.get('shipping_address_line1')
-    shipping_address_line2 = query_params.get('shipping_address_line2')
-    billing_zipcode = query_params.get('billing_zipcode')
-    billing_checkout_city = query_params.get('billing_checkout_city')
-    billing_checkout_district = query_params.get('billing_checkout_district')
-    billing_checkout_division = query_params.get('billing_checkout_division')
-    billing_checkout_state = query_params.get('billing_checkout_state')
-    billing_street_address = query_params.get('billing_street_address')
-    billing_address_line1 = query_params.get('billing_address_line1')
-    billing_address_line2 = query_params.get('billing_address_line2')
     cart_total_amount = 0
     total_amount = 0
     price_wo_gst_total = 0
@@ -679,17 +669,8 @@ def payment_invoice(request):
                 district=checkout_district,
                 division=checkout_division,
                 state=checkout_state,
-                shipping_street_address=shipping_street_address,
-                shipping_address_line1=shipping_address_line1,
-                shipping_address_line2=shipping_address_line2,
-                billing_zipcode=billing_zipcode,
-                billing_checkout_city=billing_checkout_city,
-                billing_checkout_district=billing_checkout_district,
-                billing_checkout_division=billing_checkout_division,
-                billing_checkout_state=billing_checkout_state,
-                billing_street_address=billing_street_address,
-                billing_address_line1=billing_address_line1,
-                billing_address_line2=billing_address_line2,
+                billingaddress=street_address,
+                shippingaddress=shipping_address,
                 phone=phone,
                 email=email,
                 price_wo_gst_total=price_wo_gst_total,
@@ -840,17 +821,8 @@ def generate_invoice(request, order_id):
             'district': order.district,
             'division': order.division,
             'state': order.state,
-            'shipping_street_address': order.shipping_street_address,
-            'shipping_address_line1': order.shipping_address_line1,
-            'shipping_address_line2': order.shipping_address_line2,
-            'billing_zipcode': order.billing_zipcode,
-            'billing_address_line2': order.billing_address_line2,
-            'billing_checkout_city': order.billing_checkout_city,
-            'billing_checkout_district': order.billing_checkout_district,
-            'billing_checkout_division': order.billing_checkout_division,
-            'billing_checkout_state': order.billing_checkout_state,
-            'billing_street_address': order.billing_street_address,
-            'billing_address_line1': order.billing_address_line1,
+            'billing_address': order.billingaddress,
+            'shipping_address': order.shippingaddress,
             'company_name': order.companyname,
             'gst_number': order.gstnumber,
         }
@@ -870,19 +842,10 @@ def generate_invoice(request, order_id):
         'district': order.district,
         'division': order.division,
         'state': order.state,
+        'billing_address': order.billingaddress,
+        'shipping_address': order.shippingaddress,
         'company_name': order.companyname,
         'gst_number': order.gstnumber,
-        'shipping_street_address': order.shipping_street_address,
-        'shipping_address_line1': order.shipping_address_line1,
-        'shipping_address_line2': order.shipping_address_line2,
-        'billing_zipcode': order.billing_zipcode,
-        'billing_address_line2': order.billing_address_line2,
-        'billing_checkout_city': order.billing_checkout_city,
-        'billing_checkout_district': order.billing_checkout_district,
-        'billing_checkout_division': order.billing_checkout_division,
-        'billing_checkout_state': order.billing_checkout_state,
-        'billing_street_address': order.billing_street_address,
-        'billing_address_line1': order.billing_address_line1,
         'price_wo_gst_total': price_wo_gst_total,  # Add price_wo_gst_total to context
         'cart_total_amount_words': cart_total_amount_words
     }
@@ -918,17 +881,8 @@ def generate_invoicee(request, order_id):
             'district': order.district,
             'division': order.division,
             'state': order.state,
-            'shipping_street_address': order.shipping_street_address,
-            'shipping_address_line1': order.shipping_address_line1,
-            'shipping_address_line2': order.shipping_address_line2,
-            'billing_zipcode': order.billing_zipcode,
-            'billing_address_line2': order.billing_address_line2,
-            'billing_checkout_city': order.billing_checkout_city,
-            'billing_checkout_district': order.billing_checkout_district,
-            'billing_checkout_division': order.billing_checkout_division,
-            'billing_checkout_state': order.billing_checkout_state,
-            'billing_street_address': order.billing_street_address,
-            'billing_address_line1': order.billing_address_line1,
+            'billing_address': order.billingaddress,
+            'shipping_address': order.shippingaddress,
             'company_name': order.companyname,
             'gst_number': order.gstnumber,
         }
@@ -948,19 +902,10 @@ def generate_invoicee(request, order_id):
         'district': order.district,
         'division': order.division,
         'state': order.state,
+        'billing_address': order.billingaddress,
+        'shipping_address': order.shippingaddress,
         'company_name': order.companyname,
         'gst_number': order.gstnumber,
-        'shipping_street_address': order.shipping_street_address,
-        'shipping_address_line1': order.shipping_address_line1,
-        'shipping_address_line2': order.shipping_address_line2,
-        'billing_zipcode': order.billing_zipcode,
-        'billing_address_line2': order.billing_address_line2,
-        'billing_checkout_city': order.billing_checkout_city,
-        'billing_checkout_district': order.billing_checkout_district,
-        'billing_checkout_division': order.billing_checkout_division,
-        'billing_checkout_state': order.billing_checkout_state,
-        'billing_street_address': order.billing_street_address,
-        'billing_address_line1': order.billing_address_line1,
         'price_wo_gst_total': price_wo_gst_total,
         'cart_total_amount_words': cart_total_amount_words
     }
