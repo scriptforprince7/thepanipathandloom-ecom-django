@@ -490,103 +490,128 @@
 </div>
 {% endblock innerheader %} {% block content %}
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+#toggle {
+  display: block;
+  width: 28px;
+  height: 30px;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  z-index: 1000; /* Keep the toggle on top of other content */
+}
 
-* {
+#toggle span:after,
+#toggle span:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -9px;
+}
+
+#toggle span:after {
+  top: 9px;
+}
+
+#toggle span {
+  position: relative;
+  display: block;
+}
+
+#toggle span,
+#toggle span:after,
+#toggle span:before {
+  width: 100%;
+  height: 5px;
+  background-color: #888;
+  transition: all 0.3s;
+  backface-visibility: hidden;
+  border-radius: 2px;
+}
+
+/* on activation */
+#toggle.on span {
+  background-color: transparent;
+}
+
+#toggle.on span:before {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+#toggle.on span:after {
+  transform: rotate(-45deg) translate(7px, -8px);
+}
+
+#toggle.on + #menuu {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Menu appearance */
+#menuu {
+  position: fixed;
+  bottom: 60px;
+  left: 20px;
+  color: #999;
+  width: 200px;
+  padding: 10px;
+  margin: auto;
+  font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
+  text-align: center;
+  border-radius: 4px;
+  background: white;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s;
+  z-index: 1001; /* Increased z-index to ensure it is above all other elements */
+}
+
+#menuu:after {
+  position: absolute;
+  bottom: -15px;
+  left: 95px;
+  content: "";
+  display: block;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 20px solid white;
+}
+
+ul, li, li a {
+  list-style: none;
+  display: block;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
-.island {
-  overflow: hidden;
-  background: black;
-  width: 200px;
-  height: 44px;
-  border-radius: 50px;
-  margin: 10px auto;
-  cursor: pointer;
+li a {
+  padding: 5px;
+  color: #888;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+li a:hover,
+li a:focus {
+  background: #1ABC9C;
   color: #fff;
-  transition: all .3s ease-out;
 }
 
-.hero-content {
-  width: 100%;
-  padding: 4px 4px 0px 4px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.island .titleImage {
-  width: 35px;
-  height: 35px;
-  border-radius: 100%;
-}
-
-.island .island-default-text {
-  margin-right: 10px;
-}
-
-.orderTime {
-  position: relative;
-  font-weight: bold;
-  margin-top: -4px;
-  color: #bdc3c7;
-}
-
-.orderTitle {
-  position: absolute;
-  top: -200px;
-  right: 20px;
-  color: whitesmoke;
-}
-
-.orderTitle p {
-  margin-top: 6px;
-  font-weight: bold;
-  color: #26A65B;
-}
-
-.orderTime::after {
-  position: absolute;
-  content: '';
-  width: 100%;
-  height: 4px;
-  background: green;
-  bottom: -6px;
-  left: 0;
-  border-radius: 10px;
-}
-
-.ingredients {
-  position: absolute;
-  bottom: -180px;
-  left: -100%;
-  opacity: .5;
-  padding: 0 4px;
-}
 
 </style>
-<main class="container">
-  <div class="island">
-    <div class="hero-content">
-      <img src="https://thepanipathandloom.com/static/wp-content/themes/minimog-child-demo/assets/demos/megamog/tph.png" alt="dice" class="titleImage">
-      <div class="island-default-text">
-        <h5 class="orderTime">15 mins</h5>
-        <div class="orderTitle">
-        </div>
-        <p class="ingredients">
-          {% for work in works %}
-         <span>{{ work.category_title }}</span> 
-         {% endfor %} 
-        </p>
-       
-      </div>
-    </div>
-  </div>
-</main>
+<a href="#menuu" id="toggle"><span></span></a>
+
+<div id="menuu">
+  <ul>
+    {% for work in works %}
+    <li><a href="#{{ work.wid }}">{{ work.category_title }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+
+
+
 <div id="page-content" class="page-content">
   <div class="container-broad">
     <div class="dokan-profile-frame-wrapper">
@@ -681,7 +706,7 @@
 }
     </style>
 {% for work in works %}
-<div class="row">
+<div class="row" id="{{work.wid}}">
 <div class="page-sidebar page-sidebar-left sidebar-primary">
   <div
     class="page-sidebar-inner tm-sticky-column"
@@ -891,92 +916,64 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 <script>
-  const island = document.querySelector(".island");
-island.addEventListener("mouseenter", function () {
-  gsap.to(island, {
-    duration: 0.5,
-    width: "280px",
-    height: "250px",
-    borderRadius: "6px",
-    ease: Power1.easeInOut,
-    onComplete: () => {
-      gsap.fromTo(
-        ".orderTitle",
-        {
-          opacity: 0
-        },
-        {
-          opacity: 1,
-          duration: 0.4,
-          top: "24%"
-        }
-      );
-      gsap.to(".hero-content", {
-        top: 10,
-        padding: "4px 20px 0px 20px"
-      });
-      gsap.fromTo(
-        ".ingredients",
-        {
-          opacity: 0
-        },
-        {
-          opacity: 0.5,
-          duration: 0.6,
-          left: "5%"
-        }
-      );
+var theToggle = document.getElementById("toggle");
+// hasClass
+function hasClass(elem, className) {
+  return new RegExp(" " + className + " ").test(" " + elem.className + " ");
+}
+// addClass
+function addClass(elem, className) {
+  if (!hasClass(elem, className)) {
+    elem.className += " " + className;
+  }
+}
+// removeClass
+function removeClass(elem, className) {
+  var newClass = " " + elem.className.replace(/[\t\r\n]/g, " ") + " ";
+  if (hasClass(elem, className)) {
+    while (newClass.indexOf(" " + className + " ") >= 0) {
+      newClass = newClass.replace(" " + className + " ", " ");
     }
-  });
-  gsap.to(".island .titleImage", {
-    opacity: 0,
-  });
-  gsap.to(".island .orderTime", {
-    opacity: 0,
-    y: -10,
-    delay: 0.3
-  });
-  gsap.to(".island .orderTime", {
-    delay: 0.4,
-    display: "none"
-  });
-});
-island.addEventListener("mouseleave", function () {
-  gsap.to(island, {
-    duration: 0.6,
-    width: "200px",
-    height: "44px",
-    borderRadius: "50px",
-    ease: Power4.easeOut,
-    onComplete: () => {
-      gsap.to(".island .orderTime", {
-        opacity: 1,
-        y: 0
-      });
-      gsap.to(".island .orderTime", {
-        display: "flex"
-      });
-      gsap.to(".orderTitle", {
-        top: "-100%"
-      });
-      gsap.to(".ingredients", {
-        left: "-100%"
+    elem.className = newClass.replace(/^\s+|\s+$/g, "");
+  }
+}
+// toggleClass
+function toggleClass(elem, className) {
+  var newClass = " " + elem.className.replace(/[\t\r\n]/g, " ") + " ";
+  if (hasClass(elem, className)) {
+    while (newClass.indexOf(" " + className + " ") >= 0) {
+      newClass = newClass.replace(" " + className + " ", " ");
+    }
+    elem.className = newClass.replace(/^\s+|\s+$/g, "");
+  } else {
+    elem.className += " " + className;
+  }
+}
+
+theToggle.onclick = function () {
+  toggleClass(this, "on");
+  return false;
+};
+
+
+</script>
+
+<script>
+  document.querySelectorAll('#menuu a').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    const targetId = this.getAttribute('href').substring(1);
+    const targetElement = document.getElementById(targetId);
+
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
       });
     }
-  });
-  gsap.to(".island .titleImage", {
-    width: "50px",
-    height: "35px",
-    borderRadius: "100%"
-  });
-  gsap.to(".orderTitle", {
-    top: "-200px"
-  });
-  gsap.to(".hero-content", {
-    top: 0,
-    padding: "4px 4px 0px 4px"
   });
 });
 
