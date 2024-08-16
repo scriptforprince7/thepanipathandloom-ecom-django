@@ -120,6 +120,8 @@ function updateCartItemsList(cartData) {
     cartItemsList.append(noProductsHtml);
   } else {
     $(".no-products-message").remove(); // Remove the no products message if present
+    $(".fly-cart-footer").show();
+// Remove the no products message if present
 
     $.each(cartData, function (productId, item) {
       var productUrl = generateProductUrl(baseUrl, item.title);

@@ -1091,21 +1091,72 @@
                         </div>
 
                         {% if ecommerce_enabled %}
+                        <style>
+                          
+                          
+                          .value-button {
+                            display: inline-block;
+                            border: 1px solid #ddd;
+                            margin: 0px;
+                            width: 38px;
+                            height: 31px;
+                            text-align: center;
+                            vertical-align: middle;
+                            padding: 1px 0;
+                            background: #eee;
+                            -webkit-touch-callout: none;
+                            -webkit-user-select: none;
+                            -khtml-user-select: none;
+                            -moz-user-select: none;
+                            -ms-user-select: none;
+                            user-select: none;
+                          }
+                          
+                          .value-button:hover {
+                            cursor: pointer;
+                          }
+                          
+                          form #decrease {
+                            margin-right: -2px;
+                            border-radius: 8px 0 0 8px;
+                          }
+                          
+                          form #increase {
+                            margin-left: -2px;
+                            border-radius: 0 8px 8px 0;
+                          }
+                          
+                          form #input-wrap {
+                            margin: 0px;
+                            padding: 0px;
+                          }
+                          
+                          input#number {
+                            text-align: center;
+                            border: none;
+                            border-top: 1px solid #ddd;
+                            border-bottom: 1px solid #ddd;
+                            margin: 0px;
+                            width: 77px;
+                            height: 16px;
+                          }
+                          
+                          input[type=number]::-webkit-inner-spin-button,
+                          input[type=number]::-webkit-outer-spin-button {
+                              -webkit-appearance: none;
+                              margin: 0;
+                          }
+                        </style>
                         <div>
-                          <div
-                            class="quantity"
-                            style="margin-bottom: 0.6rem; margin-top: 0.4rem"
-                          >
-                          <input
-                          type="number"
-                          name="quantity"
-                          value="1"
-                          id="product-quantity-{{ main_product.pid }}"
-                          class="qty-control__number text-center product-quantity-{{ main_product.pid }}"
-                        />
-                        <button type="button" class="decrease">-</button>
-                        <button type="button" class="increase">+</button>
-                        </div>
+                        
+                          <form>
+                            <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
+
+                            <input type="number" id="number" class="product-quantity-{{ main_product.pid }}" value="1" />
+
+                            <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
+                          </form>
+                      
                         
                         <input type="hidden" value="{{main_product.pid}}" class="product-id-{{main_product.pid}}">
                         <input type="hidden" value="{{main_product.title}}" class="product-title-{{main_product.pid}}">
@@ -2688,6 +2739,23 @@
       sendWhatsAppMessage();
     });
   })();
+</script>
+<script>
+  function increaseValue() {
+    var value = parseInt(document.getElementById("number").value, 10);
+    value = isNaN(value) ? 0 : value;
+    value++;
+    document.getElementById("number").value = value;
+  }
+  
+  function decreaseValue() {
+    var value = parseInt(document.getElementById("number").value, 10);
+    value = isNaN(value) ? 0 : value;
+    value < 1 ? (value = 1) : "";
+    value--;
+    document.getElementById("number").value = value;
+  }
+  
 </script>
 <noscript
   ><iframe
