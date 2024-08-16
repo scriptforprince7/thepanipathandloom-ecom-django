@@ -87,7 +87,7 @@ function generateProductUrl(baseUrl, title) {
 }
 
 function updateCartItemsList(cartData) {
-  var cartItemsList = $("table tbody");
+  var cartItemsList = $(".product_list_widget");
   cartItemsList.empty();
 
   var subtotalAmount = 0;
@@ -124,40 +124,50 @@ function updateCartItemsList(cartData) {
     $.each(cartData, function (productId, item) {
       var productUrl = generateProductUrl(baseUrl, item.title);
       var itemHtml = `
-        <tr class="position-relative">
-          <td class="align-middle text-center">
-            <a href="#" class="d-block clear-product remove-cart delete-product js-cart-item-remove" data-product="${productId}">
-              <i class="far fa-times"></i>
-            </a>
-          </td>
-          <td class="shop-product">
-            <div class="d-flex align-items-center">
-              <div class="me-6">
-                <img src="${item.image}" width="60" height="80" alt="${item.title}" />
-              </div>
-              <div>
-                <p class="card-text mb-1">
-                  <span class="fs-15px fw-bold text-body-emphasis">₹ ${parseFloat(item.price).toFixed(2)}</span>
-                </p>
-                <p class="fw-500 text-body-emphasis">
-                  <a href="/cart">${item.title} x ${item.qty}</a><br>
-                  ${item.sku}
-                </p>
-              </div>
-            </div>
-          </td>
-          <td class="align-middle p-0">
-            <div class="input-group position-relative shop-quantity">
-              <a href="#" class="shop-down position-absolute z-index-2">
-                <i class="far fa-minus"></i>
-              </a>
-              <input name="number[]" type="number" class="form-control form-control-sm px-6 py-4 fs-6 text-center border-0" value="${item.qty}" required />
-              <a href="#" class="shop-up position-absolute z-index-2">
-                <i class="far fa-plus"></i>
-              </a>
-            </div>
-          </td>
-        </tr>`;
+      <li class="woocommerce-mini-cart-item mini_cart_item">
+                        <div class="product-thumbnail">
+                                        <a href="">
+                              <m-image class="minimog-lazy-image m-img-loaded" style="--lazy-image-width: 450px;--lazy-image-height: 100%;" intersecting="true"><img src="${item.image}" width="450" height="450" alt="${item.title}" loading="lazy" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail product-main-image-img"></m-image>							</a>
+                                    </div>
+              
+                        <div class="product-info">
+                          <h3 class="product-name post-title-2-rows">
+                                            <a href="">
+                                            ${item.title} x ${item.qty}						</a>
+                                        </h3>
+                          <dl class="variation">
+                    <dt class="variation-Vendor">Sku:</dt>
+                  <dd class="variation-Vendor"><p>${item.sku}</p>
+              </dd>
+                </dl>
+              
+                          <div class="product-price"><b><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">₹</span> ${parseFloat(item.price).toFixed(2)}</bdi></span></b></div>
+                          <div class="product-quantity-wrap">
+                              <div class="quantity-button-wrapper">
+                  <label class="screen-reader-text" aria-label="Malm High bed frame/4 storage boxes quantity">Quantity</label>
+                  <div class="quantity">
+                          <input
+                           type="number"
+                          class="input-text qty text update-product product-qty-${productId}"
+                          data-product="${productId}"
+                          data-sku="${item.sku}"
+                          data-price="${item.price}"
+                          value="${item.qty}"
+                          size="4"
+                          min="0"
+                          max=""
+                          step="1"
+                          name="qty"
+                          inputmode="numeric"
+                          autocomplete="off" >
+                      <button type="button" class="decrease update-product" data-product="${productId}" data-sku="${item.sku}" data-price="${item.price}">-</button>
+                      <button type="button" class="increase update-product" data-product="${productId}" data-sku="${item.sku}" data-price="${item.price}">+</button>
+                              </div>
+                </div>
+                            <button class="delete-product" data-product="${productId}">Remove</button>						
+                          </div>
+                        </div>
+                      </li>`;
       cartItemsList.append(itemHtml);
 
       subtotalAmount += parseFloat(item.price) * item.qty;

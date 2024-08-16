@@ -3079,7 +3079,8 @@
                       </div>
                       <div class="fly-cart-body scroll-y ps" style="height: 353px;">
                         <div class="fly-cart-body-content">
-                          <div class="widget_shopping_cart_content">	<ul class="woocommerce-mini-cart cart_list product_list_widget ">
+                          <div class="widget_shopping_cart_content">	
+                            <ul class="woocommerce-mini-cart cart_list product_list_widget ">
                             {% if cart_data.items %}
                             {% for product_id, item in cart_data.items %}
                           <li class="woocommerce-mini-cart-item mini_cart_item">
@@ -3094,9 +3095,6 @@
                                               {{ item.title }} x {{item.qty}}						</a>
                                         </h3>
                           <dl class="variation">
-                    <!-- <dt class="variation-Color">Color:</dt>
-                  <dd class="variation-Color"><p>Black</p>
-              </dd> -->
                     <dt class="variation-Vendor">Sku:</dt>
                   <dd class="variation-Vendor"><p>{{ item.sku }}</p>
               </dd>
