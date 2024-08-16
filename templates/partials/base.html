@@ -1248,7 +1248,7 @@
           position: fixed;
           width: 60px;
           height: 60px;
-          bottom: 40px;
+          bottom: 20px;
           right: 40px;
           background-color: #25d366;
           color: #fff;
@@ -1271,11 +1271,134 @@
           color: white;
         }
       </style>
+      <style>
+
+        .whatsapp-floatt {
+          cursor: pointer;
+          position: fixed;
+          width: 60px;
+          height: 60px;
+          bottom: 90px;
+          right: 40px;
+          background-color: palevioletred;
+          color: #fff;
+          border-radius: 50px;
+          text-align: center;
+          font-size: 30px;
+          box-shadow: 2px 2px 10px #999;
+          transition: all 0.3s ease;
+          z-index: 999;
+        }
+        
+        .whatsapp-floatt:hover {
+          box-shadow: 2px 2px 15px #25d366;
+        }
+        
+        .whatsapp-floatt i {
+          margin-top: 9px;
+          margin-left: 3.6px;
+          font-size: 44px !important;
+          color: white;
+          animation: flipbook-animation 2s infinite; /* Adjust the speed (2s) as needed */
+          transform-origin: center;
+          display: inline-block;
+        }
+        @keyframes flipbook-animation {
+  0% {
+    transform: rotateY(0deg) scale(1);
+  }
+  25% {
+    transform: rotateY(-20deg) scale(1.1);
+  }
+  50% {
+    transform: rotateY(0deg) scale(1);
+  }
+  75% {
+    transform: rotateY(20deg) scale(1.1);
+  }
+  100% {
+    transform: rotateY(0deg) scale(1);
+  }
+}
+
+      </style>
+
+<style>
+  /* Popup window styling */
+  .popup {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+      animation: fadeIn 0.5s; /* Fade-in animation */
+  }
+
+  /* Pop-up content styling */
+  .popup-content {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%; /* Increase the width */
+    height: 80%; /* Increase the height */
+    max-width: 1000px; /* Optional: set a maximum width */
+    max-height: 61vh; /* Optional: set a maximum height relative to viewport */
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.5s; /* Slide-in animation */
+    overflow: hidden; /* Ensure content fits inside the pop-up */
+}
+
+  /* Close button styling */
+  .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 24px;
+      cursor: pointer;
+  }
+
+  /* Keyframes for animations */
+  @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+  }
+
+  @keyframes slideIn {
+      from { transform: translate(-50%, -60%); }
+      to { transform: translate(-50%, -50%); }
+  }
+</style>
+
+
       <div class="whatsapp-float">
         <a class="" href="https://wa.me/+919999999009" target="_blank">
           <i class="fab fa-whatsapp" aria-hidden="true"></i>
         </a>
         </div>
+
+    <div class="whatsapp-floatt">
+      <a class="" href="#" id="flipbookIcon">
+          <i class="fas fa-book-open" aria-hidden="true"></i>
+      </a>
+  </div>
+  
+  <!-- Pop-up Window -->
+  <div id="popupWindow" class="popup">
+      <div class="popup-content">
+          <span class="close-btn">&times;</span>
+          <iframe allowfullscreen="allowfullscreen" scrolling="no" class="fp-iframe"
+                  style="border: 1px solid lightgray; width: 100%; height: 400px;"
+                  src="https://heyzine.com/flip-book/ecf1b459a4.html"></iframe>
+      </div>
+  </div>
+   
       <style>
         .small-sweetalert {
           max-width: 30px; /* Adjust this value as needed */
@@ -2182,6 +2305,32 @@
   }
 }
   </style>
+
+
+<script>
+  // Get the elements
+  var popup = document.getElementById("popupWindow");
+  var flipbookIcon = document.getElementById("flipbookIcon");
+  var closeBtn = document.querySelector(".close-btn");
+  
+  // Show the popup when the flipbook icon is clicked
+  flipbookIcon.onclick = function(e) {
+      e.preventDefault();
+      popup.style.display = "block";
+  };
+  
+  // Hide the popup when the close button is clicked
+  closeBtn.onclick = function() {
+      popup.style.display = "none";
+  };
+  
+  // Hide the popup if the user clicks outside of the popup content
+  window.onclick = function(event) {
+      if (event.target == popup) {
+          popup.style.display = "none";
+      }
+  };
+  </script>
 
   <script>
     $(document).ready(function() {

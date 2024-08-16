@@ -489,6 +489,104 @@
   </div>
 </div>
 {% endblock innerheader %} {% block content %}
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.island {
+  overflow: hidden;
+  background: black;
+  width: 200px;
+  height: 44px;
+  border-radius: 50px;
+  margin: 10px auto;
+  cursor: pointer;
+  color: #fff;
+  transition: all .3s ease-out;
+}
+
+.hero-content {
+  width: 100%;
+  padding: 4px 4px 0px 4px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.island .titleImage {
+  width: 35px;
+  height: 35px;
+  border-radius: 100%;
+}
+
+.island .island-default-text {
+  margin-right: 10px;
+}
+
+.orderTime {
+  position: relative;
+  font-weight: bold;
+  margin-top: -4px;
+  color: #bdc3c7;
+}
+
+.orderTitle {
+  position: absolute;
+  top: -200px;
+  right: 20px;
+  color: whitesmoke;
+}
+
+.orderTitle p {
+  margin-top: 6px;
+  font-weight: bold;
+  color: #26A65B;
+}
+
+.orderTime::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 4px;
+  background: green;
+  bottom: -6px;
+  left: 0;
+  border-radius: 10px;
+}
+
+.ingredients {
+  position: absolute;
+  bottom: -180px;
+  left: -100%;
+  opacity: .5;
+  padding: 0 4px;
+}
+
+</style>
+<main class="container">
+  <div class="island">
+    <div class="hero-content">
+      <img src="https://thepanipathandloom.com/static/wp-content/themes/minimog-child-demo/assets/demos/megamog/tph.png" alt="dice" class="titleImage">
+      <div class="island-default-text">
+        <h5 class="orderTime">15 mins</h5>
+        <div class="orderTitle">
+        </div>
+        <p class="ingredients">
+          {% for work in works %}
+         <span>{{ work.category_title }}</span> 
+         {% endfor %} 
+        </p>
+       
+      </div>
+    </div>
+  </div>
+</main>
 <div id="page-content" class="page-content">
   <div class="container-broad">
     <div class="dokan-profile-frame-wrapper">
@@ -790,6 +888,96 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         }
     });
+});
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+  const island = document.querySelector(".island");
+island.addEventListener("mouseenter", function () {
+  gsap.to(island, {
+    duration: 0.5,
+    width: "280px",
+    height: "250px",
+    borderRadius: "6px",
+    ease: Power1.easeInOut,
+    onComplete: () => {
+      gsap.fromTo(
+        ".orderTitle",
+        {
+          opacity: 0
+        },
+        {
+          opacity: 1,
+          duration: 0.4,
+          top: "24%"
+        }
+      );
+      gsap.to(".hero-content", {
+        top: 10,
+        padding: "4px 20px 0px 20px"
+      });
+      gsap.fromTo(
+        ".ingredients",
+        {
+          opacity: 0
+        },
+        {
+          opacity: 0.5,
+          duration: 0.6,
+          left: "5%"
+        }
+      );
+    }
+  });
+  gsap.to(".island .titleImage", {
+    opacity: 0,
+  });
+  gsap.to(".island .orderTime", {
+    opacity: 0,
+    y: -10,
+    delay: 0.3
+  });
+  gsap.to(".island .orderTime", {
+    delay: 0.4,
+    display: "none"
+  });
+});
+island.addEventListener("mouseleave", function () {
+  gsap.to(island, {
+    duration: 0.6,
+    width: "200px",
+    height: "44px",
+    borderRadius: "50px",
+    ease: Power4.easeOut,
+    onComplete: () => {
+      gsap.to(".island .orderTime", {
+        opacity: 1,
+        y: 0
+      });
+      gsap.to(".island .orderTime", {
+        display: "flex"
+      });
+      gsap.to(".orderTitle", {
+        top: "-100%"
+      });
+      gsap.to(".ingredients", {
+        left: "-100%"
+      });
+    }
+  });
+  gsap.to(".island .titleImage", {
+    width: "50px",
+    height: "35px",
+    borderRadius: "100%"
+  });
+  gsap.to(".orderTitle", {
+    top: "-200px"
+  });
+  gsap.to(".hero-content", {
+    top: 0,
+    padding: "4px 4px 0px 4px"
+  });
 });
 
 </script>
