@@ -1243,82 +1243,95 @@
           font-size: 22px; /* Adjust the font size as needed */
         }
 
-        .whatsapp-float {
-          cursor: pointer;
-          position: fixed;
-          width: 60px;
-          height: 60px;
-          bottom: 20px;
-          right: 40px;
-          background-color: #25d366;
-          color: #fff;
-          border-radius: 50px;
-          text-align: center;
-          font-size: 30px;
-          box-shadow: 2px 2px 10px #999;
-          transition: all 0.3s ease;
-          z-index: 999;
-        }
-        
-        .whatsapp-float:hover {
-          box-shadow: 2px 2px 15px #25d366;
-        }
-        
-        .whatsapp-float i {
-          margin-top: 9px;
-          margin-left: 3.6px;
-          font-size: 44px !important;
-          color: white;
-        }
-      </style>
-      <style>
+        /* General Styles */
+.whatsapp-float {
+    cursor: pointer;
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 40px;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 10px #999;
+    transition: all 0.3s ease;
+    z-index: 999;
+}
 
-        .whatsapp-floatt {
-          cursor: pointer;
-          position: fixed;
-          width: 60px;
-          height: 60px;
-          bottom: 90px;
-          right: 40px;
-          background-color: palevioletred;
-          color: #fff;
-          border-radius: 50px;
-          text-align: center;
-          font-size: 30px;
-          box-shadow: 2px 2px 10px #999;
-          transition: all 0.3s ease;
-          z-index: 999;
-        }
-        
-        .whatsapp-floatt:hover {
-          box-shadow: 2px 2px 15px #25d366;
-        }
-        
-        .whatsapp-floatt i {
-          margin-top: 9px;
-          margin-left: 3.6px;
-          font-size: 44px !important;
-          color: white;
-          animation: flipbook-animation 2s infinite; /* Adjust the speed (2s) as needed */
-          transform-origin: center;
-          display: inline-block;
-        }
-        @keyframes flipbook-animation {
-  0% {
-    transform: rotateY(0deg) scale(1);
-  }
-  25% {
-    transform: rotateY(-20deg) scale(1.1);
-  }
-  50% {
-    transform: rotateY(0deg) scale(1);
-  }
-  75% {
-    transform: rotateY(20deg) scale(1.1);
-  }
-  100% {
-    transform: rotateY(0deg) scale(1);
-  }
+.whatsapp-float:hover {
+    box-shadow: 2px 2px 15px #25d366;
+}
+
+.whatsapp-float i {
+    margin-top: 9px;
+    margin-left: 3.6px;
+    font-size: 44px !important;
+    color: white;
+}
+
+.whatsapp-floatt {
+    cursor: pointer;
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 90px;
+    right: 40px;
+    background-color: palevioletred;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 10px #999;
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.whatsapp-floatt:hover {
+    box-shadow: 2px 2px 15px #25d366;
+}
+
+.whatsapp-floatt i {
+    margin-top: 9px;
+    margin-left: 3.6px;
+    font-size: 44px !important;
+    color: white;
+    animation: flipbook-animation 2s infinite;
+    transform-origin: center;
+    display: inline-block;
+}
+
+@keyframes flipbook-animation {
+    0% {
+        transform: rotateY(0deg) scale(1);
+    }
+    25% {
+        transform: rotateY(-20deg) scale(1.1);
+    }
+    50% {
+        transform: rotateY(0deg) scale(1);
+    }
+    75% {
+        transform: rotateY(20deg) scale(1.1);
+    }
+    100% {
+        transform: rotateY(0deg) scale(1);
+    }
+}
+
+/* Media Query for Mobile Screens */
+@media (max-width: 768px) {
+    .whatsapp-float {
+        bottom: 60px; /* Adjust as needed */
+        right: 20px;  /* Adjust as needed */
+    }
+
+    .whatsapp-floatt {
+        bottom: 125px; /* Adjust as needed */
+        right: 20px;  /* Adjust as needed */
+    }
 }
 
       </style>
