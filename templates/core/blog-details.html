@@ -28,7 +28,10 @@
     <div class="header-below-wrap">
       <div class="header-below-left header-col-start">
         <div class="header-content-inner lingrad">
-          <div id="header-categories-nav" class="header-categories-nav">
+          <div
+            id="header-categories-nav"
+            class="header-categories-nav"
+          >
             <div class="inner">
               <span class="nav-toggle-btn" id="nav-toggle-btn">
                 <span class="nav-toggle-bars fa fa-bars"></span>
@@ -40,9 +43,10 @@
                   class="product-category-dropdown menu__container sm sm-simple sm-vertical"
                   data-sm-options='{"mainMenuSubOffsetX":-15,"subMenusSubOffsetX":-18,"subMenusSubOffsetY":-17,"keepInViewport":false}'
                 >
-                  {% for p in main_cat %}
+                {% for p in main_cat %}
                   <li
-                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-886 level-1 menu-item-has-icon has-mega-menu">
+                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-886 level-1 menu-item-has-icon has-mega-menu"
+                  >
                     <a href=""
                       ><div class="menu-item-wrap">
                         <span class="menu-item-icon"
@@ -78,7 +82,8 @@
                               stroke-linejoin="round"
                             />
                           </svg> </span
-                        ><span class="menu-item-title">{{p.main_title}}</span
+                        ><span class="menu-item-title"
+                          >{{p.main_title}}</span
                         ><span class="toggle-sub-menu"> </span></div
                     ></a>
                     <ul class="sub-menu children mega-menu">
@@ -99,143 +104,156 @@
                                   data-element_type="section"
                                 >
                                   <div
-                                    class="elementor-container elementor-column-gap-extended">
+                                    class="elementor-container elementor-column-gap-extended"
+                                  >
                                     <div class="elementor-row">
                                       {% for cat in p.category_set.all %}
                                       <div
                                         class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-8b6c475"
                                         data-id="8b6c475"
-                                        data-element_type="column">
-                                        <div class="elementor-column-wrap elementor-element-populated">
-                                          <div class="elementor-widget-wrap">
+                                        data-element_type="column"
+                                      >
+                                        <div
+                                          class="elementor-column-wrap elementor-element-populated"
+                                        >
+                                          <div
+                                            class="elementor-widget-wrap"
+                                          >
                                             <div
                                               class="elementor-element elementor-element-60475cc elementor-widget elementor-widget-heading"
                                               data-id="60475cc"
                                               data-element_type="widget"
-                                              data-widget_type="heading.default">
+                                              data-widget_type="heading.default"
+                                            >
                                               <div
-                                                class="elementor-widget-container">
-                                                <style>
-                                                  /*! elementor - v3.10.0 - 09-01-2023 */
-                                                  .elementor-column
-                                                    .elementor-spacer-inner {
-                                                    height: var(--spacer-size);
-                                                  }
-                                                  .e-con {
-                                                    --container-widget-width: 100%;
-                                                  }
-                                                  .e-con-inner
-                                                    > .elementor-widget-spacer,
-                                                  .e-con
-                                                    > .elementor-widget-spacer {
-                                                    width: var(
-                                                      --container-widget-width,
-                                                      var(--spacer-size)
-                                                    );
-                                                    --align-self: var(
-                                                      --container-widget-align-self,
-                                                      initial
-                                                    );
-                                                    --flex-shrink: 0;
-                                                  }
-                                                  .e-con-inner
-                                                    > .elementor-widget-spacer
-                                                    > .elementor-widget-container,
-                                                  .e-con-inner
-                                                    > .elementor-widget-spacer
-                                                    > .elementor-widget-container
-                                                    > .elementor-spacer,
-                                                  .e-con
-                                                    > .elementor-widget-spacer
-                                                    > .elementor-widget-container,
-                                                  .e-con
-                                                    > .elementor-widget-spacer
-                                                    > .elementor-widget-container
-                                                    > .elementor-spacer {
-                                                    height: 100%;
-                                                  }
-                                                  .e-con-inner
-                                                    > .elementor-widget-spacer
-                                                    > .elementor-widget-container
-                                                    > .elementor-spacer
-                                                    > .elementor-spacer-inner,
-                                                  .e-con
-                                                    > .elementor-widget-spacer
-                                                    > .elementor-widget-container
-                                                    > .elementor-spacer
-                                                    > .elementor-spacer-inner {
-                                                    height: var(
-                                                      --container-widget-height,
-                                                      var(--spacer-size)
-                                                    );
-                                                  }
-                                                </style>
-                                                <style>
-                                                  /*! elementor - v3.10.0 - 09-01-2023 */
-                                                  .elementor-heading-title {
-                                                    padding: 0;
-                                                    margin: 0;
-                                                    line-height: 1;
-                                                  }
-                                                  .elementor-widget-heading
-                                                    .elementor-heading-title[class*="elementor-size-"]
-                                                    > a {
-                                                    color: inherit;
-                                                    font-size: inherit;
-                                                    line-height: inherit;
-                                                  }
-                                                  .elementor-widget-heading
-                                                    .elementor-heading-title.elementor-size-small {
-                                                    font-size: 15px;
-                                                  }
-                                                  .elementor-widget-heading
-                                                    .elementor-heading-title.elementor-size-medium {
-                                                    font-size: 19px;
-                                                  }
-                                                  .elementor-widget-heading
-                                                    .elementor-heading-title.elementor-size-large {
-                                                    font-size: 29px;
-                                                  }
-                                                  .elementor-widget-heading
-                                                    .elementor-heading-title.elementor-size-xl {
-                                                    font-size: 39px;
-                                                  }
-                                                  .elementor-widget-heading
-                                                    .elementor-heading-title.elementor-size-xxl {
-                                                    font-size: 59px;
-                                                  }
-                                                </style>
+                                                class="elementor-widget-container"
+                                              >
+                                              <style>
+                                                /*! elementor - v3.10.0 - 09-01-2023 */
+                                                .elementor-column
+                                                  .elementor-spacer-inner {
+                                                  height: var(
+                                                    --spacer-size
+                                                  );
+                                                }
+                                                .e-con {
+                                                  --container-widget-width: 100%;
+                                                }
+                                                .e-con-inner
+                                                  > .elementor-widget-spacer,
+                                                .e-con
+                                                  > .elementor-widget-spacer {
+                                                  width: var(
+                                                    --container-widget-width,
+                                                    var(
+                                                      --spacer-size
+                                                    )
+                                                  );
+                                                  --align-self: var(
+                                                    --container-widget-align-self,
+                                                    initial
+                                                  );
+                                                  --flex-shrink: 0;
+                                                }
+                                                .e-con-inner
+                                                  > .elementor-widget-spacer
+                                                  > .elementor-widget-container,
+                                                .e-con-inner
+                                                  > .elementor-widget-spacer
+                                                  > .elementor-widget-container
+                                                  > .elementor-spacer,
+                                                .e-con
+                                                  > .elementor-widget-spacer
+                                                  > .elementor-widget-container,
+                                                .e-con
+                                                  > .elementor-widget-spacer
+                                                  > .elementor-widget-container
+                                                  > .elementor-spacer {
+                                                  height: 100%;
+                                                }
+                                                .e-con-inner
+                                                  > .elementor-widget-spacer
+                                                  > .elementor-widget-container
+                                                  > .elementor-spacer
+                                                  > .elementor-spacer-inner,
+                                                .e-con
+                                                  > .elementor-widget-spacer
+                                                  > .elementor-widget-container
+                                                  > .elementor-spacer
+                                                  > .elementor-spacer-inner {
+                                                  height: var(
+                                                    --container-widget-height,
+                                                    var(
+                                                      --spacer-size
+                                                    )
+                                                  );
+                                                }
+                                              </style>
+                                               <style>
+                                                /*! elementor - v3.10.0 - 09-01-2023 */
+                                                .elementor-heading-title {
+                                                  padding: 0;
+                                                  margin: 0;
+                                                  line-height: 1;
+                                                }
+                                                .elementor-widget-heading
+                                                  .elementor-heading-title[class*="elementor-size-"]
+                                                  > a {
+                                                  color: inherit;
+                                                  font-size: inherit;
+                                                  line-height: inherit;
+                                                }
+                                                .elementor-widget-heading
+                                                  .elementor-heading-title.elementor-size-small {
+                                                  font-size: 15px;
+                                                }
+                                                .elementor-widget-heading
+                                                  .elementor-heading-title.elementor-size-medium {
+                                                  font-size: 19px;
+                                                }
+                                                .elementor-widget-heading
+                                                  .elementor-heading-title.elementor-size-large {
+                                                  font-size: 29px;
+                                                }
+                                                .elementor-widget-heading
+                                                  .elementor-heading-title.elementor-size-xl {
+                                                  font-size: 39px;
+                                                }
+                                                .elementor-widget-heading
+                                                  .elementor-heading-title.elementor-size-xxl {
+                                                  font-size: 59px;
+                                                }
+                                              </style>
                                                 <h2
-                                                  class="elementor-heading-title elementor-size-default">
+                                                  class="elementor-heading-title elementor-size-default"
+                                                >
                                                   {{cat.cat_title}}
                                                 </h2>
                                               </div>
                                             </div>
-                                            {% for sub_cat in
-                                            cat.sub_categories_set.all %}
+                                            {% for sub_cat in cat.sub_categories_set.all %}
                                             <div
                                               class="elementor-element elementor-element-e8afc0b elementor-widget elementor-widget-tm-simple-list"
                                               data-id="e8afc0b"
                                               data-element_type="widget"
-                                              data-widget_type="tm-simple-list.default"
-                                              style="margin-top: 0.3rem">
+                                              data-widget_type="tm-simple-list.default" style="margin-top: 0.3rem;"
+                                            >
                                               <div
-                                                class="elementor-widget-container">
-                                                <style>
-                                                  .dropdown-icon {
+                                                class="elementor-widget-container"
+                                              >
+                                              <style>
+                                                .dropdown-icon {
                                                     display: inline-block;
-                                                    width: 8px;
+                                                    width: 8px; 
                                                     height: 8px;
-                                                    border-left: 2px solid
-                                                      rgb(101, 96, 96);
-                                                    border-bottom: 2px solid
-                                                      rgb(101, 96, 96);
-                                                    transform: rotate(-45deg);
+                                                    border-left: 2px solid rgb(101, 96, 96);
+                                                    border-bottom: 2px solid rgb(101, 96, 96);
+                                                    transform: rotate(-45deg); 
                                                     margin-left: 5px; /* Add margin to the left of the dropdown icon */
                                                     cursor: pointer; /* Change cursor to indicate interactivity */
-                                                  }
-
-                                                  .dropdown-container {
+                                                }
+                                                
+                                                .dropdown-container {
                                                     display: none;
                                                     margin-top: 5px;
                                                     padding: 10px;
@@ -244,40 +262,36 @@
                                                     position: absolute;
                                                     z-index: 1;
                                                     padding: 20px;
-                                                  }
-                                                </style>
-                                                <div class="minimog-simple-list minimog-simple-list--style-03">
-                                                  <div class="item elementor-repeater-item-9c988d6 truncated">
+                                                }
+                                            </style>
+                                                <div
+                                                  class="minimog-simple-list minimog-simple-list--style-03"
+                                                >
+                                                  <div
+                                                    class="item elementor-repeater-item-9c988d6 truncated"
+                                                  >
                                                     <a
                                                       class="link"
-                                                      href="{% url 'core:sub-category' sub_cat.sub_cat_title %">
-                                                      {{sub_cat.sub_cat_title}} </a><i
-                                                      class="dropdown-icon"></i>
-                                                    <div
-                                                      class="dropdown-container">
+                                                      href="{% url 'core:sub-category' sub_cat.sub_cat_title %}"
+                                                    >
+                                                      {{sub_cat.sub_cat_title}}
+                                                    </a><i class="dropdown-icon"></i>
+                                                    <div class="dropdown-container">
                                                       <ul>
-                                                        {% for company in
-                                                        sub_cat.company_name_set.all
-                                                        %} {% with
-                                                        company_name=company.company_name_title
-                                                        %} {% if company_name %}
-                                                        <a
-                                                          href="{% url 'core:sub-category' sub_cat_title=sub_cat.sub_cat_title %}#{{ company.sid }}">
-                                                          <li>
-                                                            {{ company_name }}
-                                                          </li>
-                                                        </a>
-                                                        {% else %}
-                                                        <li>
-                                                          No brands available
-                                                        </li>
-                                                        {% endif %} {% endwith
-                                                        %} {% empty %}
-                                                        <li>
-                                                          No brands available
-                                                        </li>
+                                                        {% for company in sub_cat.company_name_set.all %}
+                                                            {% with company_name=company.company_name_title %}
+                                                                {% if company_name %}
+                                                                    <a href="{% url 'core:sub-category' sub_cat_title=sub_cat.sub_cat_title %}#{{ company.sid }}">
+                                                                        <li>{{ company_name }}</li>
+                                                                    </a>
+                                                                {% else %}
+                                                                    <li>No brands available</li>
+                                                                {% endif %}
+                                                            {% endwith %}
+                                                        {% empty %}
+                                                            <li>No brands available</li>
                                                         {% endfor %}
-                                                      </ul>
+                                                    </ul>
                                                     </div>
                                                   </div>
                                                 </div>
@@ -285,42 +299,23 @@
                                             </div>
                                             {% endfor %}
                                             <script>
-                                              document.addEventListener(
-                                                "DOMContentLoaded",
-                                                function () {
-                                                  const dropdownIcons =
-                                                    document.querySelectorAll(
-                                                      ".dropdown-icon"
-                                                    );
-
-                                                  dropdownIcons.forEach(
-                                                    (icon) => {
-                                                      icon.addEventListener(
-                                                        "click",
-                                                        () => {
-                                                          const dropdownContainer =
-                                                            icon.nextElementSibling;
-                                                          dropdownContainer.style.display =
-                                                            dropdownContainer
-                                                              .style.display ===
-                                                              "none" ||
-                                                            dropdownContainer
-                                                              .style.display ===
-                                                              ""
-                                                              ? "block"
-                                                              : "none";
-                                                        }
-                                                      );
-                                                    }
-                                                  );
-                                                }
-                                              );
-                                            </script>
+                                              document.addEventListener("DOMContentLoaded", function() {
+                                                  const dropdownIcons = document.querySelectorAll('.dropdown-icon');
+                                                  
+                                                  dropdownIcons.forEach(icon => {
+                                                      icon.addEventListener('click', () => {
+                                                          const dropdownContainer = icon.nextElementSibling;
+                                                          dropdownContainer.style.display = (dropdownContainer.style.display === 'none' || dropdownContainer.style.display === '') ? 'block' : 'none';
+                                                      });
+                                                  });
+                                              });
+                                          </script>
                                           </div>
                                         </div>
                                       </div>
                                       {% endfor %}
 
+                                      
                                       <div
                                         class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-877ceeb"
                                         data-id="877ceeb"
@@ -329,7 +324,9 @@
                                         <div
                                           class="elementor-column-wrap elementor-element-populated"
                                         >
-                                          <div class="elementor-widget-wrap">
+                                          <div
+                                            class="elementor-widget-wrap"
+                                          >
                                             <div
                                               class="elementor-element elementor-element-9c6cc46 minimog-animation-zoom-in sub-title-position-above_title elementor-widget elementor-widget-tm-banner"
                                               data-id="9c6cc46"
@@ -343,18 +340,24 @@
                                                   class="minimog-banner minimog-box link-secret"
                                                   href=""
                                                 >
-                                                  <div class="minimog-image">
+                                                  <div
+                                                    class="minimog-image"
+                                                  >
                                                     <div
                                                       class="image ll-background ll-background-unload"
                                                       data-src="{{blog_detail.blog_image.url}}"
                                                     ></div>
                                                   </div>
-                                                  <div class="content-wrap">
+                                                  <div
+                                                    class="content-wrap"
+                                                  >
                                                     <div
                                                       class="content-wrap__inner"
                                                     >
-                                                      <h3 class="title">
-                                                        {{p.main_title}}
+                                                      <h3
+                                                        class="title"
+                                                      >
+                                                       {{p.main_title}}
                                                       </h3>
                                                     </div>
                                                     <div
@@ -371,7 +374,8 @@
                                                           >
                                                             <span
                                                               class="button-text"
-                                                              >Shop Now</span
+                                                              >Shop
+                                                              Now</span
                                                             >
                                                           </div>
                                                         </div>
@@ -401,17 +405,22 @@
           </div>
         </div>
       </div>
-
+      
       <div class="header-below-center header-col-center lingrad">
         <div class="header-content-inner">
-          <div id="page-navigation" class="navigation page-navigation">
+          <div
+            id="page-navigation"
+            class="navigation page-navigation"
+          >
             <nav id="menu" class="menu menu--primary">
               <ul
                 id="menu-primary"
                 class="menu__container sm sm-simple"
                 data-sm-options='{"subMenusSubOffsetX":-18,"subMenusSubOffsetY":-17}'
               >
-                <li class="">
+                <li
+                  class=""
+                >
                   <a href=""
                     ><div class="menu-item-wrap">
                       <span class="menu-item-title">Home</span>
@@ -421,7 +430,8 @@
                 <li
                   class="menu-item menu-item-type-post_type menu-item-object-page menu-item-40 level-1"
                 >
-                  <a href=" .0.0.1:8000/shop-category/Wall%20Decor/"
+                  <a
+                    href=" .0.0.1:8000/shop-category/Wall%20Decor/"
                     ><div class="menu-item-wrap">
                       <span class="menu-item-title">Shop</span>
                     </div></a
@@ -459,9 +469,12 @@
                 <li
                   class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2083 level-1"
                 >
-                  <a href=""
+                  <a
+                    href=""
                     ><div class="menu-item-wrap">
-                      <span class="menu-item-title">Store List</span>
+                      <span class="menu-item-title"
+                        >Store List</span
+                      >
                     </div></a
                   >
                 </li>
@@ -479,7 +492,7 @@
 {% endblock innerheader %} {% block content %}
 <div id="page-content" class="page-content">
   <div class="container-broad">
-    <div class="dokan-profile-frame-wrapper" style="text-align: center">
+    <div class="dokan-profile-frame-wrapper" style="text-align: center;">
       <div class="profile-frame">
         <div class="profile-info-box profile-layout-default">
           <div class="profile-info-cover">
@@ -505,17 +518,20 @@
               text-align: center;
               font-size: 3.2rem;
             }
-            .show {
+            .show{
               text-align: right;
             }
           </style>
 
+          
           <!-- .profile-info-summery-wrapper -->
         </div>
         <!-- .profile-info-box -->
       </div>
       <!-- .profile-frame -->
     </div>
+
+  
 
     <div class="row">
       <div class="page-sidebar page-sidebar-left sidebar-primary">
@@ -543,9 +559,11 @@
           </div>
         </div>
       </div>
+
+      
     </div>
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600&family=Playfair+Display:wght@500&display=swap");
+      @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600&family=Playfair+Display:wght@500&display=swap');
     </style>
     <div class="profile-info-summery-wrapper dokan-clearfix">
       <div class="profile-info-summery">
@@ -554,19 +572,19 @@
         </div>
 
         <style>
-          .custom-heading {
+          .custom-heading{
             font-family: Dancing Script;
             font-size: 4rem;
           }
 
           @media only screen and (max-width: 600px) {
-            /* Adjust font size for small screens and mobile screens */
-            .custom-heading {
-              font-size: 3rem;
-            }
-          }
+    /* Adjust font size for small screens and mobile screens */
+    .custom-heading {
+      font-size: 3rem;
+    }
+  }
         </style>
-        <hr />
+        <hr>
         <p>{{blog_detail.blog_description| safe}}</p>
 
         <!-- .profile-info -->
