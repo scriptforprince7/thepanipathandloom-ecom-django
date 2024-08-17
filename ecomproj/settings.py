@@ -163,7 +163,7 @@ DEFAULT_FROM_EMAIL = 'princesachdeva@nationalmarketingprojects.com'  # Use the s
 PAYPAL_RECEIVER_EMAIL = 'sprince1500@gmail.com'
 PAYPAL_TEST =True
 
-KEY = 'rzp_test_J49wAxU6gIgE2k'
-SECRET = 'dcyvIk7pIORJEw5uzNK3NonJ'
+KEY = 'rzp_live_OTwAIGJhwyBmWk'
+SECRET = 'xbMFywelGyz802h2CaWazgAl'
 
 
